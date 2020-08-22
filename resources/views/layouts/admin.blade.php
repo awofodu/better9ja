@@ -195,7 +195,7 @@
                             </li>
 
                             <li class="menu-item {{Request::is('admin/investors') ? 'menu-item-active' : ''}}" aria-haspopup="true">
-                                <router-link to="/admin/investors" class="menu-link">
+                                <uter-link to="/admin/investors" class="menu-link">
 										<span class="svg-icon menu-icon svg-icon-success">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Bucket.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +212,7 @@
                                             <!--end::Svg Icon-->
 										</span>
                                     <span class="menu-text">Investors</span>
-                                </router-link>
+                                </uter-link>
                             </li>
 
                             <li class="menu-item {{Request::is('admin/investments') ? 'menu-item-active' : ''}}" aria-haspopup="true">
@@ -969,10 +969,9 @@
                         <!--end::Copyright-->
                         <!--begin::Nav-->
                         <div class="nav nav-dark">
-                            <a href="http://keenthemes.com/metronic" target="_blank"
-                               class="nav-link pl-0 pr-5">About</a>
-                            <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">Team</a>
-                            <a href="http://keenthemes.com/metronic" target="_blank"
+                            <a href="{{route('how-it-works')}}" target="_blank"
+                               class="nav-link pl-0 pr-5">How It Works</a>
+                            <a href="{{route('contact-us')}}" target="_blank"
                                class="nav-link pl-0 pr-0">Contact</a>
                         </div>
                         <!--end::Nav-->

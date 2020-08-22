@@ -253,10 +253,9 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!--end::Copyright-->
                         <!--begin::Nav-->
                         <div class="nav nav-dark">
-                            <a href="http://keenthemes.com/metronic" target="_blank"
-                               class="nav-link pl-0 pr-5">About</a>
-                            <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">Team</a>
-                            <a href="http://keenthemes.com/metronic" target="_blank"
+                            <a href="{{route('how-it-works')}}" target="_blank"
+                               class="nav-link pl-0 pr-5">How It Works</a>
+                            <a href="{{route('contact-us')}}" target="_blank"
                                class="nav-link pl-0 pr-0">Contact</a>
                         </div>
                         <!--end::Nav-->
