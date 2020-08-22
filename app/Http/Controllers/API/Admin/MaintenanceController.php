@@ -1,0 +1,128 @@
+<?php
+
+namespace App\Http\Controllers\Api\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Investment;
+use App\Maintenance;
+use App\Merge;
+use App\Referral;
+use Illuminate\Http\Request;
+
+class MaintenanceController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
+            'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
+            ->latest()->paginate(2);
+        return response()->json(['maintenances'=>$maintenances]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // Investors due for withdrawal
+        $withdrawal = Referral::findOrFail($request->merge_id);
+        $maintenance = Maintenance::findOrFail($request->maintenance['id']);
+
+        $maintenance->main_merge_balance = $maintenance->main_merge_balance - $request->merge_amount;
+        $maintenance->merges()->create(['referral_id'=>$withdrawal->id, 'amount'=>$request->merge_amount]);
+        $paid_amount = Merge::where('referral_id',$withdrawal->id)->where('is_paid',1)->sum('amount');
+
+        // Remove the amount the investor is about to pay from withdrawal reward
+        $merge_balance = $withdrawal->merge_balance == 0 ? ((int)$withdrawal->amount - (int)$request->merge_amount)
+            : ((int)$withdrawal->merge_balance - (int)$request->merge_amount);
+        // Update the merge balance for the admin to know the remaining amount to settle the investor
+        $withdrawal->merge_balance = $merge_balance;
+        // Update the balance of the person withdrawing with his reward amount
+        $withdrawal->balance = (int)$withdrawal->balance - $paid_amount; //add invested amount to the investment coln
+        $withdrawal->save();
+        $maintenance->save();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $maintenance = Maintenance::findOrFail($request->maintenance['id']);
+        $maintenance->main_merge_balance = $maintenance->main_merge_balance - $request->merge_amount;
+
+        $withdrawal = Investment::findOrFail($request->merge_id);
+        $maintenance->merges()->create(['withdrawal_id'=>$withdrawal->id, 'amount'=>$request->merge_amount]);
+        $paid_amount = Merge::where('withdrawal_id',$withdrawal->id)->where('is_paid',1)->sum('amount');
+
+        // Remove the amount the investor is about to pay from withdrawal reward
+        $merge_balance = $withdrawal->merge_balance == 0 ? (int)$withdrawal->reward - (int)$request->merge_amount
+        : (int)$withdrawal->merge_balance - (int)$request->merge_amount;
+        // Update the merge balance for the admin to know the remaining amount to settle the investor
+        $withdrawal->merge_balance = $merge_balance;
+        // Update the balance of the person withdrawing with his reward amount
+        $withdrawal->balance = (int)$withdrawal->reward - $paid_amount;
+
+        $withdrawal->save();
+        $maintenance->save();
+
+//        $merges = Investment::where('is_withdrawn', 1)->where('merge_balance','!=', 0)
+//            ->with('user.referrals.referrer','user.bank', 'withdrawal.user.bank')->paginate(1);
+//        return response()->json(['merges'=>$merges]);//
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}
