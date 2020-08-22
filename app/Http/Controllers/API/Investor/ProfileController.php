@@ -178,7 +178,7 @@ class ProfileController extends Controller
             }
             $user->proof_document = implode(',', $proof_array);
 
-            $referrals = User::where('referred_by', $user->referred_by)->get();
+            $referrals = User::where('referred_by', $user->referred_by)->count();
             //if the investor
             if($referrals == 14)
             {
