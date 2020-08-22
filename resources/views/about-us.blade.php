@@ -153,6 +153,7 @@
             <li><a href="#">How It Works</a></li>
         </ul>
     </div>
+
 </div>
 <div class="section-block">
     <div class="container">
