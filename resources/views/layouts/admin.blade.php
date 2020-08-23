@@ -195,7 +195,7 @@
                             </li>
 
                             <li class="menu-item {{Request::is('admin/investors') ? 'menu-item-active' : ''}}" aria-haspopup="true">
-                                <uter-link to="/admin/investors" class="menu-link">
+                                <router-link to="/admin/investors" class="menu-link">
 										<span class="svg-icon menu-icon svg-icon-success">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Bucket.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +212,7 @@
                                             <!--end::Svg Icon-->
 										</span>
                                     <span class="menu-text">Investors</span>
-                                </uter-link>
+                                </router-link>
                             </li>
 
                             <li class="menu-item {{Request::is('admin/investments') ? 'menu-item-active' : ''}}" aria-haspopup="true">
