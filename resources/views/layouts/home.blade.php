@@ -173,19 +173,6 @@
         </a>
     </section>
 
-
-    <div id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="site-info text-center">
-                        <p>Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </footer>
 
 
