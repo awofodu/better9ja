@@ -57,4 +57,5 @@ Route::group(['middleware'=>['auth:api','admin']], function(){
     Route::apiResources(['admin/reports' => 'API\Admin\MessageController']);
     Route::get('admin/report/messages', 'API\Admin\MessageController@messages');
     Route::delete('admin/report/messages/{id}', 'API\Admin\MessageController@deleteMessage');
+    Route::apiResources(['admin/testimonies' => 'API\Admin\TestimonyController']);
 });

@@ -145,7 +145,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text" esd-links-color="#fff" align="center">
-                                                                <p style="font-size: 14px; color: #ffffff;">Contact us: <a target="_blank" style="font-size: 14px; color: #ffffff;" href="tel:09079798730">09079798730</a> | <a target="_blank" href="mailto:your@mail.com" style="font-size: 14px; color: #ffffff;">your@mail.com</a></p>
+                                                                <p style="font-size: 14px; color: #ffffff;">Contact us: <a target="_blank" style="font-size: 14px; color: #ffffff;" href="tel:09079798730">09079798730</a> | <a target="_blank" href="mailto:support@better9ja.com" style="font-size: 14px; color: #ffffff;">support@better9ja.com</a></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>

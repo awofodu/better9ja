@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('home/assets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('home/assets/css/responsive.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/fontawesome-all.css')}}">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 
     <style>
         .float {
@@ -60,30 +61,30 @@
                         <span class="lni-menu"></span>
                         <span class="lni-menu"></span>
                     </button>
-                    <a href="/" class="navbar-brand"><img src="{{asset('images/logo/better_9ja.png')}}" width="150" alt=""></a>
+                    <a href="/" class="navbar-brand"><img src="{{asset('images/logo/better_9ja.png')}}" width="130" alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav mr-auto w-100 justify-content-end">
                         <li class="nav-item active">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="/">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                How It Works
+                            <a class="nav-link dropdown-toggle" href="{{route('how-it-works')}}">
+                                User Guide
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" href="{{route('contact-us')}}">
                                 Contact
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('register')}}">Sign In</a>
+                            <a class="nav-link" href="{{route('login')}}">Sign In</a>
                         </li>
                         <li class="button-group">
-                            <a href="{{route('login')}}" class="button btn btn-common">Sign Up</a>
+                            <a href="{{route('register')}}" class="button btn btn-common">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -92,21 +93,7 @@
         <div class="mobile-menu" data-logo="{{asset('images/logo/better_9ja.png')}}"></div>
     </nav>
 
-    <div class="container">
-        <div class="row space-100">
-            <div class="col-lg-7 col-md-12 col-xs-12">
-                <div class="contents">
-                    <h2 class="head-title">Register your income <br> above the rest</h2>
-                    <p>Join thousands of members, emjoy safe 50% returns.</p>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12 col-xs-12">
-                <div class="intro-img">
-                    <img src="{{asset('home/assets/img/intro.png')}}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+    @yield('banner')
 </header>
 
 
@@ -130,8 +117,8 @@
                     <div class="widget">
                         <h3 class="block-title">Quick Links</h3>
                         <ul class="menu">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Support</a></li>
+                            <li><a href="{{route('how-it-works')}}">User Guide</a></li>
+                            <li><a href="{{route('contact-us')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -157,10 +144,8 @@
                             </div>
                         </form>
                         <ul class="mt-3 footer-social">
-                            <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                            <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                            <li><a class="text-success" href="https://chat.whatsapp.com/EecurBLdt6O7xgsLgNHVUP"><i class="lni lni-whatsapp text-white"></i></a></li>
+                            <li><a class="linkedin" href="http://t.me/Better9ja"><i class="lni lni-telegram-original"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -169,7 +154,7 @@
 
 
         <a href="https://chat.whatsapp.com/EecurBLdt6O7xgsLgNHVUP" class="float" target="_blank">
-            <i class="bx bxl-whatsapp my-float"></i>
+            <i class="lni lni-whatsapp my-float"></i>
         </a>
     </section>
 

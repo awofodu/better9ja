@@ -17,6 +17,7 @@ class CreateTestimoniesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->longText('body')->nullable();
+            $table->boolean('is_approved')->default(0);
             $table->timestamps();
         });
     }

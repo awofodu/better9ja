@@ -106,6 +106,8 @@ class RegisterController extends Controller
             Maintenance::create(['user_id'=>$user->id, 'maintenance_id'=>strtoupper(Str::random(6))]);
             Referral::create(['user_id'=>$user->id, 'referral_id'=>strtoupper(Str::random(6))]);
 
+            $user->sendEmailVerificationNotification();
+
             return redirect('/investments');
         }
         return redirect()->back()->withErrors($validator)->withInput();

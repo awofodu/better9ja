@@ -13,7 +13,7 @@
                         <!--begin::Logo-->
                         <a href="/" class="login-logo pb-xl-20 pb-15 text-center">
                             <img src="{{asset('images/logo/better_9ja.png')}}"
-                                 class="max-h-70px" alt="" width="180">
+                                 class="max-h-70px" alt="" width="150">
                         </a>
                         <!--end::Logo-->
                         <!--begin::Signin-->
@@ -35,9 +35,9 @@
                             @csrf
                             <!--begin::Title-->
                                 <div class="pb-5 pb-lg-15">
-                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h3-lg">Sign In</h3>
-                                    <div class="text-muted font-weight-bold font-size-h5">New Here?
-                                        <a href="{{route('register')}}" class="font-weight-bolder"
+                                    <h3 class="font-weight-bolder text-dark font-size-h3 font-size-h4-lg">Sign In</h3>
+                                    <div class="text-muted font-weight-bold font-size-h6">New Here?
+                                        <a href="{{route('register')}}" class="font-weight-bolder font-size-h6"
                                         style="color: #119815;">Create Account</a></div>
                                 </div>
                                 <!--begin::Title-->

@@ -54,62 +54,6 @@
                                 </table>
                             </div>
 
-                            <!-- Modal-->
-                            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Investor Details</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <i aria-hidden="true" class="ki ki-close"></i>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <span><b>Name: </b>{{user.name}}</span><br><br>
-                                                    <span><b>Phone: </b><a :href="'tel:'+user.phone">{{user.phone}}</a>
-                                                    </span><br><br>
-                                                    <span><b>Referred By: </b>
-                                                        {{user.referrer ? user.referrer.name : 'Null'}}</span><br><br>
-                                                    <span><b>No of Referral: </b>
-                                                        {{user.referrals ? user.referrals.length : 'Null'}}</span><br><br>
-                                                    <span><b>Guider: </b>
-                                                        {{user.guider ? user.guider.name : 'Null'}}</span><br><br>
-                                                    <span>Status:
-                                                    <span class="label label-inline label-light-primary font-weight-bold"
-                                                          v-if="parseInt(user.is_activated) === 1">Active</span>
-                                                            <span class="label label-inline label-light-danger font-weight-bold"
-                                                                  v-else>Not Active</span>
-                                                    </span><br><br>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <span><b>Email: </b>{{user.email}}</span><br><br>
-                                                    <span><b>User Type: </b>{{user.is_guider ? 'Guider' : 'Regular'}}</span><br><br>
-                                                    <span><b>Bank Name: </b>
-                                                        {{user.bank ? user.bank.bank_name : 'Null'}}</span><br><br>
-                                                    <span><b>Account Name: </b>
-                                                        {{user.bank ? user.bank.account_name : 'Null'}}</span><br><br>
-                                                    <span><b>Account Number: </b>
-                                                        {{user.bank ? user.bank.account_number : ''}}</span><br><br>
-                                                    <span><b>Support Pin: </b>{{user.support_pin}}</span><br><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <form class="vld-parent" ref="formContainer">
-                                                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-warning font-weight-bold"
-                                                        @click="suspendUser(user, 'suspend')" v-if="user.is_blocked == 0">Suspend</button>
-                                                <button type="button" class="btn btn-primary font-weight-bold"
-                                                        @click="suspendUser(user, 'activate')" v-else>Activate</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            &emsp;&emsp;
-
                             &emsp;&emsp;
                             &emsp;&emsp;
 

@@ -10,9 +10,9 @@
                 </div>
                 <div class="alert-text text-justify">
                     <span>Make a payment of your ₦1000 Activation fee into the account below: </span><br>
-                    <span><b>Bank Name: </b>{{admin.bank.bank_name}}</span><br>
-                    <span><b>Account Name: </b>{{admin.bank.account_name}}</span><br>
-                    <span><b>Account Number: </b>{{admin.bank.account_number}}</span><br><br>
+                    <span><b>Bank Name: </b>{{admin.bank ? admin.bank.bank_name : ''}}</span><br>
+                    <span><b>Account Name: </b>{{admin.bank ? admin.bank.account_name : ''}}</span><br>
+                    <span><b>Account Number: </b>{{admin.bank ? admin.bank.account_number : ''}}</span><br><br>
 
                     Having made your payment, please upload the proof of payment of your <b>₦1000 Activation fee</b>.
                 </div>

@@ -59,7 +59,11 @@ class AppServiceProvider extends ServiceProvider
 
             $user = User::whereEmail($notifiable->getEmailForVerification())->first();
 
-            SendVerificationLink::dispatch($user, $verifyUrl)->delay(now()->addMinutes(1));
+//            SendVerificationLink::dispatch($user, $verifyUrl)->delay(now()->addMinutes(1));
+
+           return (new MailMessage)
+                ->subject('Welcome!')
+                ->markdown('email.verify', ['name' => $user->name, 'url' => $verifyUrl]);
 
         });
     }

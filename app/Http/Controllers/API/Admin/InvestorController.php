@@ -62,7 +62,9 @@ class InvestorController extends Controller
         $user->is_activated = 1;
         $user->save();
 
-        AccountVerified::dispatch($user)->delay(now()->addMinutes(1));
+        $admin = auth('api')->user();
+
+        AccountVerified::dispatch($user, $admin)->delay(now()->addMinutes(1));
         return response()->json($user, 200);
     }
 

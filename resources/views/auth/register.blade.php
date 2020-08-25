@@ -10,7 +10,7 @@
                 <div class="d-flex flex-column-auto flex-column px-10">
                     <!--begin::Aside header-->
                     <a href="{{route('main')}}" class="login-logo pb-lg-4 pb-10 text-center">
-                        <img src="{{asset('images/logo/better_9ja.png')}}" class="max-h-70px" width="180"
+                        <img src="{{asset('images/logo/better_9ja.png')}}" class="max-h-70px" width="150"
                              alt="">
                     </a>
                     <!--end::Aside header-->
