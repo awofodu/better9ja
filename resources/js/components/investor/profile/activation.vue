@@ -16,13 +16,6 @@
 
                     Having made your payment, please upload the proof of payment of your <b>₦1000 Activation fee</b>.
                 </div>
-                <div class="alert-close">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-																	<span aria-hidden="true">
-																		<i class="ki ki-close"></i>
-																	</span>
-                    </button>
-                </div>
             </div>
 
             <div class="card card-custom gutter-b" v-else>

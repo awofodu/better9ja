@@ -315,7 +315,7 @@
             profileDetails() {
                 axios.get('api/investor/profile')
                     .then(result => {
-                        this.user_type = result.data.user.is_guider ? 'Guider' : 'Regular User';
+                        this.user_type = result.data.user.is_guider == 0 ? 'Guider' : 'Regular User';
                         this.form.fill(result.data.user);
                         this.form.account_number = result.data.bank ? result.data.bank.account_number : '';
                         this.form.account_name = result.data.bank ? result.data.bank.account_name : '';

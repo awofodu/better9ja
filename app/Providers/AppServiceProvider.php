@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\User;
+use App\Jobs\SendVerificationLink;
 use Carbon\Carbon;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -57,9 +58,9 @@ class AppServiceProvider extends ServiceProvider
             );
 
             $user = User::whereEmail($notifiable->getEmailForVerification())->first();
-            return (new MailMessage)
-                ->subject('Welcome!')
-                ->markdown('email.verify', ['name' => $user->name, 'url' => $verifyUrl]);
+
+            SendVerificationLink::dispatch($user, $verifyUrl)->delay(now()->addMinutes(1));
+
         });
     }
 }
