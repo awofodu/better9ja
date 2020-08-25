@@ -187,7 +187,7 @@
                                             <i class="flaticon-warning"></i>
                                         </div>
                                         <div class="alert-text">Your account have been placed on 100% upgrade for
-                                            your {{maintenance.next_level}}th investment and
+                                            your {{maintenance.next_level | ordinal}} investment and
                                             maintenance fee is 30% of your referral bonus. <b>Make A payment of ₦{{priceComma(maintenance_fee)}}
                                                 to upgrade and activate your account</b>.</div>
                                         <div class="alert-close">
@@ -358,7 +358,7 @@
                     .then(result=>{
                         this.user = result.data.user;
                         this.maintenance_fee = result.data.bonus > 4999 ?
-                            parseInt(result.data.bonus) * (30/100) : 2000;
+                            parseInt(result.data.bonus) * (30/100) : parseInt(result.data.last_investment.amount) * (10/100);
                         this.maintenance = result.data.maintenance;
                         this.level = result.data.maintenance.next_level - 1;
                         this.investments = result.data.all_investments;

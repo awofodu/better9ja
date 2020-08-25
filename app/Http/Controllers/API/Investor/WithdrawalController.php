@@ -163,7 +163,7 @@ class WithdrawalController extends Controller
                 $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                 $referrer->referral_earnings()->create([
                     'amount' => $investor->user->referral_reward($request->amount),
-                    'percentage' => '5%',
+                    'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
                 ]);
                 $referral_bonus = Referral::whereUserId($referrer->id)->first();
                 $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
@@ -175,7 +175,7 @@ class WithdrawalController extends Controller
             {
                 $investor->user->referrer->guider->referral_earnings()->create([
                     'amount' => $investor->user->guider_reward($request->amount),
-                    'percentage' => '1%',
+                    'percentage' => '2%',
                 ]);
                 $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->first();
                 $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->guider_reward($request->amount));
@@ -210,7 +210,7 @@ class WithdrawalController extends Controller
         $investor->user->transactions()->create(['message'=>'Your payment for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span> has been confirmed."]);
         return response()->json(['user'=>$withdrawal]);
 
-        return response()->json('Payment Confirmed.');
+//        return response()->json('Payment Confirmed.');
     }
 
     /**

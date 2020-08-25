@@ -159,7 +159,8 @@ class ProfileController extends Controller
     public function getUser()
     {
         $user = auth('api')->user();
-        return response()->json($user);
+        $admin = collect(User::where('is_admin', 1)->with('bank')->get())->shuffle()->first();
+        return response()->json(['user'=>$user, 'admin'=>$admin]);
     }
 
     public function activate_account(Request $request)

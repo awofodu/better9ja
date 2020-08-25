@@ -59,6 +59,36 @@ class ReferralController extends Controller
 
             $merge->save();
 
+            // If the investor has a referrer
+            if($investor->user->referrer)
+            {
+                // If it is investor first investment
+                if($investor_investments->count() == 1 && (int)$investor->user->is_activated === 1)
+                {
+                    // Referral receives a 5% bonus pay
+                    $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
+                    $referrer->referral_earnings()->create([
+                        'amount' => $investor->user->referral_reward($request->amount),
+                        'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
+                    ]);
+                    $referral_bonus = Referral::whereUserId($referrer->id)->first();
+                    $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
+                    $referral_bonus->save();
+                }
+
+                // Investors referrer's guider receives 1% bonus
+                if($investor->user->referrer->guider)
+                {
+                    $investor->user->referrer->guider->referral_earnings()->create([
+                        'amount' => $investor->user->guider_reward($request->amount),
+                        'percentage' => '2%',
+                    ]);
+                    $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->first();
+                    $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->guider_reward($request->amount));
+                    $referral_bonus->save();
+                }
+            }
+
             $investment_merges = Merge::where('investment_id',$investor->id)->where('is_paid',1)->sum('amount');
 
             if($merge->investor->amount == $investment_merges)

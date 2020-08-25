@@ -34,6 +34,7 @@ class InvestmentController extends Controller
             array_push($investment_id_array, $investment->id);
         }
         $all_investments = Investment::whereUserId($user->id)->get();
+        $last_investment = Investment::whereUserId($user->id)->latest()->first();
         $maintenance = $user->maintenances()->latest()->first();
         $bonus = $user->referral->bonus;
         $merges = Merge::whereIn('investment_id',$investment_id_array)->get();
@@ -41,7 +42,7 @@ class InvestmentController extends Controller
         $sum_paid_merges = $merges->where('is_paid', 1)->sum('amount');
         return response()->json(['user'=>$user, 'investments'=> $investments,'maintenance'=>$maintenance,
         'all_investments' => $all_investments, 'bonus'=>$bonus, 'merges'=> $merges, 'paid_investment'=>$sum_paid_merges,
-        'maintenance_merges'=>$maintenance_merges]);
+        'maintenance_merges'=>$maintenance_merges, 'last_investment'=>$last_investment]);
     }
 
     /**

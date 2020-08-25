@@ -88,7 +88,7 @@
         <img src="{{asset('images/logo/loader.gif')}}" alt="">
     </div>
 </div>
-<a href="https://api.whatsapp.com/send?phone=2349047032306&text=Hello! Importdeals.ng, ." class="float" target="_blank">
+<a href="https://chat.whatsapp.com/EecurBLdt6O7xgsLgNHVUP" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
 </a>
 <header id="nav-transparent">
@@ -129,7 +129,7 @@
                      data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
                      data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
                      data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                     data-start="500" data-responsive_offset="on" data-elementdelay="0.05">Raise your business above the
+                     data-start="500" data-responsive_offset="on" data-elementdelay="0.05">Raise your income above the
                     rest
                 </div>
                 <div class="slide-subtitle tp-caption tp-resizeme text-left text-center-sm"
@@ -139,57 +139,12 @@
                      data-width="['1200','1000','550']" data-whitespace="nowrap" data-transform_idle="o:1;"
                      data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
                      data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                     data-start="1500" data-color="#fff" data-splitin="none" data-splitout="none">Brand marketing that
-                    puts your vision into action! Putting vision into action. <br>Accurate data for precision marketing.
-                    Your outsourced marketing team.
+                     data-start="1500" data-color="#fff" data-splitin="none" data-splitout="none">Join thousand of members, enjoy
+                    safe 50% returns.
                 </div>
                 <div class="tp-caption rev-btn tp-resizeme slider-btn button-primary" id="slide-1081-layer-13"
                      data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','30']"
-                     data-fontsize="['15','15','15','15']" data-fontweight="600" data-lineheight="['50','50','50','50']"
-                     data-width="['200','200','200','200']" data-height="none" data-whitespace="nowrap"
-                     data-start="1500" data-type="button"
-                     data-actions='[{"event":"click","action":"scrollbelow","offset":"-70px","delay":"","speed":"2500","ease":"Power1.easeInOut"}]'
-                     data-responsive_offset="on" data-splitin="none" data-splitout="none"
-                     data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"y:50px;opacity:0;fb:10px;fbr:100;","to":"o:1;fb:0;fbr:100;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;fbr:100;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;fbr:110%;","style":"c:rgba(255,255,255,1);bs:solid;bw:0 0 0 0;"}]'
-                     data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
-                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="">
-                    Learn More
-                </div>
-            </li>
-            <li data-delay="5000" data-transition="parallaxhorizontal" data-slotamount="7" data-masterspeed="2500"
-                data-fsmasterspeed="1000"><img src="{{asset('images/bg2.jpg')}}" alt=""
-                                               data-bgposition="center right" data-bgfit="cover"
-                                               data-bgrepeat="no-repeat" class="rev-slidebg">
-                <div class="slide-title tp-caption tp-resizeme text-center"
-                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                     data-y="['middle','middle','middle','middle']" data-voffset="['-35','-35', '-150', '-350']"
-                     data-fontsize="['70','60', '60', '125']" data-fontweight="600"
-                     data-lineheight="['80','70', '70', '135']" data-width="['800','700','650']" data-height="none"
-                     data-color="#fff" data-whitespace="normal" data-transform_idle="o:1;"
-                     data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
-                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                     data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                     data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                     data-start="500" data-responsive_offset="on" data-elementdelay="0.05">A marketing company focused
-                    on results
-                </div>
-                <div class="slide-subtitle tp-caption tp-resizeme text-center"
-                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                     data-y="['middle','middle','middle','middle']" data-voffset="['75','75', '15', '15']"
-                     data-fontsize="['18', '18', '18', '18']" data-fontweight="300" data-lineheight="['30']"
-                     data-width="['1200','1000','550']" data-whitespace="nowrap" data-color="#fff"
-                     data-transform_idle="o:1;"
-                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
-                     data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                     data-start="1500" data-splitin="none" data-splitout="none">Brand marketing that puts your vision
-                    into action! Putting vision into action. <br>Accurate data for precision marketing. Your outsourced
-                    marketing team.
-                </div>
-                <div class="tp-caption rev-btn tp-resizeme slider-btn button-primary" id="slide-1081-layer-14"
-                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                     data-y="['middle','middle','middle','middle']" data-voffset="['150','150','160','30']"
                      data-fontsize="['15','15','15','15']" data-fontweight="600" data-lineheight="['50','50','50','50']"
                      data-width="['200','200','200','200']" data-height="none" data-whitespace="nowrap"
                      data-start="1500" data-type="button"
@@ -211,32 +166,26 @@
             <small>PROFESSIONAL SERVICES</small>
             <h2 class="semi-bold font-size-35">Planning & Consulting</h2>
             <div class="section-heading-line line-thin"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<br>ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam.</p></div>
+            <p><b>BETTER9JA</b> first online platform with the combination of Contribution/Donation + Investment. Welcome to better9ja where you can find trusted
+            and reliable Admins.</p></div>
         <div class="row mt-30">
-            <div class="col-md-3 col-sm-6 col-12">
+            <div class="col-md-4 col-sm-6 col-12">
                 <div class="features-box-2">
                     <div class="features-box-2-icon"><i class="icon-search-2"></i></div>
                     <h4>Easy Registration</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>
+                    <p>Easy steps in creating an account with us just by you providing your valid personal details.</p></div>
             </div>
-            <div class="col-md-3 col-sm-6 col-12">
+            <div class="col-md-4 col-sm-6 col-12">
                 <div class="features-box-2">
                     <div class="features-box-2-icon"><i class="icon-megaphone"></i></div>
                     <h4>Business Services</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>
+                    <p>Make money by investing with us. Get 50% interest as profit on or unbeatable investment programe.</p></div>
             </div>
-            <div class="col-md-3 col-sm-6 col-12">
+            <div class="col-md-4 col-sm-6 col-12">
                 <div class="features-box-2">
                     <div class="features-box-2-icon"><i class="icon-graph"></i></div>
-                    <h4>Quality Resourcing</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="features-box-2">
-                    <div class="features-box-2-icon"><i class="icon-wallet"></i></div>
-                    <h4>Business Services</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>
+                    <h4>Growth</h4>
+                    <p>Grow your money today with a system built to last forever.</p></div>
             </div>
         </div>
     </div>

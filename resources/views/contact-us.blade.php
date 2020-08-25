@@ -92,23 +92,14 @@
     </style>
 </head>
 <body>
-<div id="style-switcher"><h2>Color Schemes<a href="#"><i class="fa fa-cog fa-spin"></i></a></h2>
-    <div>
-        <ul class="colors" id="color1">
-            <li><a href="#" class="style1"></a></li>
-            <li><a href="#" class="style2"></a></li>
-            <li><a href="#" class="style3"></a></li>
-            <li><a href="#" class="style4"></a></li>
-            <li><a href="#" class="style5"></a></li>
-            <li><a href="#" class="style6"></a></li>
-        </ul>
-    </div>
-</div>
 <div id="preloader">
     <div class="lds-ellipsis">
         <img src="{{asset('images/logo/loader.gif')}}" alt="">
     </div>
 </div>
+<a href="https://chat.whatsapp.com/EecurBLdt6O7xgsLgNHVUP" class="float" target="_blank">
+    <i class="fab fa-whatsapp my-float"></i>
+</a>
 <div id="top-bar" class="hidden-md-down">
     <div class="container">
         <div class="row">

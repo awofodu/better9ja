@@ -69,7 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function referral_reward($amount)
     {
-        return ((int)$amount * (5/100));
+        return ($this->referral_earnings->count() < 1  ? (int)$amount * (5/100)  : (int)$amount * (2/100));
     }
 
     public function guider_reward($amount)

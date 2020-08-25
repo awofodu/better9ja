@@ -55,7 +55,7 @@ const router = new VueRouter({
 
 import VueProgressBar from 'vue-progressbar';
 const options = {
-    color: '#bffaf3',
+    color: '#26b575',
     failedColor: '#874b4b',
     thickness: '4px',
     transition: {
@@ -180,7 +180,10 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 // global register at main.js
 import VueCountdownTimer from 'vuejs-countdown-timer'
-Vue.use(VueCountdownTimer)
+Vue.use(VueCountdownTimer);
+
+import vueNumeralFilterInstaller from 'vue-numeral-filter';
+Vue.use(vueNumeralFilterInstaller, { locale: 'en-gb' });
 
 
 /**

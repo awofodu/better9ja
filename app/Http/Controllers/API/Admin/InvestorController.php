@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\AccountVerified;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -16,7 +17,7 @@ class InvestorController extends Controller
      */
     public function index()
     {
-        $users = User::with('guider','bank', 'referrer', 'referrals')->latest()->paginate(1);
+        $users = User::with('guider','bank', 'referrer', 'referrals')->latest()->paginate(10);
         $banks = Http::withHeaders([
             'accept' => 'application/json'
         ])
@@ -60,6 +61,8 @@ class InvestorController extends Controller
         $user = User::findOrFail($id);
         $user->is_activated = 1;
         $user->save();
+
+        AccountVerified::dispatch($user)->delay(now()->addMinutes(1));
         return response()->json($user, 200);
     }
 

@@ -8,7 +8,14 @@
                 <div class="alert-icon">
                     <i class="flaticon-warning"></i>
                 </div>
-                <div class="alert-text">Upload the payment proof of your <b>₦1000 Activation fee</b>.</div>
+                <div class="alert-text text-justify">
+                    <span>Make a payment of your ₦1000 Activation fee into the account below: </span><br>
+                    <span><b>Bank Name: </b>{{admin.bank.bank_name}}</span><br>
+                    <span><b>Account Name: </b>{{admin.bank.account_name}}</span><br>
+                    <span><b>Account Number: </b>{{admin.bank.account_number}}</span><br><br>
+
+                    Having made your payment, please upload the proof of payment of your <b>₦1000 Activation fee</b>.
+                </div>
                 <div class="alert-close">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 																	<span aria-hidden="true">
@@ -87,6 +94,7 @@
             return {
                 images: [],
                 user: '',
+                admin: '',
                 form: new Form({
                     proof_document: [],
                 })
@@ -99,7 +107,8 @@
             {
                 axios.get('api/investor/profile/activate')
                     .then(result=>{
-                        this.user = result.data;
+                        this.user = result.data.user;
+                        this.admin = result.data.admin;
                         this.$Progress.finish();
                     })
             },

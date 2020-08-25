@@ -113,6 +113,10 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
+        'Q' => 
+        array (
+            'Queueworker\\SansDaemon\\' => 23,
+        ),
         'P' => 
         array (
             'Psy\\' => 4,
@@ -356,6 +360,10 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
+        'Queueworker\\SansDaemon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queueworker/sansdaemon/src',
         ),
         'Psy\\' => 
         array (
@@ -622,6 +630,7 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Investment' => __DIR__ . '/../..' . '/app/Investment.php',
+        'App\\Jobs\\AccountVerified' => __DIR__ . '/../..' . '/app/Jobs/AccountVerified.php',
         'App\\Maintenance' => __DIR__ . '/../..' . '/app/Maintenance.php',
         'App\\Merge' => __DIR__ . '/../..' . '/app/Merge.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -4345,6 +4354,10 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Queueworker\\SansDaemon\\Console\\WorkCommand' => __DIR__ . '/..' . '/queueworker/sansdaemon/src/Console/WorkCommand.php',
+        'Queueworker\\SansDaemon\\SansDaemonServiceProvider' => __DIR__ . '/..' . '/queueworker/sansdaemon/src/SansDaemonServiceProvider.php',
+        'Queueworker\\SansDaemon\\SansDaemonWorker' => __DIR__ . '/..' . '/queueworker/sansdaemon/src/SansDaemonWorker.php',
+        'Queueworker\\SansDaemon\\Traits\\SansDaemonWorkerTrait' => __DIR__ . '/..' . '/queueworker/sansdaemon/src/Traits/SansDaemonWorkerTrait.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',

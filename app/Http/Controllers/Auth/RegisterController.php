@@ -87,22 +87,20 @@ class RegisterController extends Controller
         $validator = $this->validator($input);
         if($validator->passes())
         {
-            if($request->referred_by)
+            $admin = collect(User::where('is_admin', 1)->with('bank')->get())->shuffle()->first();
+            if($ref_id = $request->referred_by)
             {
-                if($ref_id = $request->referred_by)
-                {
-                    $referrer = User::where('referral_id', $ref_id)->first();
-                    $input['referred_by'] = $referrer->referral_id;
-                    $input['guider_id'] = (int)$referrer->is_guider === 1 ? $referrer->id : rand(1,2);
+                $referrer = User::where('referral_id', $ref_id)->first();
+                $input['referred_by'] = $referrer->referral_id;
+                $input['guider_id'] = (int)$referrer->is_guider === 1 ? $referrer->id : $admin->id;
 
-                }else{
-                    $input['guider_id'] = rand(1,2);
-                }
+            }else{
+                $input['guider_id'] = $admin->id;
             }
 
-                $input['password'] = Hash::make($request->password);
-                $input['referral_id'] = strtoupper(Str::random(6));
-                $input['support_pin'] = rand(1000, 9999);
+            $input['password'] = Hash::make($request->password);
+            $input['referral_id'] = strtoupper(Str::random(6));
+            $input['support_pin'] = rand(1000, 9999);
 
             $user = User::create($input);
             Maintenance::create(['user_id'=>$user->id, 'maintenance_id'=>strtoupper(Str::random(6))]);
