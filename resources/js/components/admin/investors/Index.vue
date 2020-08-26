@@ -112,7 +112,7 @@
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <span><b>Email: </b>{{user.email}}</span><br><br>
-                                                    <span><b>User Type: </b>{{user.is_guider == 0 ? 'Guider' : 'Regular'}}</span><br><br>
+                                                    <span><b>User Type: </b>{{user.is_guider == 1 ? 'Guider' : 'Regular'}}</span><br><br>
                                                     <span><b>Bank Name: </b>
                                                         {{user.bank ? user.bank.bank_name : 'Null'}}</span><br><br>
                                                     <span><b>Account Name: </b>

@@ -22,7 +22,7 @@
                     <div class="card-body d-flex flex-column">
                         <!--begin::Items-->
                         <div class="flex-grow-1"
-                             v-if="(parseInt(investments.length) !== parseInt(level)) && parseInt(maintenance.amount) === 0">
+                             v-if="investments && (parseInt(investments.length) !== parseInt(level)) && parseInt(maintenance.amount) === 0">
                             <!--begin::Item-->
                             <div class="d-flex align-items-center justify-content-between mb-10">
                                 <div class="d-flex align-items-center mr-2">
@@ -141,7 +141,7 @@
                             <div class="card-body" v-if="user.bank">
                                 <!--begin::Form-->
                                 <form class="form" id="kt_form" @submit.prevent="createInvestment"
-                                      v-if="(parseInt(investments.length) !== parseInt(level)) &&
+                                      v-if="investments && (parseInt(investments.length) !== parseInt(level)) &&
                                       parseInt(maintenance.amount) === 0">
                                     <div class="row">
                                         <div class="col-xl-2"></div>
@@ -181,7 +181,7 @@
                                 </form>
                                 <!--end::Form-->
 
-                                <div v-if="(parseInt(investments.length) === parseInt(level)) && maintenance.amount == 0">
+                                <div v-if="investments && (parseInt(investments.length) === parseInt(level)) && maintenance.amount == 0">
                                     <div class="alert alert-custom alert-light-danger fade show mb-5" role="alert">
                                         <div class="alert-icon">
                                             <i class="flaticon-warning"></i>
@@ -207,14 +207,14 @@
 
                                 <div v-else>
                                     <div class="alert alert-custom alert-light-info fade show mb-5" role="alert"
-                                    v-if="(parseInt(investments.length) === parseInt(level)) && !maintenance_merges">
+                                    v-if="investments && (parseInt(investments.length) === parseInt(level)) && !maintenance_merges">
                                         <div class="alert-icon">
                                             <i class="flaticon-warning"></i>
                                         </div>
                                         <div class="alert-text">You will be merged with whom to pay to soon.</div>
                                     </div>
                                     <div class="alert alert-custom alert-white alert-shadow fade show mb-5" role="alert"
-                                         v-if="(parseInt(investments.length) === parseInt(level)) && maintenance_merges">
+                                         v-if="investments && (parseInt(investments.length) === parseInt(level)) && maintenance_merges">
                                         <div class="alert-text text-left">
                                             <div v-if="maintenance.withdrawal">
                                                 <span class="text-primary">
