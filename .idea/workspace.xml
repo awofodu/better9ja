@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/ManageController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-704">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -98,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/InvestmentController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -795,12 +790,12 @@
       <workItem from="1598219259808" duration="199000" />
       <workItem from="1598265024798" duration="20678000" />
       <workItem from="1598343535941" duration="36192000" />
-      <workItem from="1598435584002" duration="1347000" />
+      <workItem from="1598435584002" duration="2105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="748199000" />
+    <option name="totallyTimeSpent" value="748957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1215,7 +1210,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/InvestmentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1229,7 +1224,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/ManageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-704">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
