@@ -45,7 +45,7 @@
 <i class="lni-search"></i>
 </span>
                     <h4>Business Service</h4>
-                    <p>Make money by investing with us. Get 50% interest as profit in first 3days and subsequent profit in @
+                    <p>Make money by investing with us. Get 50% interest as profit in first 3days and subsequent profit in
                     7days using our unbeatable Investment Programme.</p>
                 </div>
             </div>

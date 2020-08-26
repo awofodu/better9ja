@@ -249,6 +249,18 @@
                                                             class="btn btn-transparent-primary font-weight-bold mr-2">
                                                         View Merges
                                                     </button>
+                                                                <!-- Button trigger modal-->
+<!--                                                <button type="button" class="btn btn-transparent-primary font-weight-bold mr-2"-->
+<!--                                                        data-toggle="modal" data-target="#proofModal"-->
+<!--                                                        @click="getMaintenance(maintenance)" v-if="maintenance.withdrawal">-->
+<!--                                                    I have made payment-->
+<!--                                                </button>-->
+<!--                                                <span v-else class="text-danger">-->
+<!--                                                    You would be merged with whom to pay to soon.</span>-->
+                                                                <!--                                <span v-if="parseInt(investment.is_paid) === 1" class="text-info">-->
+                                                                <!--                                    Please wait while the withdrawal-->
+                                                                <!--                                    confirms your payment.-->
+                                                                <!--                                </span>-->
                                             </span>
                                         </div>
                                     </div>
@@ -346,7 +358,8 @@
                     .then(result=>{
                         this.user = result.data.user;
                         this.maintenance_fee = result.data.bonus > 4999 ?
-                            parseInt(result.data.bonus) * (30/100) : parseInt(result.data.last_investment.amount) * (10/100);
+                            parseInt(result.data.bonus) * (30/100) :
+                            result.data.last_investment ? parseInt(result.data.last_investment.amount) * (10/100) : 0;
                         this.maintenance = result.data.maintenance;
                         this.level = result.data.maintenance.next_level - 1;
                         this.investments = result.data.all_investments;
