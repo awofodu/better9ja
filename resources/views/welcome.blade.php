@@ -58,7 +58,13 @@
                     <p>Refer your friends and family and earn additional percentages.</p>
                 </div>
             </div>
+
+
         </div>
+        <br>
+        <center>
+        <a href="{{route('how-it-works')}}" class="btn btn-common">Learn More</a>
+        </center>
     </div>
 </section>
 

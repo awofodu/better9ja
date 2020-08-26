@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Investment;
+use App\Jobs\MergeSuccess;
 use App\Maintenance;
 use App\Merge;
 use App\Referral;
@@ -59,6 +60,9 @@ class MaintenanceController extends Controller
         $withdrawal->balance = (int)$withdrawal->balance - $paid_amount; //add invested amount to the investment coln
         $withdrawal->save();
         $maintenance->save();
+
+
+        MergeSuccess::dispatch($maintenance->user, $withdrawal->user)->delay(now()->addMinutes(1));
     }
 
     /**
@@ -109,6 +113,9 @@ class MaintenanceController extends Controller
 
         $withdrawal->save();
         $maintenance->save();
+
+
+        MergeSuccess::dispatch($maintenance->user, $withdrawal->user)->delay(now()->addMinutes(1));
 
 //        $merges = Investment::where('is_withdrawn', 1)->where('merge_balance','!=', 0)
 //            ->with('user.referrals.referrer','user.bank', 'withdrawal.user.bank')->paginate(1);

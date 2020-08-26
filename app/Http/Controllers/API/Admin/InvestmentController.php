@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Investment;
+use App\Jobs\MergeSuccess;
 use App\Merge;
 use App\Referral;
 use App\User;
@@ -65,6 +66,9 @@ class InvestmentController extends Controller
             $withdrawal->balance = (int)$withdrawal->balance - $paid_amount; //add invested amount to the investment coln
             $withdrawal->save();
             $investment->save();
+
+            MergeSuccess::dispatch($investment->user, $withdrawal->user)->delay(now()->addMinutes(1));
+
         }
 
 
@@ -132,6 +136,9 @@ class InvestmentController extends Controller
             $withdrawal->save();
 
             $investment->save();
+
+
+            MergeSuccess::dispatch($investment->user, $withdrawal->user)->delay(now()->addMinutes(1));
         }
 
 

@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="{{asset('home/assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('home/assets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('home/assets/css/responsive.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/fontawesome-all.css')}}">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
         .float {
@@ -41,9 +41,9 @@
             margin-top: 16px;
         }
 
-        /*.slicknav_menu > a.image-responsive{*/
-        /*    width: 50%;*/
-        /*}*/
+        .page-header{
+            background: url({{asset('home/assets/img/contact_img.jpg')}}) !important;
+        }
     </style>
 </head>
 <body>

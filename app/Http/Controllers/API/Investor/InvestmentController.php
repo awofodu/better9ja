@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API\Investor;
 
 use App\Http\Controllers\Controller;
 use App\Investment;
+use App\Jobs\InvestmentSuccess;
+use App\Jobs\InvUploadProofSuccess;
 use App\Merge;
 use App\Referral;
 use App\Transaction;
@@ -88,6 +90,9 @@ class InvestmentController extends Controller
             $user->transactions()->create(
                 ['message'=>'You invested <span class="text-success">₦'.number_format($request->amount)."</span> with ID".$investment->investment_id." awaiting for merging."]);
 
+            InvestmentSuccess::dispatch($user, $investment)->delay(now()->addMinutes(1));
+
+
             return response()->json(['user'=>$user, 'investment'=>$investment]);
         }else{
             return response('Error',404);
@@ -160,10 +165,11 @@ class InvestmentController extends Controller
         }
 
 
-
 //
 
         $withdrawal = $merge->withdrawal;
+
+        InvUploadProofSuccess::dispatch($user, $withdrawal)->delay(now()->addMinutes(1));
         Transaction::create(['user_id'=>$merge->withdrawal->user->id, 'message'=>$user->name.' paid <span class="text-success">₦'.number_format($merge->amount).'</span> to you for Investment ID '.$merge->withdrawal->investment_id]);
 
         $user->transactions()->create(['message'=>'You paid for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span>"]);
