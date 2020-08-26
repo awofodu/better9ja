@@ -36,7 +36,7 @@
 <i class="lni-user"></i>
 </span>
                     <h4>Easy Registration</h4>
-                    <p>Proving a valid personal details leads you on a go.</p>
+                    <p>Providing a valid personal details leads you on a go.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
