@@ -99,6 +99,16 @@
         .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item.menu-item-active > .menu-link{
             background-color: #271d15e0 !important;
         }
+        .header-mobile
+        {
+            background-color: #fff !important;
+        }
+        .header-mobile .burger-icon span {
+            background-color: #541b1b;
+        }
+        .header-mobile .burger-icon span::before, .header-mobile .burger-icon span::after {
+            background-color: #541b1b;
+        }
     </style>
 </head>
 <!--end::Head-->

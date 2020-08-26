@@ -109,6 +109,16 @@ License: You must have a valid license purchased only from themeforest(the above
         .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item.menu-item-active > .menu-link{
             background-color: #271d15e0 !important;
         }
+        .header-mobile
+        {
+            background-color: #fff !important;
+        }
+        .header-mobile .burger-icon span {
+            background-color: #541b1b;
+        }
+        .header-mobile .burger-icon span::before, .header-mobile .burger-icon span::after {
+            background-color: #541b1b;
+        }
         /*a.menu-item-active{*/
         /*    background-color: #2f1e0fe0 !important;*/
         /*}*/
