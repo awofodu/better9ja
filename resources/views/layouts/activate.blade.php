@@ -197,7 +197,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <ul class="menu-nav">
                             <li class="menu-item menu-item-active" aria-haspopup="true">
                                 <a to="/dashboard" class="menu-link">
-										<span class="svg-icon menu-icon svg-icon-success">
+										<span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -222,7 +222,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="menu-item {{Request::is('investments') ? 'menu-item-active' : ''}}"
                                 aria-haspopup="true">
                                 <a to="/investments" class="menu-link">
-										<span class="svg-icon menu-icon svg-icon-success">
+										<span class="svg-icon menu-icon svg-icon-white">
                                             <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-07-07-181510/theme/html/demo1/dist/../src/media/svg/icons/General/User.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -239,7 +239,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="menu-item {{Request::is('withdrawals') ? 'menu-item-active' : ''}}"
                                 aria-haspopup="true">
                                 <a to="/withdrawals" class="menu-link">
-										<span class="svg-icon menu-icon svg-icon-success">
+										<span class="svg-icon menu-icon svg-icon-white">
                                             <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-07-07-181510/theme/html/demo1/dist/../src/media/svg/icons/General/User.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -263,7 +263,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="menu-item {{Request::is('transactions') ? 'menu-item-active' : ''}}"
                                 aria-haspopup="true">
                                 <a to="/transactions" class="menu-link">
-                                    <span class="svg-icon menu-icon svg-icon-success">
+                                    <span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Media/Equalizer.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -288,7 +288,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="menu-item {{Request::is('referrals') ? 'menu-item-active' : ''}}"
                                 aria-haspopup="true">
                                 <a to="/referrals" class="menu-link">
-										<span class="svg-icon svg-icon-success menu-icon">
+										<span class="svg-icon svg-icon-white menu-icon">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -308,7 +308,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </li>
                             <li class="menu-item menu-item-submenu menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
-										<span class="svg-icon svg-icon-success menu-icon">
+										<span class="svg-icon svg-icon-white menu-icon">
                                             <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-07-07-181510/theme/html/demo1/dist/../src/media/svg/icons/General/User.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -358,7 +358,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="menu-item {{Request::is('testimonies') ? 'menu-item-active' : ''}}"
                                 aria-haspopup="true">
                                 <a to="/testimonies" class="menu-link">
-										<span class="svg-icon menu-icon svg-icon-success">
+										<span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -381,7 +381,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <a class="menu-link" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-										<span class="svg-icon menu-icon svg-icon-success">
+										<span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
