@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Investor;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ConfirmPayment;
 use App\Maintenance;
 use App\Merge;
 use App\Referral;
@@ -116,6 +117,8 @@ class WithdrawalController extends Controller
 
         $maintenance->save();
 
+        ConfirmPayment::dispatch($withdrawal, $maintenance)->delay(now()->addMinutes(1));
+
         Transaction::create(['user_id'=>$withdrawal->user->id, 'message'=>$user->name.' paid <span class="text-success">₦'.number_format($merge->amount).'</span> to you for Investment ID '.$withdrawal->investment_id]);
 
         $user->transactions()->create(
@@ -205,6 +208,8 @@ class WithdrawalController extends Controller
         $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
         $withdrawal->balance = (int)$withdrawal->reward - (int)$withdrawal->paid_amount;
         $withdrawal->save();
+
+        ConfirmPayment::dispatch($withdrawal, $investor)->delay(now()->addMinutes(1));
         Transaction::create(['user_id'=>$merge->withdrawal->user->id, 'message'=>'You confirmed a payment of  <span class="text-success">₦'.number_format($merge->amount).'</span> from '.$investor->user->name.' for Investment ID '.$merge->withdrawal->investment_id]);
 
         $investor->user->transactions()->create(['message'=>'Your payment for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span> has been confirmed."]);
