@@ -40,7 +40,7 @@ class TerminateMergeTransaction extends Command
      */
     public function handle()
     {
-       $merges = Merge::where('created_at', '<=', Carbon::now())->where('is_paid', 0)->where('is_resolved', 0)->get();
+       $merges = Merge::where('created_at', '<=', Carbon::now()->addHours(24))->where('is_paid', 0)->where('is_resolved', 0)->get();
        foreach($merges as $merge)
        {
            if($merge->is_terminated == 0)

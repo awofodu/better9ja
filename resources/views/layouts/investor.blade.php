@@ -1,21 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Bootstrap 4 HTML, React, Angular 9 & VueJS Admin Dashboard Theme
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: https://1.envato.market/EA4JP
-Renew Support: https://1.envato.market/EA4JP
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<!--begin::Head-->
-
-<!-- Mirrored from preview.keenthemes.com/metronic/demo1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jul 2020 16:28:46 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8"/>
@@ -98,12 +82,12 @@ License: You must have a valid license purchased only from themeforest(the above
         a.menu-link:hover{
             background-color: #271d15e0 !important;
         }
-        .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link{
+        .aside-menu .menu-nav > .menu-item.menu-item-active-dashboard > .menu-link{
             background-color: #271d15e0 !important;
         }
-        .aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link{
-            background-color: #271d15e0 !important;
-        }
+        /*.aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link{*/
+        /*    background-color: #271d15e0 !important;*/
+        /*}*/
         .aside-menu .menu-nav > .menu-item > .menu-link .menu-text{
             color: #efefef !important;
         }
@@ -120,22 +104,9 @@ License: You must have a valid license purchased only from themeforest(the above
         .header-mobile .burger-icon span::before, .header-mobile .burger-icon span::after {
             background-color: #541b1b;
         }
-        /*a.menu-item-active{*/
-        /*    background-color: #2f1e0fe0 !important;*/
-        /*}*/
-        /*.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link{*/
-        /*    background-color: #af1a1a !important;*/
-        /*}*/
-        /*.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-icon.svg-icon svg g [fill]{*/
-        /*    fill: #008751;*/
-        /*}*/
-        /*.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-icon{*/
-        /*    color: #008751;*/
-        /*}*/
-        /*.btn-primary{*/
-        /*    background-color:#008751 !important;*/
-        /*    border-color:#008751 !important;*/
-        /*}*/
+        .router-link-active{
+            background: #271d15e0;
+        }
     </style>
 </head>
 <!--end::Head-->
@@ -206,7 +177,7 @@ License: You must have a valid license purchased only from themeforest(the above
                          data-menu-dropdown-timeout="500" style="height: 100% !important;">
                         <!--begin::Menu Nav-->
                         <ul class="menu-nav">
-                            <li class="menu-item menu-item-active" aria-haspopup="true">
+                            <li class="menu-item menu-item-active-dashboard" aria-haspopup="true">
                                 <router-link to="/dashboard" class="menu-link">
 										<span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->

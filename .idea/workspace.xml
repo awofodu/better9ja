@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="" />
+    <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/investor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/investor.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,21 +34,30 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/investor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="450" column="60" selection-start-line="450" selection-start-column="55" selection-end-line="450" selection-end-column="60" />
+            <state relative-caret-position="130">
+              <caret line="101" column="39" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="377" column="49" lean-forward="true" selection-start-line="377" selection-start-column="49" selection-end-line="377" selection-end-column="49" />
+            <state relative-caret-position="160">
+              <caret line="42" column="76" selection-start-line="42" selection-start-column="76" selection-end-line="42" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -61,13 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>how it</find>
-      <find>setting</find>
-      <find>switch</find>
-      <find>img</find>
-      <find>slic</find>
-      <find>slicknav_me</find>
-      <find>develo</find>
       <find>setti</find>
       <find>settin</find>
       <find>regi</find>
@@ -89,8 +96,15 @@
       <find>svg-icon-xl</find>
       <find>svg-icon-success</find>
       <find>auth</find>
-      <find>is_ad</find>
       <find>/dashb</find>
+      <find>is_ad</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item.menu-item-active</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item .menu-submenu .menu-item.menu-item-active &gt; .menu-link .menu-bullet.menu-bullet-dot &gt; span</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item .menu-submenu .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover &gt; .menu-link .menu-bullet.menu-bullet-dot &gt; span</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item .menu-submenu .menu-item &gt; .menu-link .menu-text</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item.menu-item-open &gt; .menu-link</find>
+      <find>dashboard</find>
+      <find>.aside-menu .menu-nav &gt; .menu-item &gt; .menu-link .menu-arrow</find>
     </findStrings>
     <replaceStrings>
       <replace>investments</replace>
@@ -131,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/investor/profile/index.vue" />
-        <option value="C:/sam/websites/job_portal/preview.uideck.com/items/thehunt/index.html" />
         <option value="$PROJECT_DIR$/public/home/assets/js/main.js" />
         <option value="$PROJECT_DIR$/resources/views/contact-us.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contact.blade.php" />
@@ -179,9 +191,11 @@
         <option value="$PROJECT_DIR$/resources/views/auth/verify.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/activate.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/investor.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" />
+        <option value="$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" />
       </list>
     </option>
   </component>
@@ -327,6 +341,30 @@
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
               <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Jobs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -357,6 +395,111 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="aside" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
@@ -611,12 +754,13 @@
       <workItem from="1598219259808" duration="199000" />
       <workItem from="1598265024798" duration="20678000" />
       <workItem from="1598343535941" duration="36192000" />
-      <workItem from="1598435584002" duration="8109000" />
+      <workItem from="1598435584002" duration="8902000" />
+      <workItem from="1598471222459" duration="4317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="754961000" />
+    <option name="totallyTimeSpent" value="760071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,9 +773,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34114978" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3464448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -654,7 +797,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33661118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3464448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -712,13 +855,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="160" column="26" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -956,13 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/ConfirmPayment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1050,24 +1179,38 @@
     <entry file="file://$PROJECT_DIR$/resources/js/components/investor/profile/activation.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/activate.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="310" column="76" selection-start-line="310" selection-start-column="76" selection-end-line="310" selection-end-column="76" />
+        <state relative-caret-position="320">
+          <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/investor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="450" column="60" selection-start-line="450" selection-start-column="55" selection-end-line="450" selection-end-column="60" />
+        <state relative-caret-position="130">
+          <caret line="101" column="39" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="377" column="49" lean-forward="true" selection-start-line="377" selection-start-column="49" selection-end-line="377" selection-end-column="49" />
+        <state relative-caret-position="194">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="42" column="76" selection-start-line="42" selection-start-column="76" selection-end-line="42" selection-end-column="76" />
         </state>
       </provider>
     </entry>
