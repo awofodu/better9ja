@@ -17,10 +17,13 @@
 <div class="about section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <div class="about-content">
-                    <h3>Get to know
-                        how the best <span class="text-success">P2P</span> platform works</h3>
+            <div class="col-lg-1 col-md-1 col-xs-12"></div>
+            <div class="col-lg-10 col-md-10 col-xs-12 card border-success">
+                <div class="about-content card-body"><br>
+                    <h3 class="text-center">Get to know
+                        how the best <span class="text-success">P2P</span> platform works</h3><br>
+
+                    <img class="img-fluid float-right" src="{{asset('home/assets/img/guide.jpg')}}" alt=""><br>
                     <ul>
                         <li><i class="fa fa-check-circle text-success"></i >Registration
                             <p class="text-secondary">STEP 1: Fill out the registration form on the registration page with your correct
@@ -111,9 +114,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <img class="img-fluid float-right" src="assets/img/about/img1.jpg" alt="">
-            </div>
+            <div class="col-lg-1 col-md-1 col-xs-12"></div>
         </div>
     </div>
 </div>
