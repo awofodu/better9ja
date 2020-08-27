@@ -40,55 +40,58 @@ class TerminateMergeTransaction extends Command
      */
     public function handle()
     {
-       $merges = Merge::where('created_at', '>=', Carbon::now()->addHours(24))->where('is_paid', 0)->where('is_resolved', 0)->get();
+       $merges = Merge::where('is_paid', 0)->where('is_resolved', 0)->get();
        foreach($merges as $merge)
        {
-           if($merge->is_terminated == 0)
+           if(Carbon::now() >= Carbon::parse($merge->created_at)->addHours(24))
            {
-               if($merge->investor)
+               if($merge->is_terminated == 0)
                {
-                   $merge->investor->user->is_blocked = 1;
-                   $merge->investor->user->save();
+                   if($merge->investor)
+                   {
+                       $merge->investor->user->is_blocked = 1;
+                       $merge->investor->user->save();
 
-                   //Revert price for the investor paying
-                   $investor = $merge->investor;
-                   $investor->inv_merge_balance = $investor->inv_merge_balance + $merge->amount;
-                   $investor->save();
+                       //Revert price for the investor paying
+                       $investor = $merge->investor;
+                       $investor->inv_merge_balance = $investor->inv_merge_balance + $merge->amount;
+                       $investor->save();
+                   }
+
+
+                   if($merge->maintenance_investor)
+                   {
+                       $merge->maintenance_investor->user->is_blocked = 1;
+                       $merge->maintenance_investor->user->save();
+
+                       //Revert price for the investor paying
+                       $investor = $merge->maintenance_investor;
+                       $investor->inv_merge_balance = $investor->main_merge_balance + $merge->amount;
+                       $investor->save();
+                   }
+
+
+                   if($merge->withdrawal)
+                   {
+                       // Revert price for the investor withdrawing
+                       $withdrawal = $merge->withdrawal;
+                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
+                       $withdrawal->save();
+                   }
+
+
+                   if($merge->referral_withdrawal)
+                   {
+                       // Revert price for the investor withdrawing referral bonus
+                       $withdrawal = $merge->referral_withdrawal;
+                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
+                       $withdrawal->save();
+                   }
                }
 
-
-               if($merge->maintenance_investor)
-               {
-                   $merge->maintenance_investor->user->is_blocked = 1;
-                   $merge->maintenance_investor->user->save();
-
-                   //Revert price for the investor paying
-                   $investor = $merge->maintenance_investor;
-                   $investor->inv_merge_balance = $investor->main_merge_balance + $merge->amount;
-                   $investor->save();
-               }
-
-
-               if($merge->withdrawal)
-               {
-                   // Revert price for the investor withdrawing
-                   $withdrawal = $merge->withdrawal;
-                   $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
-                   $withdrawal->save();
-               }
-
-
-               if($merge->referral_withdrawal)
-               {
-                   // Revert price for the investor withdrawing referral bonus
-                   $withdrawal = $merge->referral_withdrawal;
-                   $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
-                   $withdrawal->save();
-               }
+               $merge->is_terminated = 1;
+               $merge->save();
            }
-
-           $merge->is_terminated = 1;
-           $merge->save();
        }
 
     }
