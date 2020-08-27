@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <center>
-                        <img src="{{asset('images/envelope.png')}}" alt="" width="120">
+                        <img src="{{asset('images/envelope.jpg')}}" alt="" width="250">
                     </center><br><br>
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
