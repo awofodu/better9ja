@@ -215,7 +215,7 @@
                                 <tr v-for="(earning, index) in  earnings.data">
                                     <th scope="row">{{index+1}}</th>
                                     <td>{{earning.user.name}}</td>
-                                    <td>{{priceComma(earning.amount)}}</td>
+                                    <td>₦{{priceComma(earning.amount)}}</td>
                                     <td>
                                     <span class="label label-inline label-light-primary font-weight-bold">
                                         {{earning.percentage}}</span>

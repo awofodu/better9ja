@@ -122,7 +122,7 @@ class WithdrawalController extends Controller
         Transaction::create(['user_id'=>$withdrawal->user->id, 'message'=>$user->name.' paid <span class="text-success">₦'.number_format($merge->amount).'</span> to you for Investment ID '.$withdrawal->investment_id]);
 
         $user->transactions()->create(
-            ['message'=>'You paid <span class="text-success">₦'.number_format($merge->amount).'</span> out of <span class="text-success">₦'.number_format($maintenance->amount)."</span> for maintenance ID".$maintenance->maintenance_id."."]);
+            ['message'=>'You paid <span class="text-success">₦'.number_format($merge->amount).'</span> out of <span class="text-success">₦'.number_format($maintenance->amount)."</span> for maintenance ID ".$maintenance->maintenance_id."."]);
 
         return response()->json('Confirmed', 200);
     }
@@ -213,7 +213,7 @@ class WithdrawalController extends Controller
         ConfirmPayment::dispatch($withdrawal, $investor)->delay(now()->addMinutes(1));
         Transaction::create(['user_id'=>$merge->withdrawal->user->id, 'message'=>'You confirmed a payment of  <span class="text-success">₦'.number_format($merge->amount).'</span> from '.$investor->user->name.' for Investment ID '.$merge->withdrawal->investment_id]);
 
-        $investor->user->transactions()->create(['message'=>'Your payment for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span> has been confirmed."]);
+        $investor->user->transactions()->create(['message'=>'Your payment for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span> has been confirmed by".$merge->withdrawal->user->name."."]);
         return response()->json(['user'=>$withdrawal]);
 
 //        return response()->json('Payment Confirmed.');

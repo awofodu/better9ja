@@ -45,7 +45,7 @@ let routes = [
     { path: '/admin/manage-admin', name: 'manageAdmin', component: require('./components/admin/manage/Create').default },
     { path: '/admin/reports', name: 'allReports', component: require('./components/admin/messages/Report').default },
     { path: '/admin/messages', name: 'allMessages', component: require('./components/admin/messages/Index').default },
-    { path: '/admin/testimonies', name: 'allMessages', component: require('./components/admin/manage/Testimony').default },
+    { path: '/admin/testimonies', name: 'allTestimonies', component: require('./components/admin/manage/Testimony').default },
 
 ];
 

@@ -546,7 +546,7 @@
     </div>
     <!-- end::User Panel-->
     <!--begin::Scrolltop-->
-    <div id="kt_scrolltop" class="scrolltop">
+    <div id="kt_scrolltop" class="scrolltop bg-success">
 			<span class="svg-icon svg-icon-white">
 				<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Navigation/Up-2.svg-->
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
