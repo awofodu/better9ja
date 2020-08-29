@@ -74,7 +74,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function guider_reward($amount)
     {
-        return ((int)$amount * (1/100));
+        return ((int)$amount * (2/100));
     }
 
     public function is_active()

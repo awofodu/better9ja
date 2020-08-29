@@ -199,6 +199,7 @@ class WithdrawalController extends Controller
                 // Withrawal date = 3
                 $investor->withdrawal_date = Carbon::now()->addDays(3);
             }
+            $investor->is_paid = 1;
             $investor->created_at = Carbon::now();
             $investor->save();
         }

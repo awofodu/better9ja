@@ -198,7 +198,7 @@
                                                         </td>
                                                         <td>
                                                             <button type="button"
-                                                                    @click="continueMerge(merge, investment)"
+                                                                    @click="continueMerge(merge, maintenance)"
                                                                     class="btn btn-primary font-weight-bold">Go</button>
                                                         </td>
                                                     </tr>

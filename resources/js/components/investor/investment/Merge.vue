@@ -345,7 +345,7 @@
                         this.$Progress.finish();
                     })
                     .catch(()=>{
-
+                        this.catchMessage();
                     })
             },
 

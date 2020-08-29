@@ -28,186 +28,6 @@
             </div>
 
             <div class="row" v-for="(withdrawals, index) in withdrawals_chunk">
-                <div class="col-sm-4" v-for="(withdrawal, index) in withdrawals"
-                     :key="withdrawal.id" v-if="withdrawal.withdrawal && withdrawal.withdrawal.investor">
-                    <!--begin::Card-->
-                    <div class="card card-custom card-stretch">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="card-icon">
-                                    <i class="flaticon2-list-3 text-primary"></i>
-                                </span>
-                                <h3 class="card-label"><span class="text-primary">{{withdrawal.withdrawal.investment.investment_id}}</span>
-                                    <small>Withdrawal profile</small></h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div v-if="parseInt(withdrawal.withdrawal.investor.is_paid) === 0">
-                                <span><b>ID: </b> {{withdrawal.withdrawal.investment.investment_id}}</span><br>
-                                <span><b>Payer: </b> {{withdrawal.withdrawal.investor.user.bank.account_name}}</span><br>
-                                <span>
-                                    <b>Phone: </b>  <a :href="'tel:'+withdrawal.withdrawal.investor.user.phone">
-                                {{withdrawal.withdrawal.investor.user.phone}}</a>
-                                <button type="button" class="btn btn-transparent-info mr-1" data-toggle="modal"
-                                        data-target="#reportPhoneModal" @click="report(withdrawal.withdrawal.investor.user, user)">Report Phone</button>
-                            </span><br>
-                                <span>
-                                    <b>
-                                        Guider: </b> <a :href="'tel:'+withdrawal.withdrawal.investor.user.guider.phone">
-                                    {{withdrawal.withdrawal.investor.user.guider.phone}}</a>
-                            </span><br>
-                                <span v-if="withdrawal.withdrawal.investor.user.referrer">
-                                    <b>Upline: </b> <a :href="'tel:'+withdrawal.withdrawal.investor.user.referrer.phone">
-                                    {{withdrawal.withdrawal.investor.user.referrer.phone}}
-                                    </a>
-                                </span>
-                                <span v-else>
-                                    <b>Upline: </b> Null
-                                </span><br>
-                            </div>
-                            <span><b>Amount: </b> &#8358;{{priceComma(withdrawal.withdrawal.investment.reward)}}</span><br>
-                            <span><b>Date: </b>{{withdrawal.withdrawal.investment.created_at | shortDateWithTime}}</span><br>
-                            <span class="text-center"><b>Status: </b>
-                                <a href="#" class="btn btn-warning"
-                                   v-if="parseInt(withdrawal.withdrawal.investor.is_paid) === 0"
-                                   @click="confirmWithdrawal(withdrawal.withdrawal)">Confirm</a>
-                                <span href="#" class="text-success" v-else>Received</span>
-                            </span>
-                        </div>
-                    </div>
-                    <!--end::Card-->
-                </div>
-
-
-                <div class="col-sm-4" v-for="(withdrawal, index) in withdrawals"
-                     :key="withdrawal.withdrawal.id" v-if="withdrawal.withdrawal && withdrawal.withdrawal.maintenance_investor">
-                    <!--begin::Card-->
-                    <div class="card card-custom card-stretch">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="card-icon">
-                                    <i class="flaticon2-list-3 text-primary"></i>
-                                </span>
-                                <h3 class="card-label"><span class="text-primary">{{withdrawal.withdrawal.investment.investment_id}}</span>
-                                    <small>Withdrawal profile</small></h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div v-if="parseInt(withdrawal.withdrawal.maintenance_investor.is_paid) === 0">
-                                <span><b>ID: </b> {{withdrawal.withdrawal.investment.investment_id}}</span><br>
-                                <span><b>Payer: </b> {{withdrawal.withdrawal.maintenance_investor.user.bank.account_name}}</span><br>
-                                <span>
-                                    <b>Phone: </b>  <a :href="'tel:'+withdrawal.withdrawal.maintenance_investor.user.phone">
-                                {{withdrawal.withdrawal.maintenance_investor.user.phone}}</a>
-                                <button type="button" class="btn btn-transparent-info mr-1" data-toggle="modal"
-                                        data-target="#reportPhoneModal"
-                                        @click="report(withdrawal.withdrawal.maintenance_investor.user, user)">Report Phone</button>
-                            </span><br>
-                                <span>
-                                    <b>
-                                        Guider: </b> <a :href="'tel:'+withdrawal.withdrawal.maintenance_investor.user.guider.phone">
-                                    {{withdrawal.withdrawal.maintenance_investor.user.guider.phone}}</a>
-                            </span><br>
-                                <span v-if="withdrawal.withdrawal.maintenance_investor.user.referrer">
-                                    <b>Upline: </b> <a :href="'tel:'+withdrawal.withdrawal.maintenance_investor.user.referrer.phone">
-                                    {{withdrawal.withdrawal.maintenance_investor.user.referrer.phone}}
-                                    </a>
-                                </span>
-                                <span v-else>
-                                    <b>Upline: </b> Null
-                                </span><br>
-                            </div>
-
-                            <span><b>Amount: </b> &#8358;{{priceComma(withdrawal.withdrawal.investment.reward)}}</span><br>
-                            <span><b>Date: </b>{{withdrawal.withdrawal.investment.created_at | shortDateWithTime}}</span><br>
-                            <span class="text-center"><b>Status: </b>
-                                <a href="#" class="btn btn-warning"
-                                   v-if="parseInt(withdrawal.withdrawal.maintenance_investor.is_paid) === 0"
-                                   @click="confirmMaintenanceWithdrawal(withdrawal.withdrawal)">Confirm</a>
-                                <span href="#" class="text-success" v-else>Received</span>
-                            </span>
-                        </div>
-                    </div>
-                    <!--end::Card-->
-                </div>
-
-                <div class="col-sm-4" v-for="(withdrawal, index) in withdrawals"
-                     :key="withdrawal.id" v-if="withdrawal.referral_withdrawal && withdrawal.referral_withdrawal.investor">
-                    <!--begin::Card-->
-                    <div class="card card-custom card-stretch">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="card-icon">
-                                    <i class="flaticon2-list-3 text-primary"></i>
-                                </span>
-                                <h3 class="card-label"><span class="text-primary">{{withdrawal.referral_withdrawal.investment.investment_id}}</span>
-                                    <small>Withdrawal profile</small></h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div v-if="parseInt(withdrawal.referral_withdrawal.investor.is_paid) === 0">
-                                <span><b>ID: </b> {{withdrawal.referral_withdrawal.investment.investment_id}}</span><br>
-                                <span><b>Payer: </b> {{withdrawal.referral_withdrawal.investor.user.bank.account_name}}</span><br>
-                                <span>
-                                    <b>Phone: </b>  <a :href="'tel:'+withdrawal.referral_withdrawal.investor.user.phone">
-                                {{withdrawal.referral_withdrawal.investor.user.phone}}</a>
-                                <button type="button" class="btn btn-transparent-info mr-1" data-toggle="modal"
-                                        data-target="#reportPhoneModal" @click="report(withdrawal.referral_withdrawal.investor.user, user)">
-                                    Report Phone</button>
-                            </span><br>
-                                <span>
-                                    <b>
-                                        Guider: </b> <a :href="'tel:'+withdrawal.referral_withdrawal.investor.user.guider.phone">
-                                    {{withdrawal.referral_withdrawal.investor.user.guider.phone}}</a>
-                            </span><br>
-                                <span v-if="withdrawal.referral_withdrawal.investor.user.referrer">
-                                    <b>Upline: </b> <a :href="'tel:'+withdrawal.referral_withdrawal.investor.user.referrer.phone">
-                                    {{withdrawal.referral_withdrawal.investor.user.referrer.phone}}</a>
-                                </span>
-                                <span v-else>
-                                    <b>Upline: </b> Null
-                                </span><br>
-                            </div>
-
-                            <span><b>Amount: </b> &#8358;{{priceComma(withdrawal.referral_withdrawal.investment.reward)}}</span><br>
-                            <span><b>Date: </b>{{withdrawal.referral_withdrawal.investment.created_at | shortDateWithTime}}</span><br>
-                            <span class="text-center"><b>Status: </b>
-                                <a href="#" class="btn btn-warning"
-                                   v-if="parseInt(withdrawal.referral_withdrawal.investor.is_paid) === 0"
-                                   @click="confirmWithdrawal(withdrawal.referral_withdrawal)">Confirm</a>
-                                <span href="#" class="text-success" v-else>Received</span>
-                            </span>
-                        </div>
-                    </div>
-                    <!--end::Card-->
-                </div>
-
-
-
-                <div class="modal fade" id="reportPhoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" style="display: none;" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Report {{reportee.phone}}</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <i aria-hidden="true" class="ki ki-close"></i>
-                                </button>
-                            </div>
-                            <form action="" @submit.prevent="reportPhone">
-                                <div class="modal-body">
-                                        <div class="form-group mb-1">
-                                            <label for="reportTextarea">Message</label>
-                                            <textarea class="form-control" id="reportTextarea" rows="3" v-model="message"></textarea>
-                                        </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Report</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -273,6 +93,33 @@
                         </div>
                     </div>&emsp;&emsp;&emsp;&emsp;
                     <!--end::Card-->
+                </div>
+
+
+
+                <div class="modal fade" id="reportPhoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Report {{reportee.phone}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
+                            </div>
+                            <form action="" @submit.prevent="reportPhone">
+                                <div class="modal-body">
+                                    <div class="form-group mb-1">
+                                        <label for="reportTextarea">Message</label>
+                                        <textarea class="form-control" id="reportTextarea" rows="3" v-model="message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary font-weight-bold">Report</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 &emsp;&emsp;
             </div>

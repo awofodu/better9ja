@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/images/envelope.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,69 +43,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/investor.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+            <state relative-caret-position="407">
+              <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/activate.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/email/verify.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/about-us.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="504">
+              <caret line="200" column="108" selection-start-line="200" selection-start-column="108" selection-end-line="200" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -114,8 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setti</find>
-      <find>settin</find>
       <find>regi</find>
       <find>whats</find>
       <find>testi</find>
@@ -144,6 +101,8 @@
       <find>.aside-menu .menu-nav &gt; .menu-item.menu-item-open &gt; .menu-link</find>
       <find>.aside-menu .menu-nav &gt; .menu-item &gt; .menu-link .menu-arrow</find>
       <find>dashboard</find>
+      <find>rewa</find>
+      <find>continuem</find>
     </findStrings>
     <replaceStrings>
       <replace>investments</replace>
@@ -184,13 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/contact-us.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/contact.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/investor/profile/activation.vue" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" />
         <option value="$PROJECT_DIR$/resources/views/email/verify.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/email/account_activated.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InvestorController.php" />
@@ -223,9 +175,7 @@
         <option value="$PROJECT_DIR$/app/Jobs/InvUploadProofSuccess.php" />
         <option value="$PROJECT_DIR$/resources/views/email/confirm_payment.blade.php" />
         <option value="$PROJECT_DIR$/app/Jobs/ConfirmPayment.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/public/investor/theme/html/demo1/dist/assets/css/themes/layout/aside/darkc3e8.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/investor.blade.php" />
@@ -235,6 +185,15 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/about-us.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/verify.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/investor/withdrawal/index.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" />
       </list>
     </option>
   </component>
@@ -394,6 +353,36 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Console" type="462c0819:PsiDirectoryNode" />
               <item name="Commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
@@ -590,6 +579,15 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="maintenance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="manage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -600,6 +598,15 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="withdrawal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
@@ -634,7 +641,25 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="referral" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
               <item name="testimony" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="investor" type="462c0819:PsiDirectoryNode" />
+              <item name="withdrawal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
@@ -648,6 +673,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="better9ja" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="passwords" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="better9ja" type="b2602c69:ProjectViewProjectNode" />
@@ -804,12 +837,13 @@
       <workItem from="1598435584002" duration="8902000" />
       <workItem from="1598471222459" duration="5690000" />
       <workItem from="1598564825952" duration="923000" />
-      <workItem from="1598566766764" duration="1089000" />
+      <workItem from="1598566766764" duration="2131000" />
+      <workItem from="1598635821557" duration="6226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="763456000" />
+    <option name="totallyTimeSpent" value="770724000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,7 +858,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3570348" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30030257" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -883,7 +917,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php</url>
-          <line>192</line>
+          <line>193</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -891,117 +925,10 @@
           <line>65</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php</url>
-          <line>111</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php</url>
-          <line>201</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Testimony.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/testimony/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/TestimonyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/TestimonyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="e#50#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/admin/messages/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/admin/messages/Report.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="107" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/admin/manage/Testimony.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/home/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3500" selection-start-column="3493" selection-end-column="3500" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/contact-us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/contact.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="161" column="24" selection-start-line="161" selection-start-column="24" selection-end-line="247" selection-end-column="29" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../amodedun/app/Http/Controllers/Admin/SubscriptionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../amodedun/app/Jobs/ServiceBookingMail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
@@ -1041,13 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-905">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1135,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3184">
-          <caret line="211" column="55" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1153,13 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="743">
           <caret line="140" column="102" selection-start-line="140" selection-start-column="102" selection-end-line="140" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="361" column="117" selection-start-line="361" selection-start-column="117" selection-end-line="361" selection-end-column="117" />
         </state>
       </provider>
     </entry>
@@ -1191,26 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="206" column="91" selection-start-line="206" selection-start-column="91" selection-end-line="206" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/profile/activation.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="e#967#2601#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/investor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -1218,10 +1104,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/activate.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/email/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="84" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/about-us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -1239,27 +1149,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/about-us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/activate.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/email/verify.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/profile/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+        <state relative-caret-position="113">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4688">
+          <caret line="346" column="32" selection-start-line="346" selection-start-column="32" selection-end-line="346" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="81" column="15" selection-start-line="81" selection-start-column="15" selection-end-line="81" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+          <folding>
+            <element signature="e#5842#7342#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/referral/Merge.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/profile/activation.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/admin/withdrawal/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="291" column="67" selection-start-line="291" selection-start-column="67" selection-end-line="291" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="206" column="91" selection-start-line="206" selection-start-column="91" selection-end-line="206" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/withdrawal/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="58" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="243" column="57" lean-forward="true" selection-start-line="243" selection-start-column="57" selection-end-line="243" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/investor/investment/MaintenanceMerge.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1328">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="200" column="108" selection-start-line="200" selection-start-column="108" selection-end-line="200" selection-end-column="108" />
         </state>
       </provider>
     </entry>

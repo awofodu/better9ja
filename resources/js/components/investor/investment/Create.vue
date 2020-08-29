@@ -249,18 +249,9 @@
                                                             class="btn btn-transparent-primary font-weight-bold mr-2">
                                                         View Merges
                                                     </button>
-                                                                <!-- Button trigger modal-->
-<!--                                                <button type="button" class="btn btn-transparent-primary font-weight-bold mr-2"-->
-<!--                                                        data-toggle="modal" data-target="#proofModal"-->
-<!--                                                        @click="getMaintenance(maintenance)" v-if="maintenance.withdrawal">-->
-<!--                                                    I have made payment-->
-<!--                                                </button>-->
-<!--                                                <span v-else class="text-danger">-->
-<!--                                                    You would be merged with whom to pay to soon.</span>-->
-                                                                <!--                                <span v-if="parseInt(investment.is_paid) === 1" class="text-info">-->
-                                                                <!--                                    Please wait while the withdrawal-->
-                                                                <!--                                    confirms your payment.-->
-                                                                <!--                                </span>-->
+                                                    <span class="text-center text-danger" v-else>
+                                                        You will be merged with who to pay to you soon.
+                                                    </span>
                                             </span>
                                         </div>
                                     </div>
@@ -298,7 +289,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary font-weight-bold">Upgrade</button>
+                                                <button type="submit" class="btn btn-primary font-weight-bold">Continue</button>
                                             </div>
                                         </form>
                                     </div>

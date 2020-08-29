@@ -103,6 +103,7 @@ class ReferralController extends Controller
                     $investor->withdrawal_date = Carbon::now()->addDays(3);
                 }
                 $investor->created_at = Carbon::now();
+                $investor->is_paid = 1;
                 $investor->save();
             }
 

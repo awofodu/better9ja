@@ -269,8 +269,8 @@
                         this.user = result.data.user;
                         this.bonus = result.data.bonus;
                         this.earnings = result.data.earnings;
-                        this.disabled = result.data.bonus.bonus < 1000 ? true : false;
-                        this.referral_link = 'https://better9ja.localhost/register/'+this.user.referral_id;
+                        this.disabled = result.data.bonus.bonus < 5000 ? true : false;
+                        this.referral_link = `${window.location.origin}/register/${this.user.referral_id}`;
                         this.$Progress.finish();
                     })
                     .catch(()=>{
@@ -289,8 +289,8 @@
                         this.user = result.data.user;
                         this.bonus = result.data.bonus;
                         this.earnings = result.data.earnings;
-                        this.disabled = result.data.bonus.bonus < 1000 ? true : false;
-                        this.referral_link = 'https://better9ja.localhost/register/'+this.user.referral_id;
+                        this.disabled = result.data.bonus.bonus < 5000 ? true : false;
+                        this.referral_link = `${window.location.origin}/register/${this.user.referral_id}`;
                         this.$Progress.finish();
                     })
                     .catch(()=>{
