@@ -46,9 +46,9 @@
                                         <span class="label label-inline label-light-primary font-weight-bold"
                                               v-if="parseInt(maintenance.is_paid) === 1 && parseInt(maintenance.main_merge_balance) === 0">
                                             Paid</span>
-                                            <span class="label label-inline label-light-warning font-weight-bold"
+                                            <span class="label label-inline label-light-danger font-weight-bold"
                                                   v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) === 0">
-                                            Merged</span>
+                                            {{maintenance.user.investments ? ((maintenance.user.investments.length/(maintenance.next_level - 1)) * 100) : 0}}%</span>
                                             <span v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) !== 0">
                                             <button type="button"
                                                     class="btn btn-success font-weight-bold" @click="mergeWith(maintenance)">Merge</button>

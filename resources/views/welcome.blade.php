@@ -82,7 +82,6 @@
                         <div class="testimonial-item bg-success">
                             <div class="author">
                                 <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img1.png" alt="">
                                 </div>
                             </div>
                             <div class="content-inner">
@@ -99,7 +98,6 @@
                         <div class="testimonial-item bg-success">
                             <div class="author">
                                 <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img2.png" alt="">
                                 </div>
                             </div>
                             <div class="content-inner">
@@ -116,7 +114,6 @@
                         <div class="testimonial-item bg-success">
                             <div class="author">
                                 <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img3.png" alt="">
                                 </div>
                             </div>
                             <div class="content-inner">
@@ -133,11 +130,10 @@
                         <div class="testimonial-item bg-success">
                             <div class="author">
                                 <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img3.png" alt="">
                                 </div>
                             </div>
                             <div class="content-inner">
-                                <p class="description text-white-50">i am so happy to join this platform, after ecountering
+                                <p class="description text-white-50">I am so happy to join this platform, after ecountering
                                     different issues with other platform, I am so happy I got to know about better9ja.</p>
                                 <div class="author-info">
                                     <h2><a href="#" class="text-white">Tope</a></h2>

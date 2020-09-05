@@ -69,7 +69,6 @@
         gtag('config', 'UA-37564768-1');</script>
 
     <style>
-
         .aside{
             background-color: #af1a1a !important;
         }
@@ -83,12 +82,12 @@
         a.menu-link:hover{
             background-color: #271d15e0 !important;
         }
-        .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link{
+        .aside-menu .menu-nav > .menu-item.menu-item-active-dashboard > .menu-link{
             background-color: #271d15e0 !important;
         }
-        .aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link{
-            background-color: #271d15e0 !important;
-        }
+        /*.aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link{*/
+        /*    background-color: #271d15e0 !important;*/
+        /*}*/
         .aside-menu .menu-nav > .menu-item > .menu-link .menu-text{
             color: #efefef !important;
         }
@@ -104,6 +103,9 @@
         }
         .header-mobile .burger-icon span::before, .header-mobile .burger-icon span::after {
             background-color: #541b1b;
+        }
+        .router-link-active{
+            background: #271d15e0;
         }
     </style>
 </head>

@@ -31,23 +31,19 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <h4><b>You can invite friends through the following ways:</b></h4>
-                                    <p>
                                     <ol>
                                         <li>Send an email to your contacts with your referral link.</li>
                                         <li>Send an SMS to your phone contacts with your referral link</li>
                                         <li>Share your referral link on your social networks.</li>
                                     </ol>
-                                    </p>
                                 </div>
                                 <div class="col-xl-6">
                                     <h4><b>Steps to become a friend referree:</b></h4>
-                                    <p>
                                     <ol>
                                         <li>Your friends click on your referral link.</li>
                                         <li>Each of them fills the form and creates an account with the link.</li>
                                         <li>The system permanently links them to you.</li>
                                     </ol>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -258,6 +254,7 @@
                 referral_link: '',
                 price : '',
                 disabled: false,
+                total_investment: 0,
             }
         },
 
@@ -269,7 +266,8 @@
                         this.user = result.data.user;
                         this.bonus = result.data.bonus;
                         this.earnings = result.data.earnings;
-                        this.disabled = result.data.bonus.bonus < 5000 ? true : false;
+                        this.total_investment = result.data.investments;
+                        // this.disabled = result.data.bonus.bonus < 5000 ? true : false;
                         this.referral_link = `${window.location.origin}/register/${this.user.referral_id}`;
                         this.$Progress.finish();
                     })
@@ -289,7 +287,8 @@
                         this.user = result.data.user;
                         this.bonus = result.data.bonus;
                         this.earnings = result.data.earnings;
-                        this.disabled = result.data.bonus.bonus < 5000 ? true : false;
+                        this.total_investment = result.data.investments;
+                        // this.disabled = result.data.bonus.bonus < 5000 ? true : false;
                         this.referral_link = `${window.location.origin}/register/${this.user.referral_id}`;
                         this.$Progress.finish();
                     })
@@ -307,43 +306,51 @@
 
             withdrawRefBonus()
             {
+                if(this.total_investment >= 2 && this.bonus.bonus >= 5000)
+                {
+                    swal.fire({
+                        title: "Withdraw your "+this.bonus.bonus+" referral bonus?",
+                        text: "You won\'t be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Yes, confirm!",
+                        cancelButtonText: "No, cancel!",
+                        confirmButtonColor: '#1BC5BD',
+                        reverseButtons: true
+                    }).then(result => {
+                        if (result.value) {
+                            this.$Progress.start();
+                            axios.put('/api/investor/referrals/'+this.user.id, {'price':this.bonus.bonus})
+                                .then(result=>{
+                                    swal.fire(
+                                        "Successful!",
+                                        "Your referral bonus has been withdrawn.",
+                                        "success"
+                                    );
+                                    Fire.$emit('ReloadReferrals');
+                                })
+                                .catch((err)=>{
 
-                swal.fire({
-                    title: "Withdraw your "+this.bonus.bonus+" referral bonus?",
-                    text: "You won\'t be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonText: "Yes, confirm!",
-                    cancelButtonText: "No, cancel!",
-                    confirmButtonColor: '#1BC5BD',
-                    reverseButtons: true
-                }).then(result => {
-                    if (result.value) {
-                        this.$Progress.start();
-                        axios.put('/api/investor/referrals/'+this.user.id, {'price':this.bonus.bonus})
-                            .then(result=>{
-                                swal.fire(
-                                    "Successful!",
-                                    "Your referral bonus has been withdrawn.",
-                                    "success"
-                                );
-                                Fire.$emit('ReloadReferrals');
-                            })
-                            .catch((err)=>{
+                                });
 
-                            });
+                            // loader.hide();
+                            // result.dismiss can be "cancel", "overlay",
+                            // "close", and "timer"
+                        } else if (result.dismiss === "cancel") {
+                            swal.fire(
+                                "Cancelled",
+                                "Confirmation status not altered.",
+                                "error"
+                            )
+                        }
+                    });
+                }else{
+                    swal.fire(`<ul><li>${this.bonus.bonus < 5000 ? `Bonus can only be withdrawn from ₦5,000 and above.</li>` : ``}
+                                <li>You need to have at least 2-Active Investments running to withdraw your referral bonus.</li>
+                                <li>You only have ${this.total_investment} investment running.</li></ul>`)
+                }
 
-                        // loader.hide();
-                        // result.dismiss can be "cancel", "overlay",
-                        // "close", and "timer"
-                    } else if (result.dismiss === "cancel") {
-                        swal.fire(
-                            "Cancelled",
-                            "Confirmation status not altered.",
-                            "error"
-                        )
-                    }
-                });
+
             }
         },
 

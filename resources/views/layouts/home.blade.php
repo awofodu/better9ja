@@ -80,12 +80,18 @@
                                 Contact
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">Sign In</a>
-                        </li>
+                        @auth
                         <li class="button-group">
-                            <a href="{{route('register')}}" class="button btn btn-common">Sign Up</a>
+                            <a href="/dashboard" class="button btn btn-common">{{Auth::user()->name}}</a>
                         </li>
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('login')}}">Sign In</a>
+                            </li>
+                            <li class="button-group">
+                                <a href="{{route('register')}}" class="button btn btn-common">Sign Up</a>
+                            </li>
+                            @endauth
                     </ul>
                 </div>
             </div>

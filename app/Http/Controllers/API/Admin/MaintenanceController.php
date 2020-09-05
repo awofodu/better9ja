@@ -20,8 +20,8 @@ class MaintenanceController extends Controller
     public function index()
     {
         $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
-            'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
-            ->latest()->paginate(2);
+            'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank', 'user.investments')
+            ->latest()->paginate(10);
         return response()->json(['maintenances'=>$maintenances]);
     }
 
@@ -117,9 +117,9 @@ class MaintenanceController extends Controller
 
         MergeSuccess::dispatch($maintenance->user, $withdrawal->user)->delay(now()->addMinutes(1));
 
-//        $merges = Investment::where('is_withdrawn', 1)->where('merge_balance','!=', 0)
-//            ->with('user.referrals.referrer','user.bank', 'withdrawal.user.bank')->paginate(1);
-//        return response()->json(['merges'=>$merges]);//
+        $merges = Investment::where('is_withdrawn', 1)->where('merge_balance','!=', 0)
+            ->with('user.referrals.referrer','user.bank', 'withdrawal.user.bank')->paginate(1);
+        return response()->json(['merges'=>$merges]);//
     }
 
     /**

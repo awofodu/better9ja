@@ -24,12 +24,14 @@ class ReferralController extends Controller
     {
         $user = auth('api')->user();
         $user->guider;
+        $investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
         $referrals = User::whereReferredBy($user->referral_id)->with('guider', 'referrer')->paginate(1);
 //        $bonus = ReferralEarning::whereUserId($user->id)->sum('amount');
         $bonus = Referral::whereUserId($user->id)->first();
         $earnings = $user->referral_earnings()->with('user')->paginate(3);
         $user = $user->with('guider', 'referrer', 'referral_earnings.user')->first();
-        return response()->json(['user'=>$user, 'referrals'=>$referrals, 'bonus'=>$bonus, 'earnings'=>$earnings]);
+        return response()->json(['user'=>$user, 'referrals'=>$referrals, 'bonus'=>$bonus, 'earnings'=>$earnings,
+        'investments'=>$investments]);
     }
 
     /**
