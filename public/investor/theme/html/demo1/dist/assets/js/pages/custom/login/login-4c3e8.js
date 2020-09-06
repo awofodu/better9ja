@@ -269,7 +269,7 @@ var KTLogin = function() {
 			}
 		));
 
-		 
+
 		// Initialize form wizard
 		wizardObj = new KTWizard(wizardEl, {
 			startStep: 1, // initial active step number

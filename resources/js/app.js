@@ -35,7 +35,7 @@ let routes = [
     { path: '/profile', name: 'editProfiles', component: require('./components/investor/profile/Index').default },
     { path: '/change-password', name: 'changePassword', component: require('./components/investor/profile/Password').default },
     { path: '/activate-account', name: 'activateAccount', component: require('./components/investor/profile/Activation').default },
-    { path: '/testimonies', name: 'allTestimonies', component: require('./components/investor/testimony/Index').default },
+    { path: '/testimonies', name: 'myTestimonies', component: require('./components/investor/testimony/Index').default },
     { path: '/generals', component: require('./components/General').default },
     { path: '/developer', component: require('./components/Developer.vue').default },
     { path: '/admin/investors', name: 'allInvestors', component: require('./components/admin/investors/Index').default },
