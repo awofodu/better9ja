@@ -10,7 +10,7 @@ class Investment extends Model
 
     protected $fillable = [
         'amount', 'reward', 'is_paid', 'withdrawal_date', 'is_withdrawn', 'paid_amount','merge_balance','inv_merge_balance',
-        'balance', 'is_recommitted', 'withdrawal_id','referral_withdrawal_id', 'investment_id', 'user_id'
+        'balance', 'is_recommitted', 'withdrawal_id','referral_withdrawal_id', 'investment_id', 'user_id', 'inv_paid_amount'
     ];
 
     public function reward($amount)

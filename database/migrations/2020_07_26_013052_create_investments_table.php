@@ -19,6 +19,7 @@ class CreateInvestmentsTable extends Migration
             $table->string('investment_id')->nullable();
             $table->float('amount' , 20 , 2)->unsigned()->default(0);
             $table->float('inv_merge_balance' , 20 , 2)->unsigned()->default(0);
+            $table->float('inv_paid_amount' , 20 , 2)->unsigned()->default(0);
             $table->float('reward' , 20 , 2)->unsigned()->default(0);
             $table->boolean('is_paid')->default(0);
             $table->string('withdrawal_date')->nullable();

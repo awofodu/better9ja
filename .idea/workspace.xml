@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/TestimonyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/TestimonyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Investor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Investor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/investments/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/investments/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/messages/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/messages/Report.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Recommit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Recommit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/testimony/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/testimony/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Investment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Investment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_26_013052_create_investments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_26_013052_create_investments_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +305,7 @@
       <workItem from="1599415485839" duration="1423000" />
       <workItem from="1599422935837" duration="475000" />
       <workItem from="1599428703321" duration="10495000" />
-      <workItem from="1599472516482" duration="10253000" />
+      <workItem from="1599472516482" duration="12389000" />
     </task>
     <servers />
   </component>
@@ -357,7 +349,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php</url>
-          <line>195</line>
+          <line>198</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

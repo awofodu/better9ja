@@ -109,6 +109,9 @@ class ReferralController extends Controller
                 $investor->save();
             }
 
+            $investor->inv_paid_amount = (int)$investor->inv_paid_amount + (int)$merge->amount;
+            $investor->save();
+
             $withdrawal = $merge->referral_withdrawal;
             $amount_received = $withdrawal->paid_amount;
             $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
