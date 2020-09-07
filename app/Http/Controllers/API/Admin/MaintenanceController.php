@@ -19,9 +19,10 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
+        $admin = auth('api')->user();
         $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank', 'user.investments')
-            ->latest()->paginate(10);
+            ->latest()->paginate(25);
         return response()->json(['maintenances'=>$maintenances]);
     }
 

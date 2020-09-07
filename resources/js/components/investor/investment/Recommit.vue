@@ -160,7 +160,7 @@
                                                                          :class="{ 'is-invalid': form.errors.has('amount') }"
                                                                          class="form-control form-control-solid"
                                                                          placeholder="Amount To Invest"
-                                                                         :min="investment.amount" :max="user.maximum_investment">
+                                                                         :min="parseInt(investment.amount)" :max="parseInt(user.maximum_investment)">
                                                             </vue-numeric>
                                                             <has-error :form="form" field="amount"></has-error>
                                                         </div>

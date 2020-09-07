@@ -26,7 +26,7 @@
                                         <div class="alert-icon">
                                             <i class="flaticon-warning"></i>
                                         </div>
-                                        <div class="alert-text"><b>{{session('status_err')}}</b></div>
+                                        <div class="alert-text">{!! session('status_err') !!}</div>
                                     </div>
                                 </div>
                             @endif

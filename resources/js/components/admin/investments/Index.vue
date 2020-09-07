@@ -83,17 +83,21 @@
                                             Paid</span>
                                             <span class="label label-inline label-light-warning font-weight-bold"
                                                   v-if="parseInt(investment.is_paid) === 0 && parseInt(investment.inv_merge_balance) === 0
-                                                     && parseInt(investment.is_withdrawn) === 1">
-                                            Merged</span>
-                                            <span class="label label-inline label-light-success font-weight-bold"
-                                                  v-if="parseInt(investment.is_paid) === 1 && parseInt(investment.inv_merge_balance) !== 0
-                                                     && parseInt(investment.is_withdrawn) === 1">
-                                            Running</span>
-                                            <span v-if="parseInt(investment.is_paid) === 0 && parseInt(investment.inv_merge_balance) !== 0
                                                      && parseInt(investment.is_withdrawn) === 0">
+                                            Not Merged</span>
+                                            <span class="label label-inline label-light-success font-weight-bold"
+                                                  v-if="parseInt(investment.is_paid) === 1 && parseInt(investment.inv_merge_balance) === 0
+                                                     && parseInt(investment.is_withdrawn) === 1">
+                                            Withdrawn</span>
+                                            <span v-if="parseInt(investment.is_paid) === 0 && parseInt(investment.inv_merge_balance) !== 0
+                                                     && parseInt(investment.is_withdrawn) === 0 && parseInt(admin.user_type) === 2">
                                             <button type="button"
                                                     class="btn btn-success font-weight-bold" @click="mergeWith(investment)">Merge</button>
-                                        </span>
+                                            </span>
+                                            <span class="label label-inline label-light-warning font-weight-bold"
+                                                  v-if="parseInt(investment.is_paid) === 0 && parseInt(investment.inv_merge_balance) !== 0
+                                                     && parseInt(investment.is_withdrawn) === 0 && parseInt(admin.user_type) === 1">
+                                            Merging...</span>
 
                                         </td>
                                         <td>
@@ -397,6 +401,7 @@
             return {
                 investments: {},
                 investment: '',
+                admin: '',
                 merge_amount: '',
                 user: '',
                 withdrawal: '',
@@ -417,6 +422,7 @@
                 axios.get('/api/admin/investments')
                     .then(result => {
                         this.investments = result.data.investments;
+                        this.admin = result.data.admin;
                         this.$Progress.finish();
                     })
                     .catch((err) => {

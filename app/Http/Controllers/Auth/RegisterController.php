@@ -95,7 +95,7 @@ class RegisterController extends Controller
                 $input['guider_id'] = (int)$referrer->is_guider === 1 ? $referrer->id : $admin->id;
 
             }else{
-                $input['guider_id'] = $admin ?  $admin->id : 1;
+                $input['guider_id'] = $admin->id;
             }
 
             $input['password'] = Hash::make($request->password);

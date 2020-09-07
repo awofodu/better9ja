@@ -48,11 +48,16 @@
                                             Paid</span>
                                             <span class="label label-inline label-light-danger font-weight-bold"
                                                   v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) === 0">
-                                            {{maintenance.user.investments ? ((maintenance.user.investments.length/(maintenance.next_level - 1)) * 100) : 0}}%</span>
-                                            <span v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) !== 0">
+                                            {{maintenance.user.investments ? Number((((maintenance.user.investments.length/(maintenance.next_level - 1)) * 100)).toFixed()) : 0}}%</span>
+                                            <span v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) !== 0
+                                                && parseInt(admin.user_type) === 2">
                                             <button type="button"
                                                     class="btn btn-success font-weight-bold" @click="mergeWith(maintenance)">Merge</button>
-                                        </span>
+                                            </span>
+                                            <span class="label label-inline label-light-warning font-weight-bold"
+                                                  v-if="parseInt(maintenance.is_paid) === 0 && parseInt(maintenance.main_merge_balance) !== 0
+                                                && parseInt(admin.user_type) === 1">
+                                            Merging...</span>
 
                                         </td>
                                         <td>
@@ -288,6 +293,7 @@
             return {
                 maintenances: {},
                 maintenance: '',
+                admin: '',
                 merge_amount: '',
                 user: '',
                 withdrawal: '',
@@ -301,6 +307,7 @@
                 axios.get('/api/admin/maintenances')
                     .then(result => {
                         this.maintenances = result.data.maintenances;
+                        this.admin = result.data.admin;
                         this.$Progress.finish();
                     })
                     .catch((err) => {

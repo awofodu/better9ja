@@ -99,6 +99,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Body</th>
                                     <th scope="col">Date</th>
                                 </tr>
@@ -106,6 +107,7 @@
                                 <tbody>
                                 <tr v-for="(testimony, index) in testimonies.data" :key="testimony.id">
                                     <th scope="row">{{index+1}}</th>
+                                    <td>{{testimony.user.name}}</td>
                                     <td v-html="testimony.body"></td>
                                     <td>{{testimony.created_at | shortDateWithTime}}</td>
                                 </tr>

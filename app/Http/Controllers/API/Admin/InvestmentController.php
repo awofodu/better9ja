@@ -23,10 +23,11 @@ class InvestmentController extends Controller
      */
     public function index()
     {
+        $admin = auth('api')->user();
         $investments = Investment::with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
-            ->latest()->paginate(10);
-        return response()->json(['investments'=>$investments]);
+            ->latest()->paginate(25);
+        return response()->json(['investments'=>$investments, 'admin'=>$admin]);
     }
 
     /**
@@ -204,7 +205,7 @@ class InvestmentController extends Controller
             return response()->json(['investments'=>$investments]);
         }
     }
-    
+
     public function createDummy(Request $request)
     {
         $user = User::whereEmail($request->email)->first();

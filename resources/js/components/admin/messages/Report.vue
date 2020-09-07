@@ -31,6 +31,8 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Reporting</th>
+                                        <th scope="col">Message</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                     </thead>
@@ -41,6 +43,8 @@
                                                   data-toggle="modal" data-target="#userModal">{{report.reporter.name}}</span></td>
                                         <td><span class="btn btn-link" @click="viewUser(report.reportee)"title="View User"
                                                   data-toggle="modal" data-target="#userModal">{{report.reportee.name}}</span></td>
+                                        <td>{{report.message}}</td>
+                                        <td>{{report.created_at | shortDateWithTime}}</td>
                                         <td>
                                             <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete Admin"
                                                @click="deleteReport(report)">
