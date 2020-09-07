@@ -109,7 +109,7 @@
                                 </span><br>
                             </div>
                             <span><b>Amount to Pay: </b> &#8358;{{priceComma(investment.amount)}}</span><br>
-                            <span><b>Amount Paid: </b> &#8358;{{priceComma(paid_investment)}}</span><br>
+                            <span><b>Amount Paid: </b> &#8358;{{priceComma(investment.inv_paid_amount)}}</span><br>
                             <span><b>Created: </b>{{investment.created_at | shortDateWithTime}}</span><br>
                             <span>
                                 <b>Status: </b>

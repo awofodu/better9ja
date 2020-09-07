@@ -372,7 +372,17 @@
                     let loader = this.$loading.show();
                     this.form.put('/api/investor/recommit/'+this.$route.params.id)
                         .then(result=>{
-                            this.$router.push({name:'allInvestments'});
+                            swal.fire(
+                                "Successful",
+                                "Your investment request of <span class='text-success'>&#8358;"+this.priceComma(result.data.investment.amount)+
+                                "</span> was successful.",
+                                "success",
+                            ).then(result=>{
+                                if(result.value)
+                                {
+                                    this.$router.push({name:'allInvestments'})
+                                }
+                            });
                             loader.hide();
                         })
                         .catch((error)=>{

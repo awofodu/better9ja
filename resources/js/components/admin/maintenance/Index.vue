@@ -172,6 +172,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
+
+                                            <vue-numeric currency="₦" separator="," v-model="merge_amount"
+                                                         class="form-control form-control-solid"
+                                                         placeholder="Amount To Merge">
+                                            </vue-numeric>
+                                            <br>
                                             <div class="table-responsive">
 
                                                 <table class="table table-hover mb-6">
@@ -180,7 +186,7 @@
                                                         <th scope="col">#</th>
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Investor</th>
-                                                        <th scope="col" colspan="2">Amount</th>
+                                                        <th scope="col">Amount</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                     </thead>
@@ -190,12 +196,6 @@
                                                         <td>{{merge.investment_id}}</td>
                                                         <td>{{merge.user.name}}</td>
                                                         <td>₦{{priceComma(merge.merge_balance)}}</td>
-                                                        <td>
-                                                            <vue-numeric currency="₦" separator="," v-model="merge_amount"
-                                                                         class="form-control form-control-solid"
-                                                                         placeholder="Amount To Merge">
-                                                            </vue-numeric>
-                                                        </td>
                                                         <td>
                                                             <button type="button"
                                                                     @click="continueMerge(merge, maintenance)"
@@ -227,7 +227,7 @@
                                                         <th scope="col">#</th>
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Investor</th>
-                                                        <th scope="col" colspan="2">Amount</th>
+                                                        <th scope="col">Amount</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                     </thead>
@@ -237,12 +237,6 @@
                                                         <td>{{referral.ref_id}}</td>
                                                         <td>{{referral.user.name}}</td>
                                                         <td>₦{{priceComma(referral.merge_balance)}}</td>
-                                                        <td>
-                                                            <vue-numeric currency="₦" separator="," v-model="merge_amount"
-                                                                         class="form-control form-control-solid"
-                                                                         placeholder="Amount To Merge">
-                                                            </vue-numeric>
-                                                        </td>
                                                         <td>
                                                             <button type="button"
                                                                     @click="continueReferralMerge(referral, maintenance)"
