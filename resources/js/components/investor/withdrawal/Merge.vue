@@ -200,7 +200,7 @@
                                       v-if="parseInt(merge.is_paid) === 0 && $options.filters.isPast($options.filters.myDateAddHours(merge.created_at))">
                                     Terminated</span>
                                 <span class="text-success"
-                                      v-if="parseInt(merge.is_paid) === 1 && $options.filters.isPast($options.filters.myDateAddHours(merge.created_at))">
+                                      v-if="parseInt(merge.is_paid) === 1 && ($options.filters.isPast($options.filters.myDateAddHours(merge.created_at)) || $options.filters.isFuture($options.filters.myDateAddHours(merge.created_at)))">
                                     Received</span>
                             </span>
                         </div>

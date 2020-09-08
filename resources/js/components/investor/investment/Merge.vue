@@ -210,13 +210,17 @@
                                 <!-- Button trigger modal-->
                                 <button type="button" class="btn btn-transparent-primary font-weight-bold mr-2"
                                         data-toggle="modal" data-target="#proofModal"
-                                        @click="getReferralMerge(merge)" v-if="parseInt(merge.is_paid) === 0 && !merge.proof_document">
+                                        @click="getReferralMerge(merge)"
+                                        v-if="parseInt(merge.is_paid) === 0 && !merge.proof_document && $options.filters.isFuture($options.filters.myDateAddHours(merge.created_at))">
                                     I have made payment
                                 </button>
-                                <span v-if="parseInt(merge.is_paid) === 0 && merge.proof_document" class="text-primary">
+                                <span v-if="parseInt(merge.is_paid) === 0 && merge.proof_document && $options.filters.isFuture($options.filters.myDateAddHours(merge.created_at))" class="text-primary">
                                     Please wait while investor confirms your payment.
                                 </span>
-                                <span v-if="parseInt(merge.is_paid) === 1 && (!merge.proof_document || merge.proof_document)" class="text-success">
+                                <span v-if="parseInt(merge.is_paid) === 0 && !merge.proof_document && $options.filters.isPast($options.filters.myDateAddHours(merge.created_at))" class="text-danger">
+                                    Terminated
+                                </span>
+                                <span v-if="parseInt(merge.is_paid) === 1 && (!merge.proof_document || merge.proof_document) && ($options.filters.isFuture($options.filters.myDateAddHours(merge.created_at)) || $options.filters.isPast($options.filters.myDateAddHours(merge.created_at)))" class="text-success">
                                     Paid
                                 </span>
                             </span>

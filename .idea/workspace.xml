@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/WithdrawalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Merge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +305,7 @@
       <workItem from="1599422935837" duration="475000" />
       <workItem from="1599428703321" duration="10495000" />
       <workItem from="1599472516482" duration="13134000" />
-      <workItem from="1599557630994" duration="247000" />
+      <workItem from="1599557630994" duration="2389000" />
     </task>
     <servers />
   </component>
