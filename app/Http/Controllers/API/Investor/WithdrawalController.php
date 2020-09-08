@@ -87,7 +87,7 @@ class WithdrawalController extends Controller
         $merge = Merge::findOrFail($id);
         $maintenance = Maintenance::findOrFail($merge->maintenance_id);
         $user = User::findOrFail($maintenance->user_id)->first();
-        $maintenance->is_paid = 1;
+        $merge->is_paid = 1;
 
         $merge->save();
         $maintenance_merges = Merge::where('maintenance_id',$maintenance->id)->where('is_paid',1)->sum('amount');
@@ -103,9 +103,11 @@ class WithdrawalController extends Controller
             }
 
             $user->save();
-            Maintenance::create(['user_id'=>$user->id, 'next_level'=>$maintenance->next_level+6]);
+
+            $maintenance->is_paid = 1;
 
             $maintenance->save();
+            Maintenance::create(['user_id'=>$user->id, 'next_level'=>$maintenance->next_level+6]);
         }
 
         //Deduct the payed amount from the balance
