@@ -220,7 +220,7 @@
                                 <span v-if="parseInt(merge.is_paid) === 1 && (!merge.proof_document || merge.proof_document) && parseInt(merge.is_terminated) === 0 && parseInt(merge.is_resolved) === 0" class="text-success">
                                     Paid
                                 </span>
-                                <span v-if="parseInt(merge.is_paid) === 0 && merge.proof_document && parseInt(merge.is_terminated) === 1 && (parseInt(merge.is_resolved) === 1 || parseInt(merge.is_resolved) === 0)" class="text-danger">
+                                <span v-if="parseInt(merge.is_paid) === 0 && !merge.proof_document && parseInt(merge.is_terminated) === 1 && (parseInt(merge.is_resolved) === 1 || parseInt(merge.is_resolved) === 0)" class="text-danger">
                                     Terminated.
                                 </span>
                             </span>
