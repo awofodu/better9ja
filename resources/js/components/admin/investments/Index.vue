@@ -15,7 +15,7 @@
                         </div>
                     </div>
 
-                    <div class="text-right mt-3">
+                    <div class="text-right mt-3" v-if="parseInt(admin.user_type) === 2">
                         <button class="btn btn-primary mr-3" data-toggle="modal" data-target="#cInvestmentModal">
                     <span class="svg-icon">
                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->

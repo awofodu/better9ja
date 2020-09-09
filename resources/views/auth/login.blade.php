@@ -29,6 +29,15 @@
                                         <div class="alert-text">{!! session('status_err') !!}</div>
                                     </div>
                                 </div>
+                            @elseif(session('status_suc'))
+                                <div class="card-body" v-else>
+                                    <div class="alert alert-custom alert-light-success fade show mb-5" role="alert">
+                                        <div class="alert-icon">
+                                            <i class="flaticon2-check-mark"></i>
+                                        </div>
+                                        <div class="alert-text">{!! session('status_suc') !!}</div>
+                                    </div>
+                                </div>
                             @endif
                             <form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_login_singin_form"
                                   novalidate="novalidate" method="POST" action="{{ route('login') }}">

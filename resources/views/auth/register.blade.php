@@ -25,8 +25,20 @@
                                 @csrf
                                 <!--begin::Form Wizard Step 1-->
                                     <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
-                                        <h2 class="mb-10 font-weight-bold text-dark font-size-h2 font-size-h3-lg">Create
-                                            An Account</h2>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h2 class="mb-10 font-weight-bold text-dark font-size-h2 font-size-h3-lg">Create
+                                                    An Account</h2>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="pb-5 pb-lg-15">
+                                                    <div class="text-muted font-weight-bold font-size-h6">Already have an account?
+                                                        <a href="{{route('login')}}" class="font-weight-bolder font-size-h6"
+                                                           style="color: #119815;">Login</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-xl-12">
                                                 <input type="hidden" name="referred_by" value="{{$referral_id??''}}">

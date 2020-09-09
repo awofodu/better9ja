@@ -469,7 +469,7 @@
                 console.log(x)
             },
             endCallBack: function (x) {
-                console.log(x)
+                this.$router.go(0);
             }
         },
 

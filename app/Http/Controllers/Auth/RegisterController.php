@@ -108,7 +108,7 @@ class RegisterController extends Controller
 
             $user->sendEmailVerificationNotification();
 
-            return redirect('/investments');
+            return redirect('/login')->with('status_suc' , 'Resgistration successful. Proceed to login.');
         }
         return redirect()->back()->withErrors($validator)->withInput();
     }
