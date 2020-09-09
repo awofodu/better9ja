@@ -94,11 +94,11 @@ Vue.component('ToggleButton', ToggleButton);
 
 var moment = require('moment');
 Vue.filter('myDate',  function (date) {
-    return moment(date).format('YYYY-MM-DD hh:mm:ss');
+    return moment(date).tz('Africa/Lagos').format('YYYY-MM-DD hh:mm:ss');
 });
 
 Vue.filter('myDateAddHours',  function (date) {
-    return moment(date).add(24, 'h').format('YYYY-MM-DD hh:mm:ss');
+    return moment(date).add(24, 'h').tz('Africa/Lagos').format('YYYY-MM-DD hh:mm:ss');
 });
 
 Vue.filter('myDateWithTime',  function (date) {
