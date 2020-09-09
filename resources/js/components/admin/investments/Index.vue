@@ -438,6 +438,7 @@
                 axios.get('/api/admin/investments?page=' + page)
                     .then(result => {
                         this.investments = result.data.investments;
+                        this.admin = result.data.admin;
                         this.$Progress.finish();
                     })
                     .catch(() => {

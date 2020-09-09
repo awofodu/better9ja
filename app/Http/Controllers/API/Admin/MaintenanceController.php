@@ -23,7 +23,7 @@ class MaintenanceController extends Controller
         $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank', 'user.investments')
             ->latest()->paginate(25);
-        return response()->json(['maintenances'=>$maintenances]);
+        return response()->json(['maintenances'=>$maintenances, 'admin'=>$admin]);
     }
 
     /**

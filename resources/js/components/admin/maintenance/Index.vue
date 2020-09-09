@@ -323,6 +323,7 @@
                 axios.get('/api/admin/maintenances?page=' + page)
                     .then(result => {
                         this.maintenances = result.data.maintenances;
+                        this.admin = result.data.admin;
                         this.$Progress.finish();
                     })
                     .catch(() => {
