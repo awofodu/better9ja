@@ -153,7 +153,7 @@ class WithdrawalController extends Controller
 
         $merge = Merge::findOrFail($id);
         $investor = $merge->investor;
-        $investor_investments = Investment::whereUserId($investor->user_id)->get();
+        $investor_investments = Investment::whereUserId($investor->user_id)->where('is_paid', 1)->get();
         $merge->is_paid = 1;
 
         $merge->save();
@@ -162,7 +162,7 @@ class WithdrawalController extends Controller
         if($investor->user->referrer)
         {
             // If it is investor first investment
-            if($investor_investments->count() == 1 && (int)$investor->user->is_activated === 1)
+            if($investor_investments->count() < 1 && (int)$investor->user->is_activated === 1)
             {
                 // Referral receives a 5% bonus pay
                 $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();

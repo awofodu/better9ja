@@ -33,7 +33,8 @@ class Investor
                     '</b> to the account number below: <br><br>'.
                     '<b>Bank Name: '.$admin->bank->bank_name.'</b><br>'.
                     '<b>Account Name: '.$admin->bank->account_name.'</b><br>'.
-                    '<b>Account Number: '.$admin->bank->account_number.'</b><br><br>'.
+                    '<b>Account Number: '.$admin->bank->account_number.'</b><br>'.
+                    '<b>Phone Number: '.$admin->phone.'</b><br><br>'.
                     'Contact the admin after you have made your payment.'
                 );
             }
