@@ -12,6 +12,7 @@ use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Str;
 
 class ReferralController extends Controller
 {
