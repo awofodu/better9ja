@@ -25,10 +25,10 @@ class ReferralController extends Controller
         $user = auth('api')->user();
         $user->guider;
         $investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
-        $referrals = User::whereReferredBy($user->referral_id)->with('guider', 'referrer')->paginate(1);
+        $referrals = User::whereReferredBy($user->referral_id)->with('guider', 'referrer')->paginate(10);
 //        $bonus = ReferralEarning::whereUserId($user->id)->sum('amount');
         $bonus = Referral::whereUserId($user->id)->first();
-        $earnings = $user->referral_earnings()->with('user')->paginate(3);
+        $earnings = $user->referral_earnings()->with('user','payer')->paginate(10);
         $user = $user->with('guider', 'referrer', 'referral_earnings.user')->first();
         return response()->json(['user'=>$user, 'referrals'=>$referrals, 'bonus'=>$bonus, 'earnings'=>$earnings,
         'investments'=>$investments]);
@@ -56,7 +56,7 @@ class ReferralController extends Controller
         {
             $merge = Merge::findOrFail($request->merge['id']);
             $investor = $merge->investor;
-            $investor_investments = Investment::whereUserId($investor->user_id)->get();
+            $investor_investments = Investment::whereUserId($investor->user_id)->where('is_paid', 1)->get();
             $merge->is_paid = 1;
 
             $merge->save();
@@ -65,11 +65,12 @@ class ReferralController extends Controller
             if($investor->user->referrer)
             {
                 // If it is investor first investment
-                if($investor_investments->count() == 1 && (int)$investor->user->is_activated === 1)
+                if($investor_investments->count() < 1 && (int)$investor->user->is_activated === 1)
                 {
                     // Referral receives a 5% bonus pay
                     $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                     $referrer->referral_earnings()->create([
+                        'payer_id' => $merge->referral_withdrawal->user->id,
                         'amount' => $investor->user->referral_reward($request->amount),
                         'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
                     ]);
@@ -82,6 +83,7 @@ class ReferralController extends Controller
                 if($investor->user->referrer->guider)
                 {
                     $investor->user->referrer->guider->referral_earnings()->create([
+                        'payer_id' => $merge->referral_withdrawal->user->id,
                         'amount' => $investor->user->guider_reward($request->amount),
                         'percentage' => '2%',
                     ]);

@@ -167,6 +167,7 @@ class WithdrawalController extends Controller
                 // Referral receives a 5% bonus pay
                 $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                 $referrer->referral_earnings()->create([
+                    'payer_id' => $merge->withdrawal->user->id,
                     'amount' => $investor->user->referral_reward($request->amount),
                     'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
                 ]);
@@ -179,6 +180,7 @@ class WithdrawalController extends Controller
             if($investor->user->referrer->guider)
             {
                 $investor->user->referrer->guider->referral_earnings()->create([
+                    'payer_id' => $merge->withdrawal->user->id,
                     'amount' => $investor->user->guider_reward($request->amount),
                     'percentage' => '2%',
                 ]);
