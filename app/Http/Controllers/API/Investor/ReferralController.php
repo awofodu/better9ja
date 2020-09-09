@@ -70,7 +70,7 @@ class ReferralController extends Controller
                     // Referral receives a 5% bonus pay
                     $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                     $referrer->referral_earnings()->create([
-                        'payer_id' => $merge->referral_withdrawal->user->id,
+                        'payer_id' => $investor->user->id,
                         'amount' => $investor->user->referral_reward($request->amount),
                         'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
                     ]);
@@ -83,7 +83,7 @@ class ReferralController extends Controller
                 if($investor->user->referrer->guider)
                 {
                     $investor->user->referrer->guider->referral_earnings()->create([
-                        'payer_id' => $merge->referral_withdrawal->user->id,
+                        'payer_id' => $investor->user->id,
                         'amount' => $investor->user->guider_reward($request->amount),
                         'percentage' => '2%',
                     ]);
