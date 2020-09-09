@@ -15,7 +15,7 @@ class ManageController extends Controller
      */
     public function index()
     {
-        $admins = User::where('is_admin', 1)->paginate(2);
+        $admins = User::where('is_admin', 1)->paginate(10);
         return response()->json(['admins'=>$admins]);
     }
 

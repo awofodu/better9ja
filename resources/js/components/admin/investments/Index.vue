@@ -487,21 +487,26 @@
             },
 
             continueMerge(merge, investment){
-                let loader = this.$loading.show();
-                axios.put('/api/admin/investments/'+investment.id, {'merge_id':merge.id, 'investment':investment, 'merge_amount':this.merge_amount})
-                    .then(result=>{
-                        this.merges = result.data.merges;
-                        Fire.$emit('ReloadInvestments');
-                        $('#mergeModal').modal('hide');
-                        $('.modal-backdrop').remove();
-                        loader.hide();
-                    })
-                    .catch((err)=>{
-                        toastr.error('Oops... An error just occurred.');
-                        $('#mergeModal').modal('hide');
-                        $('.modal-backdrop').remove();
-                        loader.hide();
-                    })
+                if(this.form.amount <= merge.amount)
+                {
+                    let loader = this.$loading.show();
+                    axios.put('/api/admin/investments/'+investment.id, {'merge_id':merge.id, 'investment':investment, 'merge_amount':this.merge_amount})
+                        .then(result=>{
+                            this.merges = result.data.merges;
+                            Fire.$emit('ReloadInvestments');
+                            $('#mergeModal').modal('hide');
+                            $('.modal-backdrop').remove();
+                            loader.hide();
+                        })
+                        .catch((err)=>{
+                            toastr.error('Oops... An error just occurred.');
+                            $('#mergeModal').modal('hide');
+                            $('.modal-backdrop').remove();
+                            loader.hide();
+                        })
+                }else{
+                    toastr.error("Over-Price merging occur. Please try again.");
+                }
             },
 
             continueReferralMerge(referral, investment){

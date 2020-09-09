@@ -16,7 +16,7 @@ class TestimonyController extends Controller
     public function index()
     {
         $user = auth('api')->user();
-        $testimonies = Testimony::where('is_approved',1)->with('user')->latest()->paginate(3);
+        $testimonies = Testimony::where('is_approved',1)->with('user')->latest()->paginate(10);
         return response()->json(['testimonies'=>$testimonies]);
     }
 
