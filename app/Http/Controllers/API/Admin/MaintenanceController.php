@@ -64,6 +64,10 @@ class MaintenanceController extends Controller
 
 
         MergeSuccess::dispatch($maintenance->user, $withdrawal->user)->delay(now()->addMinutes(1));
+
+        $merges = Investment::where('is_withdrawn', 1)->where('merge_balance','!=', 0)
+            ->with('user.referrals.referrer','user.bank', 'withdrawal.user.bank')->paginate(1);
+        return response()->json(['merges'=>$merges]);//
     }
 
     /**

@@ -188,7 +188,7 @@
                                         </div>
                                         <div class="alert-text">Your account have been placed on 100% upgrade for
                                             your {{maintenance.next_level | ordinal}} investment and
-                                            maintenance fee is 30% of your referral bonus. <b>Make A payment of ₦{{priceComma(maintenance_fee)}}
+                                            maintenance fee. <b>Make A payment of ₦{{priceComma(maintenance_fee)}}
                                                 to upgrade and activate your account</b>.</div>
                                         <div class="alert-close">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

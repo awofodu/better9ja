@@ -15,7 +15,7 @@
                     <span><b>Account Number: </b>{{admin.bank ? admin.bank.account_number : ''}}</span><br>
                     <span><b>Phone Number: </b>{{admin.phone}}</span><br><br>
 
-                    Having made your payment, please upload the proof of payment of your <b>₦1000 Activation fee</b>.
+                    Having made your payment, please upload the proof of payment of your <b>₦1,000 Activation fee</b>.
                 </div>
             </div>
 

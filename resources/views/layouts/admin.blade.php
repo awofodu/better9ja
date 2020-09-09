@@ -272,7 +272,8 @@
                                 </router-link>
                             </li>
 
-                            <li class="menu-item {{Request::is('admin/maintenances') ? 'menu-item-active' : ''}}" aria-haspopup="true">
+                            @if(Auth::user()->user_type == 2)
+                            <li class="menu-item {{Request::is('admin/manage-admin') ? 'menu-item-active' : ''}}" aria-haspopup="true">
                                 <router-link to="/admin/manage-admin" class="menu-link">
 										<span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-07-07-181510/theme/html/demo1/dist/../src/media/svg/icons/Code/Settings4.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -284,6 +285,7 @@
                                     <span class="menu-text">Manage Admin</span>
                                 </router-link>
                             </li>
+                            @endif
 
                             <li class="menu-item {{Request::is('admin/reports') ? 'menu-item-active' : ''}}" aria-haspopup="true">
                                 <router-link to="/admin/reports" class="menu-link">

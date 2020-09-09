@@ -209,9 +209,9 @@ class ProfileController extends Controller
         {
             return response()->json('Your password must be at least 6 characters.', 404);
         }
-//        $password = $request->new_password;
-//        $data = ['password'=>Hash::make($password)];
-//        $user->update($data);
+        $password = $request->new_password;
+        $data = ['password'=>Hash::make($password)];
+        $user->update($data);
 
         return response()->json('Password Changed...', 200);
     }
