@@ -136,12 +136,12 @@ class ReferralController extends Controller
             // the investor paying to the withdrawal now pays addition of 100% of previous payment from the 6th investment upward
             if($maintenance->amount == $maintenance_merges)
             {
-                $investor->user->minimum_investment = ((int)$investor->user->minimum_investment * 2);
+                $investor->user->minimum_investment = (int)$investor->user->minimum_investment <= 250000 ? ((int)$investor->user->minimum_investment * 2) : 500000;
 
-                if($investor->user->minimum_investment > $investor->user->maximum_investment)
-                {
-                    $investor->user->maximum_investment = $investor->user->maximum_investment + 1500000;
-                }
+//                if($investor->user->minimum_investment > $investor->user->maximum_investment)
+//                {
+//                    $investor->user->maximum_investment = $investor->user->maximum_investment + 1500000;
+//                }
 
                 $investor->user->save();
                 Maintenance::create(['user_id'=>$investor->user->id, 'next_level'=>$maintenance->next_level+6]);

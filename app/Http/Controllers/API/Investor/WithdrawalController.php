@@ -95,12 +95,12 @@ class WithdrawalController extends Controller
         // the investor paying to the withdrawal now pays addition of 100% of previous payment from the 6th investment upward
         if($maintenance->amount == $maintenance_merges)
         {
-            $user->minimum_investment = ((int)$user->minimum_investment * 2);
+            $user->minimum_investment = (int)$user->minimum_investment <= 250000 ? ((int)$user->minimum_investment * 2) : 500000;
 
-            if($user->minimum_investment > $user->maximum_investment)
-            {
-                $user->maximum_investment = $user->maximum_investment + 1500000;
-            }
+//            if($user->minimum_investment > $user->maximum_investment)
+//            {
+//                $user->maximum_investment = $user->maximum_investment + 1500000;
+//            }
 
             $user->save();
 
