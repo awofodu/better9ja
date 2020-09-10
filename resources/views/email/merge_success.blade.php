@@ -60,7 +60,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p25t es-p40r es-p40l" align="left">
-                                                                <p>Kindly proceed to make payment</p>
+                                                                <p>An investor has been merged with you for investment, Kindly proceed to make payment</p>
                                                             </td>
                                                         </tr>
                                                         <tr>
