@@ -28,7 +28,7 @@
                                 <div class="alert-icon">
                                     <i class="flaticon-warning"></i>
                                 </div>
-                                <div class="alert-text">You will be notified while the admin confirms your payment in
+                                <div class="alert-text">You will be notified while your payment is being confirmed in
                                     the next 24hours.</div>
                             </div>
                         </div>
