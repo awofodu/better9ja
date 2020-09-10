@@ -92,7 +92,7 @@ Vue.use(VueCarousel);
 import { ToggleButton } from 'vue-js-toggle-button';
 Vue.component('ToggleButton', ToggleButton);
 
-var moment = require('moment');
+var moment = require('moment-timezone');
 Vue.filter('myDate',  function (date) {
     return moment(date).tz('Africa/Lagos').format('YYYY-MM-DD hh:mm:ss');
 });
