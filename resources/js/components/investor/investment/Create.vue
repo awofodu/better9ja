@@ -408,11 +408,13 @@
                     cancelButtonText: "No, cancel!",
                     reverseButtons: true
                 }).then((result) => {
-                    this.$Progress.start();
+                    $('#testimonyModal').modal('hide');
+                    $('.modal-backdrop').remove();
+                    let loader = this.$loading.show();
                     if (result.value) {
                         axios.post('/api/investor/maintenance',{'maintenance_fee':maintenance_fee, 'user_id':this.user.id, 'testimony':this.testimony})
                             .then(result=>{
-                                this.$Progress.finish();
+                                loader.hide();
                                 swal.fire(
                                     "Successful!",
                                     "You will be merged with who to pay to soon by the Admin.",
