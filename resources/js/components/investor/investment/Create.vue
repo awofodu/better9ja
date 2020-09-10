@@ -353,7 +353,7 @@
                         this.$Progress.finish();
                     })
                     .catch(()=>{
-
+                        this.errorMessage()
                     })
             },
 
@@ -381,7 +381,7 @@
                             this.$Progress.finish();
                         })
                         .catch((error)=>{
-                            this.errorMessage()
+                            this.errorMessage();
                         })
                 }else{
                     swal.fire(
@@ -398,10 +398,10 @@
 
             maintainAndUpgrade()
             {
-
+                let maintenance_fee = this.maintenance_fee;
                 Swal.fire({
                     title: "Upgrade?",
-                    text: "Continue to make a payment of ₦"+this.priceComma(this.maintenance_fee)+".",
+                    text: "Continue to make a payment of ₦"+this.priceComma(maintenance_fee)+".",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonText: "Yes, Proceed!",
@@ -410,10 +410,10 @@
                 }).then((result) => {
                     if (result.value) {
                         let loader = this.$loading.show();
-                        axios.post('/api/investor/maintenance', {'maintenance_fee':this.maintenance_fee, 'user_id':this.user.id, 'testimony':this.testimony})
+                        axios.post('/api/investor/maintenance', {'maintenance_fee':maintenance_fee, 'user_id':this.user.id, 'testimony':this.testimony})
                             .then(result=>{
                                 loader.hide();
-                                Swal.fire(
+                                swal.fire(
                                     "Successful!",
                                     "You will be merged with who to pay to soon by the Admin.",
                                     "success"

@@ -84,7 +84,7 @@
                                             <span class="label label-inline label-light-warning font-weight-bold"
                                                   v-if="parseInt(investment.is_paid) === 0 && parseInt(investment.inv_merge_balance) === 0
                                                      && parseInt(investment.is_withdrawn) === 0">
-                                            Not Merged</span>
+                                            Not Fully Merged</span>
                                             <span class="label label-inline label-light-success font-weight-bold"
                                                   v-if="parseInt(investment.is_paid) === 1 && parseInt(investment.inv_merge_balance) === 0
                                                      && parseInt(investment.is_withdrawn) === 1">
