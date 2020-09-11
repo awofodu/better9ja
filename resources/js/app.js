@@ -98,7 +98,7 @@ Vue.filter('myDate',  function (date) {
 });
 
 Vue.filter('myDateAddHours',  function (date) {
-    return moment.utc(date).tz('Africa/Lagos').add(24, 'h').format('YYYY-MM-DD hh:mm:ss');
+    return moment.utc(date).tz('Africa/Lagos').add(1, 'd').format('YYYY-MM-DD hh:mm:ss');
 });
 
 Vue.filter('myDateWithTime',  function (date) {
