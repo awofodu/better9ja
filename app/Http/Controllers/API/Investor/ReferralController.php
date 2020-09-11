@@ -30,7 +30,7 @@ class ReferralController extends Controller
 //        $bonus = ReferralEarning::whereUserId($user->id)->sum('amount');
         $bonus = Referral::whereUserId($user->id)->first();
         $earnings = $user->referral_earnings()->with('user','payer')->paginate(10);
-        $user = $user->with('guider', 'referrer', 'referral_earnings.user')->first();
+        $user = $user->load('guider', 'referrer', 'referral_earnings.user');
         return response()->json(['user'=>$user, 'referrals'=>$referrals, 'bonus'=>$bonus, 'earnings'=>$earnings,
         'investments'=>$investments]);
     }
