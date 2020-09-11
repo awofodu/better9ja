@@ -412,7 +412,7 @@
                     $('.modal-backdrop').remove();
                     let loader = this.$loading.show();
                     if (result.value) {
-                        axios.post('/api/investor/maintenance',{'maintenance_fee':maintenance_fee, 'user_id':this.user.id, 'testimony':this.testimony})
+                        axios.post('/api/investor/maintenance',{'maintenance_fee':maintenance_fee, 'id':this.maintenance.id, 'testimony':this.testimony})
                             .then(result=>{
                                 loader.hide();
                                 swal.fire(

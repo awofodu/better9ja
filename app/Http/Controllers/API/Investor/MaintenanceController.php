@@ -86,7 +86,7 @@ class MaintenanceController extends Controller
         if($request->merge['withdrawal'])
         {
             $user = auth('api')->user();
-            $merge = Merge::findOrFail($id);
+            $merge = Merge::findOrFail($request->id);
             $maintenance = Maintenance::findOrFail($merge->maintenance_id);
             $proof_array = array();
             foreach($request->proof_document as $key => $proof)

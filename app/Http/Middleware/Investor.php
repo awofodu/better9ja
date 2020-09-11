@@ -35,7 +35,7 @@ class Investor
                     '<b>Account Name: '.$admin->bank->account_name.'</b><br>'.
                     '<b>Account Number: '.$admin->bank->account_number.'</b><br>'.
                     '<b>Phone Number: '.$admin->phone.'</b><br><br>'.
-                    'Contact the admin after you have made your payment.'
+                    'Contact the investor after you have made your payment.'
                 );
             }
             return redirect('/activate-account');////When logged in and wanna access a page
