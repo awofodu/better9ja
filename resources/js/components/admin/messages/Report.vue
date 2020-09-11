@@ -177,6 +177,57 @@
                     });
             },
 
+            suspendUser(user, mode)
+            {
+                swal.fire({
+                    title: "Are you sure?",
+                    html: "Do you want to continue?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, Continue!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true,
+                }).then((result) => {
+                    if (result.value) {
+                        this.$Progress.start();
+                        axios.delete('/api/admin/investors/'+user.id)
+                            .then(result=>{
+                                if(mode == 'suspend'){
+                                    swal.fire(
+                                        "Successful",
+                                        ""+user.name+"has been suspended successfully.",
+                                        "success",
+                                    );
+                                }else{
+                                    swal.fire(
+                                        "Successful",
+                                        ""+user.name+"has been activated successfully.",
+                                        "success",
+                                    );
+                                }
+
+                                $('#userModal').modal('hide');
+                                $('.modal-backdrop').remove();
+                                Fire.$emit('ReloadUsers');
+                                this.$Progress.finish();
+                            })
+                            .catch((err)=>{
+                                toastr.error('Oops... An error just occurred, please reload your page.');
+                                this.$Progress.fail();
+                            });
+                    } else if (result.dismiss === "cancel") {
+                        Swal.fire(
+                            "Cancelled",
+                            "Action reverted.",
+                            "error"
+                        )
+                    }
+                });
+
+
+
+            },
+
             deleteReport(report)
             {
                 Swal.fire({
