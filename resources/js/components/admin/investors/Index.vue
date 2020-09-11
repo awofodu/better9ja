@@ -120,6 +120,7 @@
                                                     <span><b>Account Number: </b>
                                                         {{user.bank ? user.bank.account_number : ''}}</span><br><br>
                                                     <span><b>Support Pin: </b>{{user.support_pin}}</span><br><br>
+                                                    <span><b>Profile: </b><a :href="'/user_login/'+user.id">Login as User</a></span><br><br>
                                                 </div>
                                             </div>
                                         </div>

