@@ -94,11 +94,11 @@ Vue.component('ToggleButton', ToggleButton);
 
 var moment = require('moment-timezone');
 Vue.filter('myDate',  function (date) {
-    return moment(date).utc().tz('Africa/Lagos').format('YYYY-MM-DD hh:mm:ss');
+    return moment(date).tz('Africa/Lagos').format('YYYY-MM-DD hh:mm:ss');
 });
 
 Vue.filter('myDateAddHours',  function (date) {
-    return moment(date).utc().tz('Africa/Lagos').add(24, 'h').format('YYYY-MM-DD hh:mm:ss');
+    return moment(date).tz('Africa/Lagos').add(24, 'h').valueOf();
 });
 
 Vue.filter('myDateWithTime',  function (date) {
