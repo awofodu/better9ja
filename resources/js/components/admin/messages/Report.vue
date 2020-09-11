@@ -208,7 +208,7 @@
 
                                 $('#userModal').modal('hide');
                                 $('.modal-backdrop').remove();
-                                Fire.$emit('ReloadUsers');
+                                Fire.$emit('ReloadReports');
                                 this.$Progress.finish();
                             })
                             .catch((err)=>{
