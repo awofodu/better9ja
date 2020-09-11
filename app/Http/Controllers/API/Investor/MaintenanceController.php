@@ -42,7 +42,7 @@ class MaintenanceController extends Controller
     public function store(Request $request)
     {
         $user = auth('api')->user();
-        $maintenance = Maintenance::whereUserId($user->id)->first();
+        $maintenance = Maintenance::whereUserId($request->id)->first();
         $maintenance->amount = $request->maintenance_fee;
         $maintenance->maintenance_id = strtoupper(Str::random(6));
         $maintenance->main_merge_balance = $request->maintenance_fee;
@@ -86,7 +86,7 @@ class MaintenanceController extends Controller
         if($request->merge['withdrawal'])
         {
             $user = auth('api')->user();
-            $merge = Merge::findOrFail($request->id);
+            $merge = Merge::findOrFail($id);
             $maintenance = Maintenance::findOrFail($merge->maintenance_id);
             $proof_array = array();
             foreach($request->proof_document as $key => $proof)
