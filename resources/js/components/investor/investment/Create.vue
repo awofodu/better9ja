@@ -211,7 +211,7 @@
                                         <div class="alert-icon">
                                             <i class="flaticon-warning"></i>
                                         </div>
-                                        <div class="alert-text">You will be merged with whom to pay to soon.</div>
+                                        <div class="alert-text">You will be merge for payment.</div>
                                     </div>
                                     <div class="alert alert-custom alert-white alert-shadow fade show mb-5" role="alert"
                                          v-if="investments && (parseInt(investments.length) === parseInt(level)) && maintenance_merges">
@@ -417,7 +417,7 @@
                                 loader.hide();
                                 swal.fire(
                                     "Successful!",
-                                    "You will be merged with who to pay to soon by the Admin.",
+                                    "You will be merged with who to pay.",
                                     "success"
                                 );
                                 Fire.$emit('ReloadInvestment');

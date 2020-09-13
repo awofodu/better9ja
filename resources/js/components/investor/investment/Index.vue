@@ -126,7 +126,7 @@
                                 </button>
 
                                 <span v-else class="text-danger">
-                                    You would be merged with whom to pay to soon.</span>
+                                    You would be merge for payment.</span>
 <!--                                <span v-if="parseInt(investment.is_paid) === 1" class="text-info">-->
 <!--                                    Please wait while the withdrawal-->
 <!--                                    confirms your payment.-->
