@@ -87,10 +87,10 @@ class TerminateMergeTransaction extends Command
                        $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
                        $withdrawal->save();
                    }
-               }
 
-               $merge->is_terminated = 1;
-               $merge->save();
+                   $merge->is_terminated = 1;
+                   $merge->save();
+               }
            }
        }
 
