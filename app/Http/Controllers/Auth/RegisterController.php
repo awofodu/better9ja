@@ -98,6 +98,7 @@ class RegisterController extends Controller
                 $input['guider_id'] = $admin->id;
             }
 
+            $input['name'] = ucwords($request->name);
             $input['password'] = Hash::make($request->password);
             $input['referral_id'] = strtoupper(Str::random(6));
             $input['support_pin'] = rand(1000, 9999);

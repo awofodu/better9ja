@@ -139,6 +139,7 @@ class ProfileController extends Controller
             $user->bank()->create($request->all());
         }
 
+        $request->merge(['name' => ucwords($request->name)]);
         $user->update($request->all());
         $bank = Bank::whereUserId($user->id)->first();
         return response()->json('Profile updated successfully.');

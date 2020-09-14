@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <p>You will be credited with a 5% bonus every investment your referred friends make. There are no limits to this.</p>
+                            <p>You will be credited with a 5% bonus on every investment your referred friends make. There are no limits to this.</p>
                             <p>Refer up to <b>15 Active Users</b> and become a <b>Guider</b></p>
                             <p><b>THE MORE YOUR FRIEND INVEST, THE MORE REWARDS YOU RECEIVE.</b></p>
                              <span class="text-success"><h4>Bonus:  &#8358; {{priceComma(bonus.bonus)}}.00</h4>
@@ -76,8 +76,7 @@
                                     <span class="font-weight-bold text-muted font-size-lg">{{user.guider.phone}}</span>
                                     <span class="font-weight-bold text-info font-size-lg">Guider</span>
                                 </div>
-                                <img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/014-girl-7.svg"
-                                     alt="" class="align-self-end h-100px">
+                                <img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/avatars/004-boy-1.svg" alt="" class="align-self-end h-100px">
                             </div>
                             <!--end::Body-->
                         </div>
