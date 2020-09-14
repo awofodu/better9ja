@@ -15,13 +15,13 @@
 										</span>
             </div>
             <div class="alert-text">
-                <p><b>Welcome {{user.name}}</b> <br>
+                <p><b>Welcome {{user.name}}.</b> <br>
                 <span>This system allows you to have multiple Investments. <br>
                 You can always make new Pledges anytime you want and withdraw them when they are due. Any new Pledge you make will serve as recommitment for the predecessor. You
                 can also increase your pledege amount if you  like  to earn more.</span><br><br>
                     <span class="label label-inline label-pill label-danger label-rounded mr-2">NOTE:</span> <span class="text-danger">You are not allowed to make Payment to any
             other account details beside the one given to you by the system on the dashboard no matter the reason.
-            Even if an admin ask you to do so, tell him/her to make the account details reflect on yur dashboard, other wise don't pay.</span></p>
+            Even if an admin ask you to do so, tell him/her to make the account details reflect on your dashboard, other wise don't pay.</span></p>
             </div>
         </div>
 
@@ -112,7 +112,7 @@
 																</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block"></span>
+                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">{{priceComma(referrals)}}</span>
                         <span class="font-weight-bold text-white font-size-sm">Referrals</span>
                     </div>
                     <!--end::Body-->
@@ -141,7 +141,7 @@
 																</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block"></span>
+                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">{{priceComma(maintenance_level)}}</span>
                         <span class="font-weight-bold text-white font-size-sm">Level</span>
                     </div>
                     <!--end::Body-->
@@ -161,6 +161,8 @@
                 investment_amount: '',
                 withdrawal_amount: '',
                 withdrawals: '',
+                maintenance_level: '',
+                referrals: '',
             }
         },
 
@@ -172,6 +174,8 @@
                         this.investment_amount = result.data.investment_amount;
                         this.withdrawal_amount = result.data.withdrawal_amount;
                         this.withdrawals = result.data.withdrawals;
+                        this.referrals = result.data.referrals;
+                        this.maintenance_level = result.data.maintenance ? result.data.maintenance.level/6 : 0;
                         this.$Progress.finish();
                     })
                     .catch(() => {

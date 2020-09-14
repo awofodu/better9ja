@@ -18,10 +18,12 @@ class DashboardController extends Controller
         $user = auth('api')->user();
         $user->investments;
         $withdrawals = $user->investments->where('is_withdrawn', 1)->count();
+        $referrals = $user->referrals->count();
         $inv_amount = $user->investments->where('is_paid', 1)->sum('amount');
         $with_amount = $user->investments->where('is_withdrawn', 1)->sum('amount');
+        $maintenance = $user->maintenances()->where('is_paid', 1)->latest()->first();
         return response()->json(['user'=>$user, 'investment_amount'=>$inv_amount, 'withdrawal_amount'=>$with_amount,
-        'withdrawals'=>$withdrawals]);
+        'withdrawals'=>$withdrawals, 'referrals'=>$referrals, 'maintenance'=>$maintenance]);
     }
 
     /**

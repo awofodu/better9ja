@@ -250,7 +250,7 @@
                                                         View Merges
                                                     </button>
                                                     <span class="text-center text-danger" v-else>
-                                                        You will be merged with who to pay to you soon.
+                                                        You will be merged with who to pay to soon.
                                                     </span>
                                             </span>
                                         </div>

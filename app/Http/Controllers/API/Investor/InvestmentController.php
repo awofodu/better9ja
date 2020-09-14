@@ -88,7 +88,7 @@ class InvestmentController extends Controller
             $investment = $user->investments()->create($request->all());
 
             $user->transactions()->create(
-                ['message'=>'You invested <span class="text-success">₦'.number_format($request->amount)."</span> with ID".$investment->investment_id." awaiting merging."]);
+                ['message'=>'You invested <span class="text-success">₦'.number_format($request->amount)."</span> with ID ".$investment->investment_id." awaiting merging."]);
 
             InvestmentSuccess::dispatch($user, $investment)->delay(now()->addMinutes(1));
 
