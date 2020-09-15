@@ -20,7 +20,7 @@ class InvestorController extends Controller
      */
     public function index()
     {
-        $users = User::with('guider','bank', 'referrer', 'referrals')->latest()->paginate(10);
+        $users = User::with('guider','bank', 'referrer', 'referrals')->latest()->paginate(25);
         $banks = Http::withHeaders([
             'accept' => 'application/json'
         ])

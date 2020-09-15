@@ -66,7 +66,7 @@ class TerminateMergeTransaction extends Command
 
                        //Revert price for the investor paying
                        $investor = $merge->maintenance_investor;
-                       $investor->inv_merge_balance = $investor->main_merge_balance + $merge->amount;
+                       $investor->main_merge_balance = $investor->main_merge_balance + $merge->amount;
                        $investor->save();
                    }
 
