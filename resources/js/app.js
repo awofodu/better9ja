@@ -38,6 +38,7 @@ let routes = [
     { path: '/testimonies', name: 'myTestimonies', component: require('./components/investor/testimony/Index').default },
     { path: '/generals', component: require('./components/General').default },
     { path: '/developer', component: require('./components/Developer.vue').default },
+    { path: '/admin/dashboard', name: 'adminDashboard', component: require('./components/admin/dashboard/Index').default },
     { path: '/admin/investors', name: 'allInvestors', component: require('./components/admin/investors/Index').default },
     { path: '/admin/investments', name: 'investorInvestments', component: require('./components/admin/investments/Index').default },
     { path: '/admin/withdrawals', name: 'investorWithdrawals', component: require('./components/admin/withdrawal/Index').default },

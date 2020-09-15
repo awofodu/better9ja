@@ -107,7 +107,7 @@ class WithdrawalController extends Controller
             $maintenance->is_paid = 1;
 
             $maintenance->save();
-            Maintenance::create(['user_id'=>$user->id, 'next_level'=>$maintenance->next_level+6]);
+            Maintenance::create(['user_id'=>$maintenance->user_id, 'next_level'=>$maintenance->next_level+6]);
         }
 
         //Deduct the payed amount from the balance
