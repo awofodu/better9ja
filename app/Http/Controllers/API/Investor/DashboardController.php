@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Investor;
 
 use App\Http\Controllers\Controller;
 use App\Investment;
+use App\Maintenance;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -21,7 +22,7 @@ class DashboardController extends Controller
         $referrals = $user->referrals->count();
         $inv_amount = $user->investments->where('is_paid', 1)->sum('amount');
         $with_amount = $user->investments->where('is_withdrawn', 1)->sum('amount');
-        $maintenance = $user->maintenances()->where('is_paid', 1)->latest()->first();
+        $maintenance = Maintenance::whereUserId($user->id)->where('is_paid', 1)->latest()->first();
         return response()->json(['user'=>$user, 'investment_amount'=>$inv_amount, 'withdrawal_amount'=>$with_amount,
         'withdrawals'=>$withdrawals, 'referrals'=>$referrals, 'maintenance'=>$maintenance]);
     }

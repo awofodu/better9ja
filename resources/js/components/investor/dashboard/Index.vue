@@ -175,7 +175,7 @@
                         this.withdrawal_amount = result.data.withdrawal_amount;
                         this.withdrawals = result.data.withdrawals;
                         this.referrals = result.data.referrals;
-                        this.maintenance_level = result.data.maintenance ? result.data.maintenance.level/6 : 0;
+                        this.maintenance_level = result.data.maintenance.next_level/6;
                         this.$Progress.finish();
                     })
                     .catch(() => {

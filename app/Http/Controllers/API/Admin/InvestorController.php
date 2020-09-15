@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Investment;
 use App\Jobs\AccountVerified;
+use App\Maintenance;
+use App\Merge;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -116,6 +119,19 @@ class InvestorController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
+        $investment = Investment::whereUserId($user->id)->where('is_paid', 0)->first();
+        $maintenance = Maintenance::whereUserId($user->id)->where('is_paid', 0)->first();
+        $merges = Merge::where('investment_id', $investment->id)->orWhere('maintenance_id', $maintenance->id)->where('is_terminated',1)->get();
+        if($merges)
+        {
+            foreach($merges as $merge)
+            {
+                $merge->is_resolved = 1;
+                $merge->save();
+            }
+        }
+
+
         if($user->is_blocked == 0)
         {
             $user->is_blocked = 1;
