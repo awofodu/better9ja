@@ -295,6 +295,7 @@
                 disabled: false,
                 submitBtnDisabled: true,
                 banks: {},
+                err: [],
                 form: new Form({
                     id: '',
                     name: '',
@@ -360,7 +361,15 @@
                         loader.hide();
                         toastr.success("Profile updated successfully.");
 
-                    }).catch(() => {
+                    }).catch((error) => {
+                    loader.hide();
+                    if (error.response.status == 422){
+                        $.each(error.response.data.errors, function(key, value) {
+                            toastr.error(value[0]);
+                        });
+                    }else{
+                        this.catchMessage();
+                    }
 
                 })
             },

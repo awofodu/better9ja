@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Investor;
 
 use App\Bank;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\InvestorProfile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -108,7 +109,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InvestorProfile $request, $id)
     {
         $user = auth('api')->user();
 
