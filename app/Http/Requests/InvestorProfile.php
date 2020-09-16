@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class InvestorProfile extends FormRequest
 {
@@ -23,8 +25,10 @@ class InvestorProfile extends FormRequest
      */
     public function rules()
     {
+        $user = Auth::user();
         return [
-            'account_number' => 'required|unique:banks',
+            'account_number' => ['required', Rule::unique('banks', 'account_number')
+                ->ignore($this->user()->id, 'user_id')],
         ];
     }
 

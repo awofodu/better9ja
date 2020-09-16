@@ -363,6 +363,7 @@
 
                     }).catch((error) => {
                     loader.hide();
+                    this.disabled = false;
                     if (error.response.status == 422){
                         $.each(error.response.data.errors, function(key, value) {
                             toastr.error(value[0]);
