@@ -198,14 +198,13 @@ class InvestmentController extends Controller
     {
         if($search = \Request::get('q'))
         {
-            $investments = Investment::join('users', 'investments.user_id','=','users.id')
-            ->where(function ($query) use ($search){
-                $query->where('investment_id','LIKE',"%$search%");
-                $query->where('users.email','LIKE',"%$search%");
-                $query->where('users.name','LIKE',"%$search%");
-            })->with('user.referrals.referrer','user.bank',
-            'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
-            ->latest('investments.created_at')->paginate(1000000);
+            $investments = Investment::with('user.referrals.referrer','user.bank',
+                'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
+                ->join('users', 'investments.user_id','=','users.id')
+                ->where(function ($query) use ($search){
+                $query->where('investment_id','LIKE',"%$search%")->orWhere('users.email','LIKE',"%$search%")
+                ->orWhere('users.name','LIKE',"%$search%");
+            })->latest('investments.created_at')->paginate(1000000);
             return response()->json(['investments'=>$investments]);
         }
     }
