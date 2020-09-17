@@ -153,7 +153,7 @@ class WithdrawalController extends Controller
 
         $merge = Merge::findOrFail($id);
         $investor = $merge->investor;
-        $investor_investments = Investment::whereUserId($investor->user_id)->where('is_paid', 1)->get();
+        $investor_investments = Investment::whereUserId($investor->user->id)->where('is_paid', 1)->get();
         $merge->is_paid = 1;
 
         $merge->save();
@@ -195,7 +195,7 @@ class WithdrawalController extends Controller
         if($merge->investor->amount == $investment_merges)
         {
             //If the investor has made more than one investment
-            if($investor_investments->count() > 1)
+            if($investor_investments->count() > 0)
             {
                 // Withrawal date = 7
                 $investor->withdrawal_date = Carbon::now()->addDays(7);

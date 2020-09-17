@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvestorProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvestorProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/profile/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/profile/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +329,8 @@
       <workItem from="1600026502256" duration="8427000" />
       <workItem from="1600073884557" duration="20145000" />
       <workItem from="1600215282682" duration="9662000" />
-      <workItem from="1600251315916" duration="2261000" />
+      <workItem from="1600251315916" duration="2728000" />
+      <workItem from="1600310015599" duration="71000" />
     </task>
     <servers />
   </component>
