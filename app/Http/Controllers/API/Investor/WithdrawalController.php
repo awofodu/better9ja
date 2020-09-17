@@ -162,14 +162,16 @@ class WithdrawalController extends Controller
         if($investor->user->referrer)
         {
             // If it is investor first investment
-            if($investor_investments->count() < 1 && (int)$investor->user->is_activated === 1)
+            if((int)$investor->user->is_activated === 1)
             {
+                $amount = $request->amount;
+
                 // Referral receives a 5% bonus pay
                 $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                 $referrer->referral_earnings()->create([
                     'payer_id' => $investor->user->id,
-                    'amount' => $investor->user->referral_reward($request->amount),
-                    'percentage' => $referrer->referral_earnings->count() < 1 ? '5%' : '2%',
+                    'amount' => $investor_investments->count() < 1 ? (int)$amount * (5/100)  : (int)$amount * (2/100),
+                    'percentage' => $investor_investments->count() < 1 ? '5%' : '2%',
                 ]);
                 $referral_bonus = Referral::whereUserId($referrer->id)->first();
                 $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
