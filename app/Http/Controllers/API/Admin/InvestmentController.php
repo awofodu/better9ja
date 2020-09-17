@@ -198,7 +198,8 @@ class InvestmentController extends Controller
     {
         if($search = \Request::get('q'))
         {
-            $investments = Investment::with('user.referrals.referrer','user.bank',
+            $investments = Investment::select('investments.*')
+            ->with('user.referrals.referrer','user.bank',
                 'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
                 ->join('users', 'investments.user_id','=','users.id')
                 ->where(function ($query) use ($search){
