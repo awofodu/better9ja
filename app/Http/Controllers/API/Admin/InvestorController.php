@@ -65,6 +65,13 @@ class InvestorController extends Controller
         $user->is_activated = 1;
         $user->save();
 
+        $referrer_referrals = User::where('referred_by', $user->referred_by)->where('is_activated', 1)->count();
+        //if the investor
+        if($referrer_referrals == 15)
+        {
+            User::where('referral_id', $user->referred_by)->update(['is_guider'=>1]);
+        }
+
         $admin = auth('api')->user();
 
         AccountVerified::dispatch($user, $admin)->delay(now()->addMinutes(1));

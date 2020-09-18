@@ -181,13 +181,6 @@ class ProfileController extends Controller
             }
             $user->proof_document = implode(',', $proof_array);
 
-            $referrals = User::where('referred_by', $user->referred_by)->count();
-            //if the investor
-            if($referrals == 14)
-            {
-                User::where('referral_id', $user->referred_by)->update(['is_guider'=>1]);
-            }
-
             $user->save();
             return response()->json('Success');
         }else{
