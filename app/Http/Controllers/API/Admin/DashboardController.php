@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Investment;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,7 +16,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $investors = User::all()->count();
+        $investments = Investment::all()->count();
+        return response()->json(['investors'=>$investors, 'investments'=>$investments]);
     }
 
     /**

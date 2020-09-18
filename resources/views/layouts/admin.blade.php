@@ -178,7 +178,7 @@
                         <!--begin::Menu Nav-->
                         <ul class="menu-nav">
                             <li class="menu-item menu-item-active" aria-haspopup="true">
-                                <router-link to="/dashboard" class="menu-link">
+                                <router-link to="/admin/dashboard" class="menu-link">
 										<span class="svg-icon menu-icon svg-icon-white">
 											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg"

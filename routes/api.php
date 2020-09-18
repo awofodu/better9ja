@@ -44,6 +44,7 @@ Route::group(['middleware'=>['auth:api','active_investor']], function(){
 
 
 Route::group(['middleware'=>['auth:api','admin']], function(){
+    Route::apiResources(['admin/dashboard' => 'API\Admin\DashboardController']);
     Route::apiResources(['admin/investors' => 'API\Admin\InvestorController']);
     Route::get('admin/investor/search', 'API\Admin\InvestorController@search');
     Route::apiResources(['admin/investments' => 'API\Admin\InvestmentController']);

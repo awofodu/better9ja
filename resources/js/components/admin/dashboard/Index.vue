@@ -1,31 +1,5 @@
 <template>
     <div class="col-lg-12">
-
-        <div class="alert alert-custom alert-white alert-shadow gutter-b" role="alert">
-            <div class="alert-icon alert-icon-top">
-										<span class="svg-icon svg-icon-3x svg-icon-primary mt-15">
-											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Tools/Tools.svg-->
-											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"/>
-                                                    <rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"/>
-                                                </g>
-                                            </svg>
-                                            <!--end::Svg Icon-->
-										</span>
-            </div>
-            <div class="alert-text">
-                <p><b>Welcome {{user.name}}.</b> <br>
-                    <span>This system allows you to have multiple Investments. <br>
-                You can always make new Pledges anytime you want and withdraw them when they are due. Any new Pledge you make will serve as recommitment for the predecessor. You
-                can also increase your pledege amount if you  like  to earn more.</span><br><br>
-                    <span class="label label-inline label-pill label-danger label-rounded mr-2">NOTE:</span> <span class="text-danger">You are not allowed to make Payment to any
-            other account details beside the one given to you by the system on the dashboard no matter the reason.
-            Even if an admin ask you to do so, tell him/her to make the account details reflect on your dashboard, other wise don't pay.</span></p>
-            </div>
-        </div>
-
-
         <div class="row">
             <div class="col-xl-3">
                 <!--begin::Stats Widget 29-->
@@ -53,8 +27,8 @@
                                                     </svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">₦{{priceComma(investment_amount)}} ({{user.investments.length}})</span>
-                        <span class="font-weight-bold text-muted font-size-sm">Investments</span>
+                        <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">{{priceComma(investors)}}</span>
+                        <span class="font-weight-bold text-muted font-size-sm">Investors</span>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -82,8 +56,8 @@
 																</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">₦{{priceComma(withdrawal_amount)}} ({{withdrawals}})</span>
-                        <span class="font-weight-bold text-white font-size-sm">Withdrawals</span>
+                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">{{priceComma(investments)}}</span>
+                        <span class="font-weight-bold text-white font-size-sm">Investments</span>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -112,7 +86,7 @@
 																</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">{{priceComma(referrals)}}</span>
+                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block"></span>
                         <span class="font-weight-bold text-white font-size-sm">Referrals</span>
                     </div>
                     <!--end::Body-->
@@ -141,7 +115,7 @@
 																</svg>
                                                     <!--end::Svg Icon-->
 												</span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block">{{priceComma(maintenance_level)}}</span>
+                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block"></span>
                         <span class="font-weight-bold text-white font-size-sm">Level</span>
                     </div>
                     <!--end::Body-->
@@ -157,25 +131,17 @@
     export default {
         data() {
             return {
-                user: '',
-                investment_amount: '',
-                withdrawal_amount: '',
-                withdrawals: '',
-                maintenance_level: '',
-                referrals: '',
+                investors: '',
+                investments: '',
             }
         },
 
         methods: {
             allData() {
-                axios.get('api/investor/dashboard')
+                axios.get('/api/admin/dashboard')
                     .then(result => {
-                        this.user = result.data.user;
-                        this.investment_amount = result.data.investment_amount;
-                        this.withdrawal_amount = result.data.withdrawal_amount;
-                        this.withdrawals = result.data.withdrawals;
-                        this.referrals = result.data.referrals;
-                        this.maintenance_level = result.data.maintenance.next_level/6;
+                        this.investors = result.data.investors;
+                        this.investments = result.data.investments;
                         this.$Progress.finish();
                     })
                     .catch(() => {
