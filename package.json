@@ -40,6 +40,7 @@
         "vue-debounce": "^2.5.7",
         "vue-js-toggle-button": "^1.3.3",
         "vue-loading-overlay": "^3.3.2",
+        "vue-multiple-image-clipping": "^1.1.4",
         "vue-numeral-filter": "^2.0.0",
         "vue-numeric": "^2.3.0",
         "vue-progressbar": "^0.7.5",

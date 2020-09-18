@@ -48,18 +48,26 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <vue-upload-multiple-image
+<!--                            <vue-upload-multiple-image-->
+<!--                                    @upload-success="uploadImageSuccess"-->
+<!--                                    @before-remove="beforeRemove"-->
+<!--                                    @edit-image="editImage"-->
+<!--                                    :data-images="images"-->
+<!--                                    browseText="Upload Proof Document"-->
+<!--                                    dragText="Drag and Drop here."-->
+<!--                                    primaryText="Better9ja"-->
+<!--                                    marklsPrimaryText="Better9ja"-->
+<!--                                    popupText="Better9ja"-->
+<!--                                    accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"-->
+<!--                            ></vue-upload-multiple-image>-->
+<!--                            <div id="my-strictly-unique-vue-upload-multiple-image" style="display: flex; justify-content: center;">-->
+                                <vue-multiple-image-clipping
                                     @upload-success="uploadImageSuccess"
                                     @before-remove="beforeRemove"
                                     @edit-image="editImage"
                                     :data-images="images"
-                                    browseText="Upload Proof Document"
-                                    dragText="Drag and Drop here."
-                                    primaryText="Better9ja"
-                                    marklsPrimaryText="Better9ja"
-                                    popupText="Better9ja"
-                                    accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"
-                            ></vue-upload-multiple-image>
+                                ></vue-multiple-image-clipping>
+<!--                            </div>-->
                         </div>
                         <div class="modal-footer">
                             <form @submit.prevent="uploadProofDocument" class="vld-parent" ref="formContainer">
@@ -78,10 +86,11 @@
 </template>
 
 <script>
-    import VueUploadMultipleImage from 'vue-upload-multiple-image'
+    // import VueUploadMultipleImage from 'vue-upload-multiple-image'
+    import VueMultipleImageClipping from 'vue-multiple-image-clipping'
     export default {
         components: {
-            VueUploadMultipleImage,
+            VueMultipleImageClipping,
         },
 
         data() {
@@ -150,7 +159,7 @@
 </script>
 
 <style>
-    #my-strictly-unique-vue-upload-multiple-image {
+    #my-strictly-unique-vue-multiple-image-clipping {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -176,9 +185,4 @@
     a {
         color: #42b983;
     }
-
-    .image-container{
-        width: 100% !important;
-    }
-
 </style>

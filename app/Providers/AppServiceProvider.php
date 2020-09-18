@@ -47,24 +47,24 @@ class AppServiceProvider extends ServiceProvider
         }
 
 
-        VerifyEmail::toMailUsing(function ($notifiable){
-            $verifyUrl = URL::temporarySignedRoute(
-                'verification.verify',
-                Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
-                [
-                    'id' => $notifiable->getKey(),
-                    'hash' => sha1($notifiable->getEmailForVerification()),
-                ]
-            );
-
-            $user = User::whereEmail($notifiable->getEmailForVerification())->first();
-
-//            SendVerificationLink::dispatch($user, $verifyUrl)->delay(now()->addMinutes(1));
-
-           return (new MailMessage)
-                ->subject('Welcome!')
-                ->markdown('email.verify', ['name' => $user->name, 'url' => $verifyUrl]);
-
-        });
+//        VerifyEmail::toMailUsing(function ($notifiable){
+//            $verifyUrl = URL::temporarySignedRoute(
+//                'verification.verify',
+//                Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
+//                [
+//                    'id' => $notifiable->getKey(),
+//                    'hash' => sha1($notifiable->getEmailForVerification()),
+//                ]
+//            );
+//
+//            $user = User::whereEmail($notifiable->getEmailForVerification())->first();
+//
+////            SendVerificationLink::dispatch($user, $verifyUrl)->delay(now()->addMinutes(1));
+//
+//           return (new MailMessage)
+//                ->subject('Welcome!')
+//                ->markdown('email.verify', ['name' => $user->name, 'url' => $verifyUrl]);
+//
+//        });
     }
 }
