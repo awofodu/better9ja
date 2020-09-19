@@ -99,23 +99,23 @@ Vue.filter('myDate',  function (date) {
 });
 
 Vue.filter('myDateAddHours',  function (date) {
-    return moment(date).tz('Africa/Lagos').add(24, 'h').valueOf();
+    return moment(date).tz('Africa/Lagos').add(1, 'd').valueOf();
 });
 
 Vue.filter('myDateWithTime',  function (date) {
-    return moment(date).format('dddd Do MMMM, YYYY [at] hh:mm A');
+    return moment(date).tz('Africa/Lagos').format('dddd Do MMMM, YYYY [at] hh:mm A');
 });
 
 Vue.filter('shortDateWithTime',  function (date) {
-    return moment(date).format('ddd Do MMM, YYYY [at] hh:mm A');
+    return moment(date).tz('Africa/Lagos').format('ddd Do MMM, YYYY [at] hh:mm A');
 });
 
 Vue.filter('isPast',  function (date) {
-    return moment().isSameOrAfter(date);
+    return moment().tz('Africa/Lagos').isSameOrAfter(date);
 });
 
 Vue.filter('isFuture',  function (date) {
-    return moment().isBefore(date);
+    return moment().tz('Africa/Lagos').isBefore(date);
 });
 
 Vue.filter('capFirstText', function(text){
