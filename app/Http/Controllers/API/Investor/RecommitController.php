@@ -120,7 +120,7 @@ class RecommitController extends Controller
             $user->transactions()->create(
                 ['message'=>'You invested <span class="text-success">₦'.number_format($request->amount)."</span> with ID".$investment->investment_id." awaiting for merging."]);
 
-            return response('Success', 200);
+            return response()->json(['user'=>$user, 'investment'=>$investment]);
         }else{
             return response('Error',404);
         }

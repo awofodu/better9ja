@@ -42,9 +42,10 @@ class InvestmentController extends Controller
         $merges = Merge::whereIn('investment_id',$investment_id_array)->get();
         $maintenance_merges = Merge::where('maintenance_id', $maintenance->id)->get();
         $sum_paid_merges = $merges->where('is_paid', 1)->sum('amount');
+        $running_investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
         return response()->json(['user'=>$user, 'investments'=> $investments,'maintenance'=>$maintenance,
         'all_investments' => $all_investments, 'bonus'=>$bonus, 'merges'=> $merges, 'paid_investment'=>$sum_paid_merges,
-        'maintenance_merges'=>$maintenance_merges, 'last_investment'=>$last_investment]);
+        'maintenance_merges'=>$maintenance_merges, 'last_investment'=>$last_investment, 'running_investments'=>$running_investments]);
     }
 
     /**
@@ -187,10 +188,12 @@ class InvestmentController extends Controller
         $user = auth('api')->user();
         $investment = Investment::findOrFail($id);
         $investment->is_withdrawn = 1;
-        $investment->withdraw()->create([
-            'user_id'=>$user->id,
-            ]);
-//        $investment->save();
+        $investment->balance = $investment->reward;
+        $investment->merge_balance = $investment->reward;
+        $investment->save();
+
+        $user->transactions()->create(
+            ['message'=>'You withdrew <span class="text-success">₦'.number_format($investment->reward)."</span> with ID".$investment->investment_id." awaiting for merging."]);
         return response($investment, 200);
     }
 }

@@ -196,6 +196,7 @@
                 paid_investment: {},
                 user: '',
                 investment: '',
+                running_investments: '',
                 name: 'Timer',
             }
         },
@@ -209,6 +210,7 @@
                         this.investments = result.data.investments;
                         this.merges = result.data.merges;
                         this.paid_investment = result.data.paid_investment;
+                        this.running_investments = result.data.running_investments;
                         this.$Progress.finish();
                     })
                     .catch(()=>{
@@ -219,31 +221,31 @@
             withdrawInvestment(investment)
             {
 
+                    if(this.running_investments > 0)
+                    {
                         swal.fire({
                             title: "Are you sure?",
-                            html: "To withdraw your  <span class='text-success'> &#8358;"
-                                +this.priceComma(investment.amount)+"</span>  you will have to " +
-                                "recommit <span class='text-danger'> &#8358;"
-                                +this.priceComma(investment.amount)+"</span> or higher.",
-                        icon: "warning",
+                            html: "Proceeding to withdraw would not be revertible.",
+                            icon: "warning",
                             showCancelButton: true,
                             confirmButtonText: "Yes, proceed!",
                             cancelButtonText: "No, cancel!",
                             reverseButtons: true,
-                    }).then((result) => {
+                        }).then((result) => {
                             if (result.value) {
-                                // axios.delete('/api/investor/recommit/'+investment.id)
-                                //     .then(result=>{
-                                //
-                                //     });
-                                this.$router.push({name:'recommitWithdrawal', params: {id: investment.id}})
-                                // Swal.fire(
-                                //     "Deleted!",
-                                //     "Your file has been deleted.",
-                                //     "success"
-                                // )
-                                // result.dismiss can be "cancel", "overlay",
-                                // "close", and "timer"
+                                axios.delete('/api/investor/investments/'+investment.id)
+                                    .then(result => {
+                                        swal.fire(
+                                            "Successful",
+                                            "Your investment is withdrawn successfully.",
+                                            "success",
+                                        );
+                                        Fire.$emit('ReloadInvestments');
+                                    })
+                                    .catch((err)=>{
+
+                                    });
+
                             } else if (result.dismiss === "cancel") {
                                 Swal.fire(
                                     "Cancelled",
@@ -252,6 +254,32 @@
                                 )
                             }
                         });
+                    }else{
+                        swal.fire({
+                            title: "Are you sure?",
+                            html: "To withdraw your  <span class='text-success'> &#8358;"
+                                +this.priceComma(investment.amount)+"</span>  you will have to " +
+                                "recommit <span class='text-danger'> &#8358;"
+                                +this.priceComma(investment.amount)+"</span> or higher. Please do not proceed if you have " +
+                                "already pledged for an investment but haven't paid fully as this would not be revertible.",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonText: "Yes, proceed!",
+                            cancelButtonText: "No, cancel!",
+                            reverseButtons: true,
+                        }).then((result) => {
+                            if (result.value) {
+                                this.$router.push({name:'recommitWithdrawal', params: {id: investment.id}})
+
+                            } else if (result.dismiss === "cancel") {
+                                Swal.fire(
+                                    "Cancelled",
+                                    "Process terminated.",
+                                    "error"
+                                )
+                            }
+                        });
+                    }
             },
 
 
