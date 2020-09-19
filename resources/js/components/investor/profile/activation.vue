@@ -16,6 +16,9 @@
                     <span><b>Phone Number: </b>{{admin.phone}}</span><br><br>
 
                     Having made your payment, please upload the proof of payment <b>SCREENSHOT</b> of your <b>₦1,000 Activation fee</b>.
+                    <br><br>
+                    <b>Note:</b> <span>If you are having issues uploading your proof, kindly click on the <i class="fa fa-pen text-danger"></i>
+                to crop and resize image.</span>
                 </div>
             </div>
 
@@ -48,26 +51,16 @@
                             </div>
                         </div>
                         <div class="card-body">
-<!--                            <vue-upload-multiple-image-->
-<!--                                    @upload-success="uploadImageSuccess"-->
-<!--                                    @before-remove="beforeRemove"-->
-<!--                                    @edit-image="editImage"-->
-<!--                                    :data-images="images"-->
-<!--                                    browseText="Upload Proof Document"-->
-<!--                                    dragText="Drag and Drop here."-->
-<!--                                    primaryText="Better9ja"-->
-<!--                                    marklsPrimaryText="Better9ja"-->
-<!--                                    popupText="Better9ja"-->
-<!--                                    accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"-->
-<!--                            ></vue-upload-multiple-image>-->
-<!--                            <div id="my-strictly-unique-vue-upload-multiple-image" style="display: flex; justify-content: center;">-->
                                 <vue-multiple-image-clipping
                                     @upload-success="uploadImageSuccess"
                                     @before-remove="beforeRemove"
                                     @edit-image="editImage"
                                     :data-images="images"
+                                    :maxImage="8"
+                                    :maxHeightImage="5000"
+                                    :maxWidthImage="5000"
+                                    :maxSizeImage="1000000"
                                 ></vue-multiple-image-clipping>
-<!--                            </div>-->
                         </div>
                         <div class="modal-footer">
                             <form @submit.prevent="uploadProofDocument" class="vld-parent" ref="formContainer">
@@ -86,7 +79,6 @@
 </template>
 
 <script>
-    // import VueUploadMultipleImage from 'vue-upload-multiple-image'
     import VueMultipleImageClipping from 'vue-multiple-image-clipping'
     export default {
         components: {
