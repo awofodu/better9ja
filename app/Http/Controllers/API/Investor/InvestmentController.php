@@ -12,6 +12,7 @@ use App\Transaction;
 use App\User;
 use App\ReferralEarning;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -108,7 +109,15 @@ class InvestmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $investment = Investment::findOrFail($id);
+        \session(['investment_user_id' => $investment->user_id]);
+        $investment->delete();
+
+        $user_id = \session('investment_user_id');
+        $investment = Investment::where('user_id', $user_id)->latest()->first();
+        $investment->user->minimum_investment = $investment->amount;
+        $investment->user->save();
+        return response($investment);
     }
 
     /**

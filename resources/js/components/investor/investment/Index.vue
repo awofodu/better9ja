@@ -126,7 +126,9 @@
                                 </button>
 
                                 <span v-else class="text-danger">
-                                    You would be merge for payment.</span>
+                                    You would be merge for payment. <br><br>
+                                <button class="btn btn-danger btn-shadow font-weight-bold mr-2" @click="deleteInvestment(investment)"><i class="fa fa-power-off"></i> Cancel</button>
+                                </span>
 <!--                                <span v-if="parseInt(investment.is_paid) === 1" class="text-info">-->
 <!--                                    Please wait while the withdrawal-->
 <!--                                    confirms your payment.-->
@@ -233,8 +235,10 @@
                             reverseButtons: true,
                         }).then((result) => {
                             if (result.value) {
+                                let loader = this.$loading.show();
                                 axios.delete('/api/investor/investments/'+investment.id)
                                     .then(result => {
+                                        loader.hide();
                                         swal.fire(
                                             "Successful",
                                             "Your investment is withdrawn successfully.",
@@ -243,7 +247,7 @@
                                         Fire.$emit('ReloadInvestments');
                                     })
                                     .catch((err)=>{
-
+                                        this.catchMessage();
                                     });
 
                             } else if (result.dismiss === "cancel") {
@@ -280,6 +284,44 @@
                             }
                         });
                     }
+            },
+
+            deleteInvestment(investment)
+            {
+                swal.fire({
+                    title: "Are you sure?",
+                    html: "Proceeding to delete this investment would not be revertible.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, proceed!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true,
+                }).then((result) => {
+                    if (result.value) {
+                        let loader = this.$loading.show();
+                        axios.get('/api/investor/investments/'+investment.id)
+                            .then(result => {
+                                loader.hide();
+                                swal.fire(
+                                    "Successful",
+                                    "Investment "+investment.investment_id+" is deleted successfully.",
+                                    "success",
+                                );
+                                Fire.$emit('ReloadInvestments');
+                            })
+                            .catch((err)=>{
+                                this.catchMessage();
+                            });
+
+                    } else if (result.dismiss === "cancel") {
+                        Swal.fire(
+                            "Cancelled",
+                            "Your imaginary file is safe :)",
+                            "error"
+                        )
+                    }
+                });
+
             },
 
 

@@ -89,6 +89,11 @@ class WithdrawalController extends Controller
         $user = User::findOrFail($maintenance->user_id)->first();
         $merge->is_paid = 1;
 
+        if(file_exists(public_path('uploads/').$merge->proof_document))
+        {
+            @unlink(public_path('uploads/').$merge->proof_document);
+        }
+
         $merge->save();
         $maintenance_merges = Merge::where('maintenance_id',$maintenance->id)->where('is_paid',1)->sum('amount');
 
@@ -155,6 +160,11 @@ class WithdrawalController extends Controller
         $investor = $merge->investor;
         $investor_investments = Investment::whereUserId($investor->user->id)->where('is_paid', 1)->get();
         $merge->is_paid = 1;
+
+        if(file_exists(public_path('uploads/').$merge->proof_document))
+        {
+            @unlink(public_path('uploads/').$merge->proof_document);
+        }
 
         $merge->save();
 

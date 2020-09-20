@@ -65,6 +65,8 @@ class InvestorController extends Controller
         $user->is_activated = 1;
         $user->save();
 
+        @unlink(public_path('uploads/').$user->proof_document);
+
         $referrer_referrals = User::where('referred_by', $user->referred_by)->where('is_activated', 1)->count();
         //if the investor
         if($referrer_referrals == 15)
