@@ -115,9 +115,12 @@ class InvestmentController extends Controller
 
         $user_id = \session('investment_user_id');
         $investment = Investment::where('user_id', $user_id)->latest()->first();
-        $investment->user->minimum_investment = $investment->amount;
-        $investment->user->save();
-        return response($investment);
+        if($investment)
+        {
+            $investment->user->minimum_investment = $investment->amount;
+            $investment->user->save();
+        }
+        return response('success');
     }
 
     /**
