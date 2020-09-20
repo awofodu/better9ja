@@ -107,13 +107,13 @@ class RecommitController extends Controller
             $user->update(['minimum_investment' => $request->amount]);
 
 
-            $investment->is_withdrawn = 1;
-            $investment->balance = $investment->reward;
-            $investment->merge_balance = $investment->reward;
-            $investment->save();
+//            $investment->is_withdrawn = 1;
+//            $investment->balance = $investment->reward;
+//            $investment->merge_balance = $investment->reward;
+//            $investment->save();
 
-            $user->transactions()->create(
-                ['message'=>'You withdrew <span class="text-success">₦'.number_format($investment->reward)."</span> with ID".$investment->investment_id." awaiting for merging."]);
+//            $user->transactions()->create(
+//                ['message'=>'You withdrew <span class="text-success">₦'.number_format($investment->reward)."</span> with ID".$investment->investment_id." awaiting for merging."]);
 
             $investment = $user->investments()->create($request->all());
 

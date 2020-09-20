@@ -44,20 +44,6 @@ Route::get('/user_login/{id}' , function($id){
     return redirect('/investments');
 });
 
-Route::get('/delete-proofs', function(){
-    $users = User::where('is_activated', 1)->get();
-
-    foreach($users as $user)
-    {
-        if(file_exists(public_path('uploads/').$user->proof_document))
-        {
-            @unlink(public_path('uploads/').$user->proof_document);
-            echo 'done<br>';
-        }
-    }
-
-});
-
 Route::get('/admin/{path}', 'AdminController@index')->where('path',  '.*')->middleware(['auth', 'admin', 'verified']);
 Route::get('/{path}', 'InvestorController@index')->where('path',  '.*')->middleware(['auth', 'active_investor', 'verified']);
 
