@@ -360,29 +360,57 @@
             createInvestment(){
                 if(this.form.amount >= this.user.minimum_investment && this.form.amount <= this.user.maximum_investment)
                 {
-                    let loader = this.$loading.show();
-                    this.form.post('api/investor/investments')
-                        .then(result=>{
-                            this.user = result.data.user;
-                            this.form.amount = this.user.minimum_investment;
-                            loader.hide();
-                            swal.fire(
-                                "Successful",
-                                "Your investment request of <span class='text-success'>&#8358;"+this.priceComma(result.data.investment.amount)+
-                                    "</span> was successful.",
-                                "success",
-                            ).then(result=>{
-                                if(result.value)
-                                {
-                                    this.$router.push({name:'allInvestments'})
-                                }
-                            });
-                            this.amount = result.data;
-                            this.$Progress.finish();
-                        })
-                        .catch((error)=>{
-                            this.errorMessage();
-                        })
+                    swal.fire({
+                        title: "Are you sure?",
+                        html: "Proceed to pledge <span class='text-info'>&#8358;"+this.priceComma(this.form.amount)+
+                            "</span> for investment?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Yes, proceed!",
+                        cancelButtonText: "No, cancel!",
+                        reverseButtons: true,
+                    }).then((result) => {
+                        if (result.value) {
+                            let loader = this.$loading.show();
+                            axios.delete('/api/investor/investments/'+investment.id)
+                                .then(result => {
+                                    let loader = this.$loading.show();
+                                    this.form.post('api/investor/investments')
+                                        .then(result=>{
+                                            this.user = result.data.user;
+                                            this.form.amount = this.user.minimum_investment;
+                                            loader.hide();
+                                            swal.fire(
+                                                "Successful",
+                                                "Your investment request of <span class='text-success'>&#8358;"+this.priceComma(result.data.investment.amount)+
+                                                "</span> was successful.",
+                                                "success",
+                                            ).then(result=>{
+                                                if(result.value)
+                                                {
+                                                    this.$router.push({name:'allInvestments'})
+                                                }
+                                            });
+                                            this.amount = result.data;
+                                            this.$Progress.finish();
+                                        })
+                                        .catch((error)=>{
+                                            this.errorMessage();
+                                        })
+                                })
+                                .catch((err)=>{
+                                    this.catchMessage();
+                                });
+
+                        } else if (result.dismiss === "cancel") {
+                            Swal.fire(
+                                "Cancelled",
+                                "Action processs has been terminated.",
+                                "error"
+                            )
+                        }
+                    });
+
                 }else{
                     swal.fire(
                         "Ooops!",
