@@ -29,7 +29,7 @@ class InvestmentController extends Controller
     {
         $user = auth('api')->user();
         $user->bank;
-        $investments = Investment::whereUserId($user->id)
+        $investments = Investment::whereUserId($user->id)->where('is_withdrawn', 0)
             ->with('merges')->paginate(6);
         $investment_id_array = array();
         foreach($investments as $investment)
