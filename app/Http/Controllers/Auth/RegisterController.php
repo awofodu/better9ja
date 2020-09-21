@@ -92,7 +92,7 @@ class RegisterController extends Controller
             {
                 $referrer = User::where('referral_id', $ref_id)->first();
                 $input['referred_by'] = $referrer->referral_id;
-                $input['guider_id'] = (int)$referrer->is_guider === 1 ? $referrer->id : $admin->id;
+                $input['guider_id'] = (int)$referrer->is_guider === 1 ? $referrer->id : $referrer->guider_id;
 
             }else{
                 $input['guider_id'] = $admin->id;
