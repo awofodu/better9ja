@@ -110,6 +110,7 @@
                                 </span><br>
                             </div>
                             <span><b>Amount: </b> &#8358;{{priceComma(merge.amount)}}</span><br>
+                            <span><b>Upload: </b> {{merge.proof_document ? 'Yes' : 'No'}}</span><br>
                             <span><b>Date: </b>{{merge.created_at | shortDateWithTime}}</span><br>
                             <span class="text-center"><b>Status: </b>
                                 <button type="button" class="btn btn-warning"
@@ -191,6 +192,7 @@
                                 </span><br>
                             </div>
                             <span><b>Amount: </b> &#8358;{{priceComma(merge.amount)}}</span><br>
+                            <span><b>Upload: </b> {{merge.proof_document ? 'Yes' : 'No'}}</span><br>
                             <span><b>Date: </b>{{merge.created_at | shortDateWithTime}}</span><br>
                             <span class="text-center"><b>Status: </b>
                                 <button type="button" class="btn btn-warning"
