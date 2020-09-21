@@ -372,35 +372,28 @@
                     }).then((result) => {
                         if (result.value) {
                             let loader = this.$loading.show();
-                            axios.delete('/api/investor/investments/'+investment.id)
-                                .then(result => {
-                                    let loader = this.$loading.show();
-                                    this.form.post('api/investor/investments')
-                                        .then(result=>{
-                                            this.user = result.data.user;
-                                            this.form.amount = this.user.minimum_investment;
-                                            loader.hide();
-                                            swal.fire(
-                                                "Successful",
-                                                "Your investment request of <span class='text-success'>&#8358;"+this.priceComma(result.data.investment.amount)+
-                                                "</span> was successful.",
-                                                "success",
-                                            ).then(result=>{
-                                                if(result.value)
-                                                {
-                                                    this.$router.push({name:'allInvestments'})
-                                                }
-                                            });
-                                            this.amount = result.data;
-                                            this.$Progress.finish();
-                                        })
-                                        .catch((error)=>{
-                                            this.errorMessage();
-                                        })
+                            this.form.post('api/investor/investments')
+                                .then(result=>{
+                                    this.user = result.data.user;
+                                    this.form.amount = this.user.minimum_investment;
+                                    loader.hide();
+                                    swal.fire(
+                                        "Successful",
+                                        "Your investment request of <span class='text-success'>&#8358;"+this.priceComma(result.data.investment.amount)+
+                                        "</span> was successful.",
+                                        "success",
+                                    ).then(result=>{
+                                        if(result.value)
+                                        {
+                                            this.$router.push({name:'allInvestments'})
+                                        }
+                                    });
+                                    this.amount = result.data;
+                                    this.$Progress.finish();
                                 })
-                                .catch((err)=>{
-                                    this.catchMessage();
-                                });
+                                .catch((error)=>{
+                                    this.errorMessage();
+                                })
 
                         } else if (result.dismiss === "cancel") {
                             Swal.fire(
