@@ -32,7 +32,7 @@
 
 
                 <div class="col-sm-4" v-for="(withdrawal, index) in withdrawals"
-                     :key="withdrawal.id" v-if="withdrawal.withdrawal_merges">
+                     :key="withdrawal.id" v-if="withdrawal.withdrawal_merges && parseInt(withdrawal.balance) !== 0">
                     <!--begin::Card-->
                     <div class="card card-custom card-stretch">
                         <div class="card-header">
@@ -65,7 +65,7 @@
 
 
                 <div class="col-sm-4" v-for="(withdrawal, index) in withdrawals"
-                     :key="withdrawal.id" v-if="withdrawal.ref_withdrawal_merges">
+                     :key="withdrawal.id" v-if="withdrawal.ref_withdrawal_merges && parseInt(withdrawal.balance) !== 0">
                     <!--begin::Card-->
                     <div class="card card-custom card-stretch">
                         <div class="card-header">

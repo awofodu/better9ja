@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/referral/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/referral/Merge.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/withdrawal/Merge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,14 +196,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\investment\public\images\logo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\investment\resources\views" />
       <recent name="C:\xampp\htdocs\investment\resources\js\components\admin\investments" />
       <recent name="C:\xampp\htdocs\investment\app\Http\Controllers\API\Investor" />
       <recent name="C:\xampp\htdocs\investment\resources\js" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\investment\public\images\logo" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -344,7 +343,8 @@
       <workItem from="1600647264045" duration="778000" />
       <workItem from="1600648384345" duration="604000" />
       <workItem from="1600649092959" duration="599000" />
-      <workItem from="1600703673547" duration="1138000" />
+      <workItem from="1600703673547" duration="1822000" />
+      <workItem from="1600720480297" duration="965000" />
     </task>
     <servers />
   </component>

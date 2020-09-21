@@ -141,34 +141,34 @@
 
 
 <!--                div for withdrawn investment-->
-                <div class="col-sm-4" v-for="(investment, index) in investments"
-                     :key="investment.id"
-                     v-if="parseInt(investment.is_paid) === 1 && parseInt(investment.is_withdrawn) === 1">
-                    <!--begin::Card-->
-                    <div class="card card-custom card-stretch">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="card-icon">
-                                    <i class="flaticon2-list-3 text-primary"></i>
-                                </span>
-                                <h3 class="card-label"><span class="text-primary">{{investment.investment_id}}</span>
-                                    <small>investment profile</small></h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <span><b>ID: </b> {{investment.investment_id}}</span><br>
-                            <span><b>Amount Paid: </b> &#8358;{{priceComma(investment.amount)}}</span><br>
-                            <span><b>Amount to Receive: </b> &#8358;{{priceComma(investment.reward)}}</span><br>
-                            <span><b>Amount Received: </b> &#8358;{{priceComma(investment.paid_amount)}}</span><br>
-                            <span><b>Created: </b>{{investment.created_at | shortDateWithTime}}</span><br>
-                            <span><b>Status: </b>
-                                <span class="text-success">
-                                    Withdrawn</span>
-                            </span><br>
-                        </div>
-                    </div>
-                    <!--end::Card-->
-                </div>
+<!--                <div class="col-sm-4" v-for="(investment, index) in investments"-->
+<!--                     :key="investment.id"-->
+<!--                     v-if="parseInt(investment.is_paid) === 1 && parseInt(investment.is_withdrawn) === 1">-->
+<!--                    &lt;!&ndash;begin::Card&ndash;&gt;-->
+<!--                    <div class="card card-custom card-stretch">-->
+<!--                        <div class="card-header">-->
+<!--                            <div class="card-title">-->
+<!--                                <span class="card-icon">-->
+<!--                                    <i class="flaticon2-list-3 text-primary"></i>-->
+<!--                                </span>-->
+<!--                                <h3 class="card-label"><span class="text-primary">{{investment.investment_id}}</span>-->
+<!--                                    <small>investment profile</small></h3>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card-body">-->
+<!--                            <span><b>ID: </b> {{investment.investment_id}}</span><br>-->
+<!--                            <span><b>Amount Paid: </b> &#8358;{{priceComma(investment.amount)}}</span><br>-->
+<!--                            <span><b>Amount to Receive: </b> &#8358;{{priceComma(investment.reward)}}</span><br>-->
+<!--                            <span><b>Amount Received: </b> &#8358;{{priceComma(investment.paid_amount)}}</span><br>-->
+<!--                            <span><b>Created: </b>{{investment.created_at | shortDateWithTime}}</span><br>-->
+<!--                            <span><b>Status: </b>-->
+<!--                                <span class="text-success">-->
+<!--                                    Withdrawn</span>-->
+<!--                            </span><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;end::Card&ndash;&gt;-->
+<!--                </div>-->
             </div>
             &emsp;&emsp;
             <!--end::Card-->
