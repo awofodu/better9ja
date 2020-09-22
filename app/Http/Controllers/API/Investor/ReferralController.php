@@ -121,6 +121,10 @@ class ReferralController extends Controller
             $amount_received = $withdrawal->paid_amount;
             $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
             $withdrawal->balance = (int)$withdrawal->amount - (int)$withdrawal->paid_amount;
+            if($withdrawal->balance == 0)
+            {
+                $withdrawal->is_withdrawn = 0;
+            }
             $withdrawal->save();
             $investor->user->transactions()->create(['message'=>'You paid for Investment ID <span class="text-success">'.$merge->investor->investment_id."</span>"]);
         }
@@ -157,6 +161,10 @@ class ReferralController extends Controller
             $amount_received = $withdrawal->paid_amount;
             $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
             $withdrawal->balance = (int)$withdrawal->amount - (int)$withdrawal->paid_amount;
+            if($withdrawal->balance == 0)
+            {
+                $withdrawal->is_withdrawn = 0;
+            }
             $withdrawal->save();
             $investor->user->transactions()->create(['message'=>'You paid for Maintenance ID <span class="text-success">'.$merge->maintenance_investor->maintenance_id."</span>"]);
         }
@@ -199,13 +207,16 @@ class ReferralController extends Controller
     {
         $user = auth('api')->user();
         $referral = Referral::whereUserId($user->id)->first();
-        $referral->amount = $referral->amount + $referral->bonus;
-        $referral->bonus = $referral->bonus - $request->price;
-        $referral->is_withdrawn = 1;
-        $referral->merge_balance = $referral->amount;
-        $referral->balance = $referral->amount;
-        $referral->referral_id = strtoupper(Str::random(6));
-        $referral->save();
+        if($referral->amount >= 5000)
+        {
+            $referral->amount = $referral->amount + $referral->bonus;
+            $referral->bonus = $referral->bonus - $request->price;
+            $referral->is_withdrawn = 1;
+            $referral->merge_balance = $referral->amount;
+            $referral->balance = $referral->amount;
+            $referral->referral_id = strtoupper(Str::random(6));
+            $referral->save();
+        }
         return response()->json('Success');
     }
 
