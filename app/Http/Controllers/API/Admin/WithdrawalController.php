@@ -23,7 +23,7 @@ class WithdrawalController extends Controller
             ->with('user','ref_withdrawal_merges.investor.user.bank','ref_withdrawal_merges.maintenance_investor.user.bank')->latest()->get();
         $collection = collect($withdrawals);
         $merged = $collection->merge($referral_withdrawal);
-        $withdrawals = $merged->paginate(6);
+        $withdrawals = $merged->paginate(50);
         return response()->json(['withdrawals'=>$withdrawals]);
     }
 

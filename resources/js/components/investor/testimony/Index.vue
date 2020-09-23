@@ -113,15 +113,12 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            <pagination :data="testimonies" @pagination-change-page="getResults">
+                                <span slot="prev-nav">&lt; Previous</span>
+                                <span slot="next-nav">Next &gt;</span>
+                            </pagination>
                         </div>
                         <!--end: Datatable-->
-                    </div>
-
-                    <div class="card-footer">
-                        <pagination :data="testimonies" @pagination-change-page="getResults">
-                            <span slot="prev-nav">&lt; Previous</span>
-                            <span slot="next-nav">Next &gt;</span>
-                        </pagination>
                     </div>
                 </div>
                 <!--end::Tiles Widget 15-->

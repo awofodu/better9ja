@@ -26,7 +26,7 @@ class InvestmentController extends Controller
         $admin = auth('api')->user();
         $investments = Investment::with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
-            ->latest()->paginate(25);
+            ->latest()->paginate(50);
         return response()->json(['investments'=>$investments, 'admin'=>$admin]);
     }
 

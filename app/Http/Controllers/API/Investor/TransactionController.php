@@ -16,7 +16,7 @@ class TransactionController extends Controller
     public function index()
     {
         $user = auth('api')->user();
-        $transactions = Transaction::whereUserId($user->id)->latest()->paginate(10);
+        $transactions = Transaction::whereUserId($user->id)->latest()->paginate(30);
         return response()->json(['transactions'=>$transactions]);
     }
 

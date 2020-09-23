@@ -22,7 +22,7 @@ class MaintenanceController extends Controller
         $admin = auth('api')->user();
         $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank', 'user.investments')
-            ->latest()->paginate(25);
+            ->latest()->paginate(50);
         return response()->json(['maintenances'=>$maintenances, 'admin'=>$admin]);
     }
 

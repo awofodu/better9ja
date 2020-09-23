@@ -112,6 +112,10 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <pagination :data="investments" @pagination-change-page="getResults">
+                                    <span slot="prev-nav">&lt; Previous</span>
+                                    <span slot="next-nav">Next &gt;</span>
+                                </pagination>
                             </div>
 
 
@@ -332,13 +336,6 @@
                         </div>
                     </div>
                     <!--end::Example-->
-                </div>
-
-                <div class="card-footer">
-                    <pagination :data="investments" @pagination-change-page="getResults">
-                        <span slot="prev-nav">&lt; Previous</span>
-                        <span slot="next-nav">Next &gt;</span>
-                    </pagination>
                 </div>
 
 
