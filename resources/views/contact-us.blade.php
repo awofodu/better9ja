@@ -48,6 +48,17 @@
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
+                                    <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                        <label class="col-md-4 control-label">Captcha</label>
+                                        <div class="col-md-6">
+                                            {!! app('captcha')->display() !!}
+                                            @if ($errors->has('g-recaptcha-response'))
+                                                <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <textarea class="form-control" id="message" placeholder="Your Message" name="message" rows="5" data-error="Write your message" required></textarea>

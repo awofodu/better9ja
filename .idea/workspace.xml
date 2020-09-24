@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/investment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/investment.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
@@ -185,6 +190,7 @@
       <path value="$PROJECT_DIR$/vendor/queueworker/sansdaemon" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
       <path value="$PROJECT_DIR$/vendor/buzz/laravel-google-captcha" />
+      <path value="$PROJECT_DIR$/vendor/anhskohbo/no-captcha" />
     </include_path>
   </component>
   <component name="ProjectId" id="1h9gIlA99hAyxQPRxR5NrTo8GlL" />
@@ -355,7 +361,7 @@
       <workItem from="1600720480297" duration="1854000" />
       <workItem from="1600773712494" duration="2631000" />
       <workItem from="1600776691475" duration="48000" />
-      <workItem from="1600872553133" duration="4163000" />
+      <workItem from="1600872553133" duration="6716000" />
     </task>
     <servers />
   </component>
