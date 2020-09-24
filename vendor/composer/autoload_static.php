@@ -110,6 +110,7 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         ),
         'R' => 
         array (
+            'ReCaptcha\\' => 10,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
@@ -201,6 +202,7 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         ),
         'B' => 
         array (
+            'Buzz\\LaravelGoogleCaptcha\\' => 26,
             'Brick\\Math\\' => 11,
         ),
         'A' => 
@@ -352,6 +354,10 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'Symfony\\Bridge\\PsrHttpMessage\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
+        ),
+        'ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -550,6 +556,10 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Buzz\\LaravelGoogleCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src',
+        ),
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
@@ -591,10 +601,12 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\API\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/DashboardController.php',
         'App\\Http\\Controllers\\API\\Admin\\InvestmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/InvestmentController.php',
         'App\\Http\\Controllers\\API\\Admin\\InvestorController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/InvestorController.php',
         'App\\Http\\Controllers\\API\\Admin\\ManageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/ManageController.php',
         'App\\Http\\Controllers\\API\\Admin\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/MessageController.php',
+        'App\\Http\\Controllers\\API\\Admin\\TestimonyController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/TestimonyController.php',
         'App\\Http\\Controllers\\API\\Admin\\WithdrawalController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Admin/WithdrawalController.php',
         'App\\Http\\Controllers\\API\\Investor\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Investor/DashboardController.php',
         'App\\Http\\Controllers\\API\\Investor\\InvestmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Investor/InvestmentController.php',
@@ -629,8 +641,14 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\InvestorProfile' => __DIR__ . '/../..' . '/app/Http/Requests/InvestorProfile.php',
         'App\\Investment' => __DIR__ . '/../..' . '/app/Investment.php',
         'App\\Jobs\\AccountVerified' => __DIR__ . '/../..' . '/app/Jobs/AccountVerified.php',
+        'App\\Jobs\\ConfirmPayment' => __DIR__ . '/../..' . '/app/Jobs/ConfirmPayment.php',
+        'App\\Jobs\\InvUploadProofSuccess' => __DIR__ . '/../..' . '/app/Jobs/InvUploadProofSuccess.php',
+        'App\\Jobs\\InvestmentSuccess' => __DIR__ . '/../..' . '/app/Jobs/InvestmentSuccess.php',
+        'App\\Jobs\\MergeSuccess' => __DIR__ . '/../..' . '/app/Jobs/MergeSuccess.php',
+        'App\\Jobs\\SendVerificationLink' => __DIR__ . '/../..' . '/app/Jobs/SendVerificationLink.php',
         'App\\Maintenance' => __DIR__ . '/../..' . '/app/Maintenance.php',
         'App\\Merge' => __DIR__ . '/../..' . '/app/Merge.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -663,6 +681,9 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'Brick\\Math\\Internal\\Calculator\\GmpCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/GmpCalculator.php',
         'Brick\\Math\\Internal\\Calculator\\NativeCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/NativeCalculator.php',
         'Brick\\Math\\RoundingMode' => __DIR__ . '/..' . '/brick/math/src/RoundingMode.php',
+        'Buzz\\LaravelGoogleCaptcha\\Captcha' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/Captcha.php',
+        'Buzz\\LaravelGoogleCaptcha\\CaptchaFacade' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/CaptchaFacade.php',
+        'Buzz\\LaravelGoogleCaptcha\\CaptchaServiceProvider' => __DIR__ . '/..' . '/buzz/laravel-google-captcha/src/CaptchaServiceProvider.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonConverterInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonConverterInterface.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
@@ -4489,6 +4510,15 @@ class ComposerStaticInitd9806e1c1744e989c46f229500818ec4
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'ReCaptcha\\ReCaptcha' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/ReCaptcha.php',
+        'ReCaptcha\\RequestMethod' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod.php',
+        'ReCaptcha\\RequestMethod\\Curl' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod/Curl.php',
+        'ReCaptcha\\RequestMethod\\CurlPost' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod/CurlPost.php',
+        'ReCaptcha\\RequestMethod\\Post' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod/Post.php',
+        'ReCaptcha\\RequestMethod\\Socket' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod/Socket.php',
+        'ReCaptcha\\RequestMethod\\SocketPost' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestMethod/SocketPost.php',
+        'ReCaptcha\\RequestParameters' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/RequestParameters.php',
+        'ReCaptcha\\Response' => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha/Response.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

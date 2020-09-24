@@ -45,7 +45,7 @@ class TerminateMergeTransaction extends Command
        {
            if(Carbon::now() >= Carbon::parse($merge->created_at)->addHours(24))
            {
-               if($merge->is_terminated == 0)
+               if($merge->is_terminated == 0 && $merge->proof_document == 1)
                {
                    if($merge->investor)
                    {

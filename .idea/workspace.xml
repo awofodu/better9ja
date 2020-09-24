@@ -21,19 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InvestmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/MaintenanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/WithdrawalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/ReferralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Investor/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/investments/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/investments/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/investors/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/maintenance/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/messages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/messages/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/withdrawal/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/withdrawal/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/referral/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/testimony/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/testimony/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/investor/transaction/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/transaction/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TerminateMergeTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +183,8 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/queueworker/sansdaemon" />
+      <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/buzz/laravel-google-captcha" />
     </include_path>
   </component>
   <component name="ProjectId" id="1h9gIlA99hAyxQPRxR5NrTo8GlL" />
@@ -359,7 +355,7 @@
       <workItem from="1600720480297" duration="1854000" />
       <workItem from="1600773712494" duration="2631000" />
       <workItem from="1600776691475" duration="48000" />
-      <workItem from="1600872553133" duration="571000" />
+      <workItem from="1600872553133" duration="4163000" />
     </task>
     <servers />
   </component>
