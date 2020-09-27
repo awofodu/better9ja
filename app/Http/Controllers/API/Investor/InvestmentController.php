@@ -40,11 +40,12 @@ class InvestmentController extends Controller
         $last_investment = Investment::whereUserId($user->id)->latest()->first();
         $maintenance = $user->maintenances()->latest()->first();
         $bonus = $user->referral->bonus;
+        $amount = $user->referral->amount;
         $merges = Merge::whereIn('investment_id',$investment_id_array)->get();
         $maintenance_merges = Merge::where('maintenance_id', $maintenance->id)->get();
         $sum_paid_merges = $merges->where('is_paid', 1)->sum('amount');
         $running_investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
-        return response()->json(['user'=>$user, 'investments'=> $investments,'maintenance'=>$maintenance,
+        return response()->json(['user'=>$user, 'investments'=> $investments,'maintenance'=>$maintenance,'amount'=>$amount,
         'all_investments' => $all_investments, 'bonus'=>$bonus, 'merges'=> $merges, 'paid_investment'=>$sum_paid_merges,
         'maintenance_merges'=>$maintenance_merges, 'last_investment'=>$last_investment, 'running_investments'=>$running_investments]);
     }
