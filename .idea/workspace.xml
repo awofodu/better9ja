@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f43b45c7-3278-4d79-8f2f-a9782c99c350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/investor/investment/Create.vue" afterDir="false" />
     </list>
@@ -351,7 +352,7 @@
       <workItem from="1600773712494" duration="2631000" />
       <workItem from="1600776691475" duration="48000" />
       <workItem from="1600872553133" duration="8234000" />
-      <workItem from="1601234800141" duration="2300000" />
+      <workItem from="1601234800141" duration="2605000" />
     </task>
     <servers />
   </component>
