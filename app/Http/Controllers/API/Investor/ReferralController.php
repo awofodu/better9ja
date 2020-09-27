@@ -212,8 +212,8 @@ class ReferralController extends Controller
             $referral->amount = $referral->amount + $referral->bonus;
             $referral->bonus = $referral->bonus - $request->price;
             $referral->is_withdrawn = 1;
-            $referral->merge_balance = $referral->amount;
-            $referral->balance = $referral->amount;
+            $referral->merge_balance = $referral->merge_balance + $referral->bonus;
+            $referral->balance = $referral->merge_balance + $referral->bonus;
             $referral->referral_id = strtoupper(Str::random(6));
             $referral->save();
         }

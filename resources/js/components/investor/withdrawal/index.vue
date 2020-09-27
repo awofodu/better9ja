@@ -79,8 +79,9 @@
                         </div>
                         <div class="card-body">
                                 <span><b>ID: </b> {{withdrawal.referral_id}}</span><br>
-                            <span><b>Amount to Receive: </b> &#8358;{{priceComma(withdrawal.balance)}}</span><br>
+                            <span><b>Amount: </b> &#8358;{{priceComma(withdrawal.amount)}}</span><br>
                             <span><b>Amount Received: </b> &#8358;{{priceComma(withdrawal.paid_amount)}}</span><br>
+                            <span><b>Balance: </b> &#8358;{{priceComma(withdrawal.balance)}}</span><br>
                             <span><b>Time Limit: </b>{{withdrawal.created_at | shortDateWithTime}}</span><br>
                             <!-- Button trigger modal-->
                             <button type="button" v-if="withdrawal.ref_withdrawal_merges.length > 0" @click="viewReferralMerges(withdrawal)"
