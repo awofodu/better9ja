@@ -207,7 +207,7 @@ class ReferralController extends Controller
     {
         $user = auth('api')->user();
         $referral = Referral::whereUserId($user->id)->first();
-        if($referral->amount >= 5000)
+        if($referral->bonus >= 5000)
         {
             $referral->amount = $referral->amount + $referral->bonus;
             $referral->bonus = $referral->bonus - $request->price;
