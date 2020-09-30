@@ -342,7 +342,7 @@
                     .then(result=>{
                         this.user = result.data.user;
                         this.maintenance_fee = parseInt(result.data.bonus)+parseInt(result.data.amount) > 4999 ?
-                            parseInt(result.data.bonus)+parseInt(result.data.amount) * (30/100) :
+                            ((parseInt(result.data.bonus)+parseInt(result.data.amount)) * (30/100)) :
                             result.data.last_investment ? parseInt(result.data.last_investment.amount) * (10/100) : 0;
                         this.maintenance = result.data.maintenance;
                         this.level = result.data.maintenance.next_level - 1;

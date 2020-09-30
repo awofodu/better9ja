@@ -196,10 +196,10 @@
                             <span><b>Date: </b>{{merge.created_at | shortDateWithTime}}</span><br>
                             <span class="text-center"><b>Status: </b>
                                 <button type="button" class="btn btn-warning"
-                                        v-if="parseInt(merge.is_paid) === 0 && $options.filters.isFuture($options.filters.myDateAddHours(merge.created_at))"
+                                        v-if="parseInt(merge.is_paid) === 0 && parseInt(merge.is_terminated) === 0"
                                         @click="viewProof(merge, 'maintenance')">Confirm</button>
                                 <span class="text-danger"
-                                      v-if="parseInt(merge.is_paid) === 0 && $options.filters.isPast($options.filters.myDateAddHours(merge.created_at))">
+                                      v-if="parseInt(merge.is_paid) === 0 && parseInt(merge.is_terminated) === 1">
                                     Terminated</span>
                                 <span class="text-success"
                                       v-if="parseInt(merge.is_paid) === 1 && ($options.filters.isPast($options.filters.myDateAddHours(merge.created_at)) || $options.filters.isFuture($options.filters.myDateAddHours(merge.created_at)))">
