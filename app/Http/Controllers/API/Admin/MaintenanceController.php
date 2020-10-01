@@ -139,4 +139,21 @@ class MaintenanceController extends Controller
     {
         //
     }
+
+    public function search()
+    {
+        if($search = \Request::get('q'))
+        {
+            $admin = auth('api')->user();
+            $maintenances = Maintenance::select('maintenances.*')
+                ->with('user.referrals.referrer','user.bank',
+                    'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
+                ->join('users', 'investments.user_id','=','users.id')
+                ->where(function ($query) use ($search){
+                    $query->where('maintenance_id','LIKE',"%$search%")->orWhere('users.email','LIKE',"%$search%")
+                        ->orWhere('users.name','LIKE',"%$search%");
+                })->latest('investments.created_at')->paginate(1000000);
+            return response()->json(['maintenances'=>$maintenances, 'admin'=>$admin]);
+        }
+    }
 }

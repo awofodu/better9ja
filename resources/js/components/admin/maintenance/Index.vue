@@ -16,6 +16,18 @@
                     </div>
                 </div>
                 <div class="card-body">
+
+                    <div class="col-md-4 my-2 my-md-0">
+                        <div class="input-icon">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                   @keyup.enter="searchMaintenance" v-model="search">
+                            <span>
+																	<i class="flaticon2-search-1 text-muted"></i>
+																</span>
+                        </div>
+                    </div>
+                    <br>
+
                     <!--begin::Example-->
                     <div class="example mb-10">
                         <div class="example-preview">
@@ -296,6 +308,7 @@
                 withdrawal: '',
                 merges: {},
                 referrals: {},
+                search: '',
             }
         },
 
@@ -402,7 +415,12 @@
                         $('.modal-backdrop').remove();
                         loader.hide();
                     })
-            }
+            },
+
+            searchMaintenance(){
+                this.$Progress.start();
+                Fire.$emit('searching');
+            },
 
         },
 
@@ -415,6 +433,22 @@
                     this.getResults(this.maintenances.current_page);
                 }else{
                     this.allMaintenances();
+                }
+            });
+
+
+            Fire.$on('searching', ()=>{
+                let query = this.search;
+                if(query !== ''){
+                    axios.get('/api/admin/maintenances/search?q='+query)
+                        .then((result)=>{
+                            this.maintenances = result.data.maintenances;
+                            this.admin = result.data.admin;
+                            this.$Progress.finish();
+                        })
+                        .catch(()=>{
+                            this.catchButtonMessage();
+                        });
                 }
             });
 
