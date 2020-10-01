@@ -49,6 +49,7 @@ Route::group(['middleware'=>['auth:api','admin']], function(){
     Route::get('admin/investor/search', 'API\Admin\InvestorController@search');
     Route::apiResources(['admin/investments' => 'API\Admin\InvestmentController']);
     Route::get('admin/investment/search', 'API\Admin\InvestmentController@search');
+    Route::get('admin/maintenances/search', 'API\Admin\MaintenanceController@search');
     Route::post('admin/investment/create-dummy', 'API\Admin\InvestmentController@createDummy');
     Route::apiResources(['admin/maintenances' => 'API\Admin\MaintenanceController']);
     Route::get('admin/merges', 'API\Admin\InvestmentController@merges');
