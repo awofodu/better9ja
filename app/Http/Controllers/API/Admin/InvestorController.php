@@ -130,17 +130,19 @@ class InvestorController extends Controller
         $user = User::findOrFail($id);
         $investment = Investment::whereUserId($user->id)->where('is_paid', 0)->first();
         $maintenance = Maintenance::whereUserId($user->id)->where('is_paid', 0)->first();
-        if($investment || $maintenance)
+        if($investment)
         {
+            $merges = Merge::where('investment_id', $investment->id)->where('is_terminated',1)->get();
+        }else{
+            $merges = Merge::where('maintenance_id', $maintenance->id)->where('is_terminated',1)->get();
+        }
 
-            $merges = Merge::where('investment_id', $investment->id)->orWhere('maintenance_id', $maintenance->id)->where('is_terminated',1)->get();
-            if($merges)
+        if($merges)
+        {
+            foreach($merges as $merge)
             {
-                foreach($merges as $merge)
-                {
-                    $merge->is_resolved = 1;
-                    $merge->save();
-                }
+                $merge->is_resolved = 1;
+                $merge->save();
             }
         }
 
