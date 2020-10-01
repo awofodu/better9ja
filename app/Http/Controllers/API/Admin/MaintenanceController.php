@@ -152,7 +152,7 @@ class MaintenanceController extends Controller
                 ->where(function ($query) use ($search){
                     $query->where('maintenance_id','LIKE',"%$search%")->orWhere('users.email','LIKE',"%$search%")
                         ->orWhere('users.name','LIKE',"%$search%");
-                })->latest('investments.created_at')->paginate(1000000);
+                })->latest('maintenances.created_at')->paginate(1000000);
             return response()->json(['maintenances'=>$maintenances, 'admin'=>$admin]);
         }
     }
