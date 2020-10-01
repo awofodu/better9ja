@@ -148,7 +148,7 @@ class MaintenanceController extends Controller
             $maintenances = Maintenance::select('maintenances.*')
                 ->with('user.referrals.referrer','user.bank',
                     'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
-                ->join('users', 'investments.user_id','=','users.id')
+                ->join('users', 'maintenances.user_id','=','users.id')
                 ->where(function ($query) use ($search){
                     $query->where('maintenance_id','LIKE',"%$search%")->orWhere('users.email','LIKE',"%$search%")
                         ->orWhere('users.name','LIKE',"%$search%");
