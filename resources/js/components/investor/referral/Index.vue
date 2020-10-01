@@ -313,7 +313,7 @@
                     }).then(result => {
                         if (result.value) {
                             this.$Progress.start();
-                            axios.put('/api/investor/referrals/'+this.user.id, {'price':this.bonus.bonus})
+                            axios.put('/api/investor/referrals/'+this.bonus.id, {'price':this.bonus.bonus})
                                 .then(result=>{
                                     swal.fire(
                                         "Successful!",

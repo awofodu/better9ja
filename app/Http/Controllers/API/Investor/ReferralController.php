@@ -28,7 +28,7 @@ class ReferralController extends Controller
         $investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
         $referrals = User::whereReferredBy($user->referral_id)->with('guider', 'referrer')->paginate(20);
 //        $bonus = ReferralEarning::whereUserId($user->id)->sum('amount');
-        $bonus = Referral::whereUserId($user->id)->first();
+        $bonus = Referral::whereUserId($user->id)->latest()->first();
         $earnings = $user->referral_earnings()->with('user','payer')->paginate(20);
         $user = $user->load('guider', 'referrer', 'referral_earnings.user');
         return response()->json(['user'=>$user, 'referrals'=>$referrals, 'bonus'=>$bonus, 'earnings'=>$earnings,
@@ -206,16 +206,18 @@ class ReferralController extends Controller
     public function update(Request $request, $id)
     {
         $user = auth('api')->user();
-        $referral = Referral::whereUserId($user->id)->first();
+        $referral = Referral::where('id', $id)->first();
         if($referral->bonus >= 5000)
         {
             $referral->amount = $referral->amount + $referral->bonus;
-            $referral->bonus = $referral->bonus - $request->price;
+//            $referral->bonus = $referral->bonus - $request->price;
             $referral->is_withdrawn = 1;
-            $referral->merge_balance = $referral->merge_balance + $referral->bonus;
-            $referral->balance = $referral->merge_balance + $referral->bonus;
+            $referral->merge_balance = $referral->bonus;
+            $referral->balance = $referral->merge_balance;
             $referral->referral_id = strtoupper(Str::random(6));
             $referral->save();
+
+            Referral::create(['user_id'=>$user->id, 'referral_id'=>strtoupper(Str::random(6))]);
         }
         return response()->json('Success');
     }

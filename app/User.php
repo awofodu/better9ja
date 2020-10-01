@@ -150,7 +150,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function referral()
     {
-        return $this->hasOne('App\Referral');
+        return $this->hasMany('App\Referral');
     }
 
     public function transactions()
