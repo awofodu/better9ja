@@ -207,7 +207,7 @@ class WithdrawalController extends Controller
         if($merge->investor->amount == $investment_merges)
         {
             //If the investor has made more than one investment
-            if($investor_investments->count() > 0)
+            if($investor_investments->count() > 1)
             {
                 // Withrawal date = 7
                 $investor->withdrawal_date = Carbon::now()->addDays(7);

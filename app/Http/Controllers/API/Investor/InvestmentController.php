@@ -199,14 +199,18 @@ class InvestmentController extends Controller
     public function destroy($id)
     {
         $user = auth('api')->user();
+        $running_investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
         $investment = Investment::findOrFail($id);
-        $investment->is_withdrawn = 1;
-        $investment->balance = $investment->reward;
-        $investment->merge_balance = $investment->reward;
-        $investment->save();
+        if($running_investments > 0)
+        {
+            $investment->is_withdrawn = 1;
+            $investment->balance = $investment->reward;
+            $investment->merge_balance = $investment->reward;
+            $investment->save();
+            $user->transactions()->create(
+                ['message'=>'You withdrew <span class="text-success">₦'.number_format($investment->reward)."</span> with ID".$investment->investment_id." awaiting for merging."]);
+        }
 
-        $user->transactions()->create(
-            ['message'=>'You withdrew <span class="text-success">₦'.number_format($investment->reward)."</span> with ID".$investment->investment_id." awaiting for merging."]);
-        return response($investment, 200);
+       return response($investment, 200);
     }
 }
