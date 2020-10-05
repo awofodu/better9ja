@@ -191,8 +191,14 @@ class WithdrawalController extends Controller
                 if($referral_bonus > 4999)
                 {
                     $maintenance = $referrer->maintenances()->latest()->first();
-                    $maintenance->charge = (int)$referral_bonus * (30/100);
-                    $maintenance->save();
+                    if((int)$maintenance->charge > 0)
+                    {
+                        $maintenance->charge = $maintenance->charge + (int)$amount * (30/100);
+                        $maintenance->save();
+                    }else{
+                        $maintenance->charge = (int)$referral_bonus * (30/100);
+                        $maintenance->save();
+                    }
                 }else{
                     $maintenance = $referrer->maintenances()->latest()->first();
                     $last_investment = Investment::whereUserId($referrer->id)->latest()->first();
@@ -204,6 +210,7 @@ class WithdrawalController extends Controller
             // Investors referrer's guider receives 1% bonus
             if($investor->user->referrer->guider)
             {
+                $amount = $request->amount;
                 $investor->user->referrer->guider->referral_earnings()->create([
                     'payer_id' => $investor->user->id,
                     'amount' => $investor->user->guider_reward($request->amount),
@@ -217,8 +224,14 @@ class WithdrawalController extends Controller
                 if($referral_bonus > 4999)
                 {
                     $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
-                    $maintenance->charge = (int)$referral_bonus * (30/100);
-                    $maintenance->save();
+                    if((int)$maintenance->charge > 0)
+                    {
+                        $maintenance->charge = $maintenance->charge + (int)$amount * (30/100);
+                        $maintenance->save();
+                    }else{
+                        $maintenance->charge = (int)$referral_bonus * (30/100);
+                        $maintenance->save();
+                    }
                 }else{
                     $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
                     $last_investment = Investment::whereUserId($investor->user->referrer->guider->id)->latest()->first();
