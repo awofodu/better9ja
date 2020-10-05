@@ -32,16 +32,33 @@ Route::get('/update', function (){
     foreach($users as $user)
     {
         $ref = \App\Referral::where('user_id', $user->id)->latest()->first();
-        if($ref->bonus > 4999)
+        $ref_count = \App\Referral::where('user_id', $user->id)->count();
+        if($ref_count > 1)
         {
-            $maintenance = $user->maintenances()->latest()->first();
-            $maintenance->charge = (int)$ref->bonus * (30/100);
-            $maintenance->save();
+            if($ref->bonus > 4999)
+            {
+                $maintenance = $user->maintenances()->latest()->first();
+                $maintenance->charge = (int)$ref->bonus * (30/100);
+                $maintenance->save();
+            }else{
+                $maintenance = \App\Maintenance::where('user_id', $user->id)->orderBy('created_at', 'desc')->skip(1)->first();
+                $maintenance->charge = (int)$ref->bonus * (30/100);
+                $maintenance->save();
+            }
+
         }else{
-            $last_investment = Investment::whereUserId($user->id)->latest()->first();
-            $maintenance = $user->maintenances()->latest()->first();
-            $maintenance->charge = (int)$last_investment->amount * (10/100);
-            $maintenance->save();
+            if($ref->bonus > 4999)
+            {
+                $maintenance = $user->maintenances()->latest()->first();
+                $maintenance->charge = (int)$ref->bonus * (30/100);
+                $maintenance->save();
+            }else{
+                $last_investment = Investment::whereUserId($user->id)->latest()->first();
+                $maintenance = $user->maintenances()->latest()->first();
+                $maintenance->charge = (int)$last_investment->amount * (10/100);
+                $maintenance->save();
+            }
+
         }
     }
 });
