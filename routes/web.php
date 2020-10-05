@@ -42,8 +42,9 @@ Route::get('/update', function (){
                 $maintenance->save();
             }else{
                 $maintenance = \App\Maintenance::where('user_id', $user->id)->latest()->skip(1)->first();
-                $maintenance->charge = (int)$ref->bonus * (30/100);
-                $maintenance->save();
+//                $maintenance->charge = (int)$ref->bonus * (30/100);
+//                $maintenance->save();
+                echo $maintenance;
             }
 
         }else{
