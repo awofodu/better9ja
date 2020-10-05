@@ -20,13 +20,14 @@ class InvestorController extends Controller
      */
     public function index()
     {
+        $admin = auth('api')->user();
         $users = User::with('guider','bank', 'referrer', 'referrals')->latest()->paginate(25);
         $banks = Http::withHeaders([
             'accept' => 'application/json'
         ])
             ->get('https://api.paystack.co/bank')
             ->json();
-        return response()->json(['users'=>$users, 'banks'=>$banks]);
+        return response()->json(['users'=>$users, 'banks'=>$banks, 'admin'=>$admin]);
     }
 
     /**

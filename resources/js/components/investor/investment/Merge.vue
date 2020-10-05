@@ -247,16 +247,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <vue-upload-multiple-image
-                                    @upload-success="uploadImageSuccess"
-                                    @before-remove="beforeRemove"
-                                    @edit-image="editImage"
-                                    :data-images="images"
-                                    browseText="Upload Proof Document"
-                                    dragText="Drag and Drop here."
-                                    primaryText="Betta9ja"
-                                    marklsPrimaryText="Betta9ja"
-                            ></vue-upload-multiple-image>
+                            <vue-multiple-image-clipping
+                                @upload-success="uploadImageSuccess"
+                                @before-remove="beforeRemove"
+                                @edit-image="editImage"
+                                :data-images="images"
+                                :maxImage="8"
+                                :maxHeightImage="5000"
+                                :maxWidthImage="5000"
+                                :maxSizeImage="1000000"
+                            ></vue-multiple-image-clipping>
                         </div>
                         <div class="modal-footer">
                             <form @submit.prevent="uploadProofDocument" class="vld-parent" ref="formContainer">
@@ -312,11 +312,11 @@
 </template>
 
 <script>
-    import VueUploadMultipleImage from 'vue-upload-multiple-image'
+    import VueMultipleImageClipping from 'vue-multiple-image-clipping'
     export default {
 
         components: {
-            VueUploadMultipleImage,
+            VueMultipleImageClipping,
         },
 
         data() {

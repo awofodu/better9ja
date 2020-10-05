@@ -124,7 +124,7 @@
                                                     <span><b>Account Number: </b>
                                                         {{user.bank ? user.bank.account_number : ''}}</span><br><br>
                                                     <span><b>Support Pin: </b>{{user.support_pin}}</span><br><br>
-                                                    <span><b>Profile: </b><a :href="'/user_login/'+user.id">Login as User</a></span><br><br>
+                                                    <span v-if="parseInt(admin.user_type) === 2"><b>Profile: </b><a :href="'/user_login/'+user.id">Login as User</a></span><br><br>
                                                 </div>
                                             </div>
                                         </div>
@@ -290,6 +290,7 @@
                 referral_link: '',
                 price: '',
                 user: '',
+                admin: '',
                 search: '',
                 form : new Form({
                     id : '',
@@ -315,7 +316,7 @@
                         // this.referrals = result.data.referrals;
                         this.users = result.data.users;
                         this.banks = result.data.banks;
-                        // this.bonus = result.data.bonus;
+                        this.admin = result.data.admin;
                         // this.earnings = result.data.earnings;
                         // this.referral_link = 'https://better9ja.localhost/register/' + this.user.referral_id;
                         this.$Progress.finish();
