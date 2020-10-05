@@ -55,7 +55,7 @@ Route::get('/update', function (){
             }else{
                 $last_investment = Investment::whereUserId($user->id)->latest()->first();
                 $maintenance = $user->maintenances()->latest()->first();
-                $maintenance->charge = (int)$last_investment['amount'] * (10/100);
+                $maintenance->charge = $last_investment ? (int)$last_investment['amount'] * (10/100) : 0;
                 $maintenance->save();
             }
 
