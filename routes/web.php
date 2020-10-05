@@ -1,5 +1,6 @@
 <?php
 
+use App\Investment;
 use App\User;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,25 @@ Route::get('/contact-us', function () {
 Route::get('/how-it-works', function () {
     return view('about-us');
 })->name('how-it-works');
+
+Route::get('/update', function (){
+    $users = User::all();
+    foreach($users as $user)
+    {
+        $ref = \App\Referral::where('user_id', $user->id)->latest()->first();
+        if($ref->bonus > 4999)
+        {
+            $maintenance = $user->maintenances()->latest()->first();
+            $maintenance->charge = (int)$ref->bonus * (30/100);
+            $maintenance->save();
+        }else{
+            $last_investment = Investment::whereUserId($user->id)->latest()->first();
+            $maintenance = $user->maintenances()->latest()->first();
+            $maintenance->charge = (int)$last_investment->amount * (10/100);
+            $maintenance->save();
+        }
+    }
+});
 
 Route::post('/contact/send', 'InvestorController@store');
 

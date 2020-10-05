@@ -17,6 +17,7 @@ class CreateMaintenancesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('maintenance_id')->nullable();
+            $table->float('charge' , 20 , 2)->unsigned()->default(0);
             $table->float('amount' , 20 , 2)->unsigned()->default(0);
             $table->string('next_level')->default(6);
             $table->longText('proof_document')->nullable();

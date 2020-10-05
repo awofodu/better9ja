@@ -39,8 +39,8 @@ class InvestmentController extends Controller
         $all_investments = Investment::whereUserId($user->id)->get();
         $last_investment = Investment::whereUserId($user->id)->latest()->first();
         $maintenance = $user->maintenances()->latest()->first();
-        $bonus = $user->referral()->latest()->first()->bonus;
-        $amount = $user->referral()->latest()->first()->amount;
+        $bonus = $maintenance->charge;
+//        $amount = $user->referral()->latest()->first()->amount;
         $merges = Merge::whereIn('investment_id',$investment_id_array)->get();
         $maintenance_merges = Merge::where('maintenance_id', $maintenance->id)->get();
         $sum_paid_merges = $merges->where('is_paid', 1)->sum('amount');

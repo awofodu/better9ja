@@ -43,12 +43,15 @@ class MaintenanceController extends Controller
     {
         $user = auth('api')->user();
         $maintenance = Maintenance::where('id',$request->id)->first();
-        $maintenance->amount = $request->maintenance_fee;
-        $maintenance->maintenance_id = strtoupper(Str::random(6));
-        $maintenance->main_merge_balance = $request->maintenance_fee;
-        $maintenance->save();
+        if((int)$maintenance->charge == (int)$request->maintenance_fee)
+        {
+            $maintenance->amount = $request->maintenance_fee;
+            $maintenance->maintenance_id = strtoupper(Str::random(6));
+            $maintenance->main_merge_balance = $request->maintenance_fee;
+            $maintenance->save();
 
-        $user->testimonies()->create(['body'=>$request->testimony]);
+            $user->testimonies()->create(['body'=>$request->testimony]);
+        }
         return response()->json('Upgrading in progress.');
     }
 
