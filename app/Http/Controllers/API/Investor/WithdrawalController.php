@@ -188,15 +188,15 @@ class WithdrawalController extends Controller
                 $referral_bonus->save();
 
                 // Calculate maintenance charge
-                if($referral_bonus > 4999)
+                if($referral_bonus->bonus > 4999)
                 {
                     $maintenance = $referrer->maintenances()->latest()->first();
                     if((int)$maintenance->charge > 0)
                     {
-                        $maintenance->charge = $maintenance->charge + (int)$amount * (30/100);
+                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
                         $maintenance->save();
                     }else{
-                        $maintenance->charge = (int)$referral_bonus * (30/100);
+                        $maintenance->charge = round((int)$referral_bonus * (30/100));
                         $maintenance->save();
                     }
                 }else{
@@ -221,15 +221,15 @@ class WithdrawalController extends Controller
                 $referral_bonus->save();
 
                 // Calculate maintenance charge
-                if($referral_bonus > 4999)
+                if($referral_bonus->bonus > 4999)
                 {
                     $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
                     if((int)$maintenance->charge > 0)
                     {
-                        $maintenance->charge = $maintenance->charge + (int)$amount * (30/100);
+                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
                         $maintenance->save();
                     }else{
-                        $maintenance->charge = (int)$referral_bonus * (30/100);
+                        $maintenance->charge = round((int)$referral_bonus * (30/100));
                         $maintenance->save();
                     }
                 }else{
