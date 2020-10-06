@@ -187,7 +187,7 @@ class WithdrawalController extends Controller
                 $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
                 $referral_bonus->save();
 
-                // Calculate maintenance charge
+                // Calculate maintenance charges
                 if($referral_bonus->bonus > 4999)
                 {
                     $maintenance = $referrer->maintenances()->latest()->first();
