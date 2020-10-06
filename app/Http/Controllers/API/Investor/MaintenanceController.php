@@ -125,11 +125,11 @@ class MaintenanceController extends Controller
             }
 //
             // Update the investment details of the investor withdrawing the money.
-            $withdrawal = $merge->withdrawal;
-            $amount_received = $withdrawal->paid_amount;
-            $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
-            $withdrawal->balance = (int)$withdrawal->reward - (int)$withdrawal->paid_amount;
-            $withdrawal->save();
+//            $withdrawal = $merge->withdrawal;
+//            $amount_received = $withdrawal->paid_amount;
+//            $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
+//            $withdrawal->balance = (int)$withdrawal->reward - (int)$withdrawal->paid_amount;
+//            $withdrawal->save();
         }
 
 
