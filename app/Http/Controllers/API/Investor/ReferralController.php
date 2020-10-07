@@ -90,7 +90,7 @@ class ReferralController extends Controller
                             $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
                             $maintenance->save();
                         }else{
-                            $maintenance->charge = round((int)$referral_bonus * (30/100));
+                            $maintenance->charge = round((int)$referral_bonus->bonus * (30/100));
                             $maintenance->save();
                         }
                     }else{
@@ -124,7 +124,7 @@ class ReferralController extends Controller
                             $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
                             $maintenance->save();
                         }else{
-                            $maintenance->charge = round((int)$referral_bonus * (30/100));
+                            $maintenance->charge = round((int)$referral_bonus->bonus * (30/100));
                             $maintenance->save();
                         }
                     }else{
