@@ -156,7 +156,7 @@
                                                         <!--end::Badge-->
                                                         <!--begin::Content-->
 														<div class="timeline-content d-flex">
-															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">END YOUR VIDEO ON "WHATSAPP GROUP/TELEGRAM" AND SEND TO ANY ADMIN, TO ENTER THE DRAW. </span>
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">SEND YOUR VIDEO ON "WHATSAPP GROUP/TELEGRAM" AND SEND TO ANY ADMIN, TO ENTER THE DRAW. </span>
 														</div>
                                                         <!--end::Content-->
 													</div>
