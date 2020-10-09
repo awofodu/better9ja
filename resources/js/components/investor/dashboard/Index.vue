@@ -16,12 +16,157 @@
             </div>
             <div class="alert-text">
                 <p><b>Welcome {{user.name}}.</b> <br>
-                <span>This system allows you to have multiple Investments. <br>
-                You can always make new Pledges anytime you want and withdraw them when they are due. Any new Pledge you make will serve as recommitment for the predecessor. You
-                can also increase your pledege amount if you  like  to earn more.</span><br><br>
+                <span>THIS SYSTEM ALLOWS YOU TO HAVE MINIMUM OF TWO INVESTMENT AND MAXIMUM OF THREE INVESTMENT
+                    TO AVOID COMPLICATION ISSUES
+                    OR ACCOUNT SUSPENSION. <br>
+                Any new Pledge you make will serve as recommitment for the predecessor. You can also increase your pledege amount if you like to earn more.</span><br><br>
                     <span class="label label-inline label-pill label-danger label-rounded mr-2">NOTE:</span> <span class="text-danger">You are not allowed to make Payment to any
             other account details beside the one given to you by the system on the dashboard no matter the reason.
             Even if an admin ask you to do so, tell him/her to make the account details reflect on your dashboard, other wise don't pay.</span></p>
+            </div>
+        </div>
+
+        <div class="alert alert-custom alert-white alert-shadow gutter-b" role="alert">
+            <div class="alert-icon alert-icon-top">
+										<span class="svg-icon svg-icon-3x svg-icon-primary mt-15">
+											<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Tools/Tools.svg-->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <path d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z" fill="#000000"/>
+                                                    <rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"/>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+										</span>
+            </div>
+            <div class="alert-text">
+                <p><b>DEAL OF THE MONTH</b> <br>
+                <span><span style="color: yellow; font-size:200%;">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</span>  <br>
+                    HURRAYYYYYYYYYY!!!!!!!!! <br><br>
+                <span>BETTER9JA WOW SURPRISE PACKAGE TO YOU ALL</span><br>
+                <span>WE DONT "MANDATE"  TESTIMONY VIDOES LIKE OTHER PLATFORMS.
+                    BUT WE ARE BRINGING OUT A WOW DEAL TO "BETTER9JA INVESTORS" WITH SUPER GIFT.</span><br>
+                <span>"ANY INTERESTED INVESTOR SHOULD DROP A CREATIVE AND PERFECT CONCEPT TESTIMONY VIDEO WITH A CLEAR AND BRIGHT VIDEO VISION OF BETTER9JA"</span><br><br>
+                    <span style="color: yellow; font-size:200%;">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</span>  <br>
+                    <span>CASH PRICES ARE AS FOLLOWS:- </span><br>
+
+                                <div class="timeline timeline-5">
+                                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-success icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">1ST PRICE - 600K </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-danger icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">2ND PRICE - 300K </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-warning icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">3RD PRICE - AUTOMATIC GUIDER WITH REFERAL BONUS OF 50K </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                                    <!--end::Item-->
+												</div><br><br>
+
+                    <span>HOW TO PARTICIPATE </span><br>
+
+                                <div class="timeline timeline-5">
+                                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-success icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">RECORD A CLEAR VIDEO WITH A MEANINFUL TESTIMONY. </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-danger icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">BE CREATIVE. </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-warning icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">HAVE A NICE CONCEPT.  </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+													<div class="timeline-item align-items-start">
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"></div>
+														<div class="timeline-badge">
+															<i class="fa fa-genderless text-dark icon-xl"></i>
+														</div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+														<div class="timeline-content d-flex">
+															<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">END YOUR VIDEO ON "WHATSAPP GROUP/TELEGRAM" AND SEND TO ANY ADMIN, TO ENTER THE DRAW. </span>
+														</div>
+                                                        <!--end::Content-->
+													</div>
+                                    <!--end::Item-->
+												</div> <br><br>
+
+                    <b>BETTER9JA all the way</b>
+
+                </span><br><br>
+                    </p>
             </div>
         </div>
 
