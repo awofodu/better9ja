@@ -278,13 +278,13 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
+                                                <pagination :data="merges" @pagination-change-page="getMergesResults">
+                                                    <span slot="prev-nav">&lt; Previous</span>
+                                                    <span slot="next-nav">Next &gt;</span>
+                                                </pagination>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <pagination :data="merges" @pagination-change-page="getMergesResults">
-                                                <span slot="prev-nav">&lt; Previous</span>
-                                                <span slot="next-nav">Next &gt;</span>
-                                            </pagination>
                                         </div>
 
 
@@ -317,13 +317,13 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
+                                                <pagination :data="referrals" @pagination-change-page="getRefMergesResults">
+                                                    <span slot="prev-nav">&lt; Previous</span>
+                                                    <span slot="next-nav">Next &gt;</span>
+                                                </pagination>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <pagination :data="referrals" @pagination-change-page="getMergesResults">
-                                                <span slot="prev-nav">&lt; Previous</span>
-                                                <span slot="next-nav">Next &gt;</span>
-                                            </pagination>
                                             <form class="vld-parent" ref="formContainer">
                                                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
                                             </form>
@@ -450,6 +450,20 @@
                 axios.get('/api/admin/merges?page=' + page)
                     .then(result => {
                         this.merges = result.data.merges;
+                        this.$Progress.finish();
+                    })
+                    .catch(() => {
+                        // this.catchMessage();
+                    });
+            },
+
+
+            // Our method to GET results from a Laravel endpoint
+            getRefMergesResults(page = 1) {
+                this.$Progress.start();
+                axios.get('/api/admin/merges?page=' + page)
+                    .then(result => {
+                        this.referrals = result.data.referrals;
                         this.$Progress.finish();
                     })
                     .catch(() => {
