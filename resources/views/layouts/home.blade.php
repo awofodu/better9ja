@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('home/assets/css/responsive.css')}}">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    {!! NoCaptcha::renderJs() !!}
+{{--    {!! NoCaptcha::renderJs() !!}--}}
 
     <style>
         .float {
