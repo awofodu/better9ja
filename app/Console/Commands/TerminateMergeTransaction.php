@@ -53,9 +53,9 @@ class TerminateMergeTransaction extends Command
                        $merge->investor->user->save();
 
                        //Revert price for the investor paying
-//                       $investor = $merge->investor;
-//                       $investor->inv_merge_balance = $investor->inv_merge_balance + $merge->amount;
-//                       $investor->save();
+                       $investor = $merge->investor;
+                       $investor->inv_merge_balance = $investor->inv_merge_balance + $merge->amount;
+                       $investor->save();
                    }
 
 
@@ -65,30 +65,30 @@ class TerminateMergeTransaction extends Command
                        $merge->maintenance_investor->user->save();
 
                        //Revert price for the investor paying
-//                       $investor = $merge->maintenance_investor;
-//                       $investor->main_merge_balance = $investor->main_merge_balance + $merge->amount;
-//                       $investor->save();
+                       $investor = $merge->maintenance_investor;
+                       $investor->main_merge_balance = $investor->main_merge_balance + $merge->amount;
+                       $investor->save();
                    }
 
 
-//                   if($merge->withdrawal)
-//                   {
-//                       // Revert price for the investor withdrawing
-//                       $withdrawal = $merge->withdrawal;
-//                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
-//                       $withdrawal->save();
-//                   }
+                   if($merge->withdrawal)
+                   {
+                       // Revert price for the investor withdrawing
+                       $withdrawal = $merge->withdrawal;
+                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
+                       $withdrawal->save();
+                   }
 //
 //
-//                   if($merge->referral_withdrawal)
-//                   {
-//                       // Revert price for the investor withdrawing referral bonus
-//                       $withdrawal = $merge->referral_withdrawal;
-//                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
-//                       $withdrawal->save();
-//                   }
+                   if($merge->referral_withdrawal)
+                   {
+                       // Revert price for the investor withdrawing referral bonus
+                       $withdrawal = $merge->referral_withdrawal;
+                       $withdrawal->merge_balance = $withdrawal->merge_balance + $merge->amount;
+                       $withdrawal->save();
+                   }
 
-//                   $merge->is_terminated = 1;
+                   $merge->is_terminated = 1;
                    $merge->save();
                }
            }
