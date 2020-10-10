@@ -74,11 +74,11 @@ class ReferralController extends Controller
                     $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
                     $referrer->referral_earnings()->create([
                         'payer_id' => $investor->user->id,
-                        'amount' => $investor_investments->count() < 1 ? (int)$amount * (5/100)  : (int)$amount * (2/100),
+                        'amount' => $investor_investments->count() < 1 ? round((int)$amount * (5/100))  : round((int)$amount * (2/100)),
                         'percentage' => $investor_investments->count() < 1 ? '5%' : '2%',
                     ]);
                     $referral_bonus = Referral::whereUserId($referrer->id)->first();
-                    $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
+                    $referral_bonus->bonus = round($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
                     $referral_bonus->save();
 
                     // Calculate maintenance charge
@@ -96,7 +96,7 @@ class ReferralController extends Controller
                     }else{
                         $maintenance = $referrer->maintenances()->latest()->first();
                         $last_investment = Investment::whereUserId($referrer->id)->latest()->first();
-                        $maintenance->charge = (int)$last_investment->amount * (10/100);
+                        $maintenance->charge = round((int)$last_investment->amount * (10/100));
                         $maintenance->save();
                     }
 
@@ -108,11 +108,11 @@ class ReferralController extends Controller
                     $amount = $request->amount;
                     $investor->user->referrer->guider->referral_earnings()->create([
                         'payer_id' => $investor->user->id,
-                        'amount' => $investor->user->guider_reward($request->amount),
+                        'amount' => round($investor->user->guider_reward($request->amount)),
                         'percentage' => '2%',
                     ]);
                     $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->first();
-                    $referral_bonus->bonus = ($referral_bonus->bonus + $investor->user->guider_reward($request->amount));
+                    $referral_bonus->bonus = round($referral_bonus->bonus + $investor->user->guider_reward($request->amount));
                     $referral_bonus->save();
 
                     // Calculate maintenance charge
@@ -130,7 +130,7 @@ class ReferralController extends Controller
                     }else{
                         $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
                         $last_investment = Investment::whereUserId($investor->user->referrer->guider->id)->latest()->first();
-                        $maintenance->charge = (int)$last_investment->amount * (10/100);
+                        $maintenance->charge = round((int)$last_investment->amount * (10/100));
                         $maintenance->save();
                     }
                 }
@@ -154,13 +154,13 @@ class ReferralController extends Controller
                 $investor->save();
             }
 
-            $investor->inv_paid_amount = (int)$investor->inv_paid_amount + (int)$merge->amount;
+            $investor->inv_paid_amount = round((int)$investor->inv_paid_amount + (int)$merge->amount);
             $investor->save();
 
             $withdrawal = $merge->referral_withdrawal;
-            $amount_received = $withdrawal->paid_amount;
-            $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
-            $withdrawal->balance = (int)$withdrawal->amount - (int)$withdrawal->paid_amount;
+            $amount_received = round($withdrawal->paid_amount);
+            $withdrawal->paid_amount = round((int)$amount_received + (int)$merge->amount);
+            $withdrawal->balance = round((int)$withdrawal->amount - (int)$withdrawal->paid_amount);
             if($withdrawal->balance == 0)
             {
                 $withdrawal->is_withdrawn = 0;
@@ -182,7 +182,7 @@ class ReferralController extends Controller
             // the investor paying to the withdrawal now pays addition of 100% of previous payment from the 6th investment upward
             if($maintenance->amount == $maintenance_merges)
             {
-                $investor->user->minimum_investment = (int)$investor->user->minimum_investment <= 250000 ? ((int)$investor->user->minimum_investment * 2) : 500000;
+                $investor->user->minimum_investment = (int)$investor->user->minimum_investment <= 250000 ? round((int)$investor->user->minimum_investment * 2) : 500000;
 
 //                if($investor->user->minimum_investment > $investor->user->maximum_investment)
 //                {
@@ -198,9 +198,9 @@ class ReferralController extends Controller
 
             //Deduct the payed amount from the balance
             $withdrawal = $merge->referral_withdrawal;
-            $amount_received = $withdrawal->paid_amount;
-            $withdrawal->paid_amount = (int)$amount_received + (int)$merge->amount;
-            $withdrawal->balance = (int)$withdrawal->amount - (int)$withdrawal->paid_amount;
+            $amount_received = round($withdrawal->paid_amount);
+            $withdrawal->paid_amount = round((int)$amount_received + (int)$merge->amount);
+            $withdrawal->balance = round((int)$withdrawal->amount - (int)$withdrawal->paid_amount);
             if($withdrawal->balance == 0)
             {
                 $withdrawal->is_withdrawn = 0;
