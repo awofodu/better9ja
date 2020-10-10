@@ -23,10 +23,10 @@
                             <p>You will be credited with a 5% bonus on every investment your referred friends make. There are no limits to this.</p>
                             <p>Refer up to <b>15 Active Users</b> and become a <b>Guider</b></p>
                             <p><b>THE MORE YOUR FRIEND INVEST, THE MORE REWARDS YOU RECEIVE.</b></p>
-                             <span class="text-success"><h4>Bonus:  &#8358; {{priceComma(bonus.bonus)}}.00</h4>
-                                <button type="button" class="btn btn-dark mr-2" :disabled="disabled"
-                                        @click="withdrawRefBonus()">Withdraw</button>
-                             </span>
+<!--                             <span class="text-success"><h4>Bonus:  &#8358; {{priceComma(bonus.bonus)}}.00</h4>-->
+<!--                                <button type="button" class="btn btn-dark mr-2" :disabled="disabled"-->
+<!--                                        @click="withdrawRefBonus()">Withdraw</button>-->
+<!--                             </span>-->
                             <div class="separator separator-dashed my-10"></div>
                             <div class="row">
                                 <div class="col-xl-6">
