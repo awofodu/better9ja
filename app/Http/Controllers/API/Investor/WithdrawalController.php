@@ -191,14 +191,14 @@ class WithdrawalController extends Controller
                 if($referral_bonus->bonus > 4999)
                 {
                     $maintenance = $referrer->maintenances()->latest()->first();
-                    if((int)$maintenance->charge > 0)
-                    {
-                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
-                        $maintenance->save();
-                    }else{
+//                    if((int)$maintenance->charge > 0)
+//                    {
+//                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
+//                        $maintenance->save();
+//                    }else{
                         $maintenance->charge = round((int)$referral_bonus->bonus * (30/100));
                         $maintenance->save();
-                    }
+//                    }
                 }else{
                     $maintenance = $referrer->maintenances()->latest()->first();
                     $last_investment = Investment::whereUserId($referrer->id)->latest()->first();
@@ -224,14 +224,14 @@ class WithdrawalController extends Controller
                 if($referral_bonus->bonus > 4999)
                 {
                     $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
-                    if((int)$maintenance->charge > 0)
-                    {
-                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
-                        $maintenance->save();
-                    }else{
+//                    if((int)$maintenance->charge > 0)
+//                    {
+//                        $maintenance->charge = round(($maintenance->charge + (int)$amount) * (30/100));
+//                        $maintenance->save();
+//                    }else{
                         $maintenance->charge = round((int)$referral_bonus->bonus * (30/100));
                         $maintenance->save();
-                    }
+//                    }
                 }else{
                     $maintenance = $investor->user->referrer->guider->maintenances()->latest()->first();
                     $last_investment = Investment::whereUserId($investor->user->referrer->guider->id)->latest()->first();
