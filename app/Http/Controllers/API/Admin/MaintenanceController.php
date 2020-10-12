@@ -20,7 +20,7 @@ class MaintenanceController extends Controller
     public function index()
     {
         $admin = auth('api')->user();
-        $maintenances = Maintenance::with('user.referrals.referrer','user.bank',
+        $maintenances = Maintenance::where('is_paid', 0)->with('user.referrals.referrer','user.bank',
             'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank', 'user.investments')
             ->latest()->paginate(50);
         return response()->json(['maintenances'=>$maintenances, 'admin'=>$admin]);
@@ -146,7 +146,7 @@ class MaintenanceController extends Controller
         {
             $admin = auth('api')->user();
             $maintenances = Maintenance::select('maintenances.*')
-                ->with('user.referrals.referrer','user.bank',
+                ->with('user.referrals.referrer','user.bank', 'user.investments',
                     'merges.withdrawal.user.bank','merges.referral_withdrawal.user.bank')
                 ->join('users', 'maintenances.user_id','=','users.id')
                 ->where(function ($query) use ($search){
