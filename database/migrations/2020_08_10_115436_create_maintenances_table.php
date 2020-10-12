@@ -19,6 +19,7 @@ class CreateMaintenancesTable extends Migration
             $table->string('maintenance_id')->nullable();
             $table->float('charge' , 20 , 2)->unsigned()->default(0);
             $table->float('amount' , 20 , 2)->unsigned()->default(0);
+            $table->float('pending_amount' , 20 , 2)->unsigned()->default(0);
             $table->string('next_level')->default(6);
             $table->longText('proof_document')->nullable();
             $table->boolean('is_paid')->default(0);

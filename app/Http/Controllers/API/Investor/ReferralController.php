@@ -247,6 +247,7 @@ class ReferralController extends Controller
     {
         $user = auth('api')->user();
         $referral = Referral::where('id', $id)->first();
+        $maintenance = $user->maintenances()->latest()->first();
         if($referral->bonus >= 5000)
         {
             $referral->amount = $referral->amount + $referral->bonus;
@@ -256,6 +257,9 @@ class ReferralController extends Controller
             $referral->balance = $referral->merge_balance;
             $referral->referral_id = strtoupper(Str::random(6));
             $referral->save();
+
+            $maintenance->pending_amount = $maintenance->pending_amount + round((int)$referral->amount * (30/100));
+            $maintenance->save();
 
             Referral::create(['user_id'=>$user->id, 'referral_id'=>strtoupper(Str::random(6))]);
         }

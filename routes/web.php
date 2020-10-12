@@ -39,11 +39,11 @@ Route::get('/update', function (){
             if($ref->bonus > 4999)
             {
                 $maintenance = $user->maintenances()->latest()->first();
-                $maintenance->charge = (int)$ref->bonus * (30/100);
+                $maintenance->charge = round((int)$ref->bonus * (30/100)) + round((int)$maintenance->pending_amount * (30/100));
                 $maintenance->save();
             }else{
                 $maintenance = $user->maintenances()->latest()->first();
-                $maintenance->charge = (int)$prev_ref->bonus * (30/100);
+                $maintenance->charge = round((int)$prev_ref->bonus * (30/100)) + round((int)$maintenance->pending_amount * (30/100));
                 $maintenance->save();
             }
 
@@ -51,12 +51,12 @@ Route::get('/update', function (){
             if($ref->bonus > 4999)
             {
                 $maintenance = $user->maintenances()->latest()->first();
-                $maintenance->charge = (int)$ref->bonus * (30/100);
+                $maintenance->charge = round((int)$ref->bonus * (30/100)) + round((int)$maintenance->pending_amount * (30/100));
                 $maintenance->save();
             }else{
                 $last_investment = Investment::whereUserId($user->id)->latest()->first();
                 $maintenance = $user->maintenances()->latest()->first();
-                $maintenance->charge = $last_investment ? (int)$last_investment->amount * (10/100) : 0;
+                $maintenance->charge = $last_investment ? round((int)$last_investment->amount * (10/100)) + round((int)$maintenance->pending_amount * (30/100)) : 0;
                 $maintenance->save();
             }
 

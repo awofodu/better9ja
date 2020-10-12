@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Maintenance extends Model
 {
     protected $fillable = ['user_id', 'date', 'next_level', 'proof_document', 'is_paid', 'main_merge_balance',
-    'maintenance_id', 'charge'];
+    'maintenance_id', 'charge', 'pending_amount'];
 
 
     public function withdrawal()
