@@ -77,7 +77,10 @@ Route::get('/rw', function(){
 //     {
 //         if($referral->user_id == $earning->user_id)
 //         {
-             echo 'unwithdrawn='.$referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
+      if($referral->bonus != $amount)
+      {
+          echo 'unwithdrawn='.$referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
+      }
 //         }
 //     }
   }
