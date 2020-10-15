@@ -72,7 +72,6 @@ Route::get('/rw', function(){
   foreach($users as $user)
   {
       $amount = \App\ReferralEarning::where('user_id', $user->id)->sum('amount');
-      echo $user->id . '=' . $amount;
       foreach($referrals as $referral)
       {
           echo $user->id.'='.$referral->bonus. '=' . $amount.'<br>';
