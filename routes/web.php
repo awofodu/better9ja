@@ -68,7 +68,17 @@ Route::get('/update', function (){
 
 Route::get('/rw', function(){
   $referrals = \App\Referral::where('is_withdrawn', 1)->get();
-  dd($referrals);
+  foreach($referrals as $referral)
+  {
+     $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->sum('amount');
+     foreach($earnings as $earning)
+     {
+         if($referral->user_id == $earning->user_id)
+         {
+             echo $referral->bonus. '=' . $earnings;
+         }
+     }
+  }
 });
 
 Route::post('/contact/send', 'InvestorController@store');
