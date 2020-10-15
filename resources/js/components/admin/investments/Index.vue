@@ -304,7 +304,7 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr v-for="(referral,index) in referrals.data" :key="referral.id">
+                                                    <tr v-for="(referral,index) in referrals.data" :key="referral.id" v-if="parseInt(referral.merge_balance) !== 0">
                                                         <th scope="row">{{index+1}}</th>
                                                         <td>{{referral.ref_id}}</td>
                                                         <td>{{referral.user.name}}</td>

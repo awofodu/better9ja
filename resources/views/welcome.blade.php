@@ -19,7 +19,7 @@
         <div class="row space-100">
             <div class="col-lg-7 col-md-12 col-xs-12">
                 <div class="contents">
-                    <div class="alert-success"><h3 class="blinking alert text-center"><strong>#EndSarsNow</strong></h3>
+                    <div class="alert-dark"><h3 class="blinking alert text-center"><strong>#EndSarsNow</strong></h3>
                         <p class="blinking alert text-center">STOP SARS BRUTALITY, INTIMIDATION, EXTORTION AND KILLINGS.</p>
                     </div>
                     <h2 class="head-title">Register your income <br> above the rest</h2>
