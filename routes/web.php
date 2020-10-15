@@ -68,10 +68,19 @@ Route::get('/update', function (){
 
 Route::get('/rw', function(){
   $referrals = \App\Referral::where('bonus','>', 0)->where('is_withdrawn', 0)->get();
+  $users = User::all();
+  foreach($users as $user)
+  {
+      $amount = \App\ReferralEarning::where('user_id', $user->id)->sum('amount');
+      echo $user->id . '=' . $amount;
+      foreach($referrals as $referral)
+      {
+          echo $user->id.'='.$referral->bonus. '=' . $amount.'<br>';
+      }
+  }
   foreach($referrals as $referral)
   {
      $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->get();
-     $amount = \App\ReferralEarning::where('user_id', $referral->user_id)->sum('amount');
 //     foreach($earnings as $earning)
 //     {
 //         if($referral->user_id == $earning->user_id)
