@@ -26,9 +26,9 @@ class WithdrawalController extends Controller
     public function index()
     {
         $user = auth('api')->user();
-        $withdrawals = Investment::whereUserId($user->id)->where('is_withdrawn',1)
+        $withdrawals = Investment::whereUserId($user->id)->where('is_withdrawn',1)->where('balance','>',0)
             ->with('withdrawal_merges')->get();
-        $referral_withdrawal = Referral::whereUserId($user->id)->where('is_withdrawn',1)
+        $referral_withdrawal = Referral::whereUserId($user->id)->where('is_withdrawn',1)->where('balance','>',0)
             ->with('ref_withdrawal_merges')->get();
 //        foreach($all_referral_withdrawals as $withdrawal)
 //        {
