@@ -178,13 +178,14 @@ class WithdrawalController extends Controller
 
                 // Referral receives a 5% bonus pay
                 $referrer = User::whereReferralId($investor->user->referrer->referral_id)->first();
+                $ref_amount = $investor_investments->count() < 1 ? round((int)$amount * (5/100))  : round((int)$amount * (2/100));
                 $referrer->referral_earnings()->create([
                     'payer_id' => $investor->user->id,
-                    'amount' => $investor_investments->count() < 1 ? round((int)$amount * (5/100))  : round((int)$amount * (2/100)),
+                    'amount' => $ref_amount,
                     'percentage' => $investor_investments->count() < 1 ? '5%' : '2%',
                 ]);
                 $referral_bonus = Referral::whereUserId($referrer->id)->latest()->first();
-                $referral_bonus->bonus = round($referral_bonus->bonus + $investor->user->referral_reward($request->amount));
+                $referral_bonus->bonus = round($referral_bonus->bonus + $ref_amount);
                 $referral_bonus->save();
 
                 // Calculate maintenance charges
@@ -213,11 +214,11 @@ class WithdrawalController extends Controller
                 $amount = $request->amount;
                 $investor->user->referrer->guider->referral_earnings()->create([
                     'payer_id' => $investor->user->id,
-                    'amount' => round($investor->user->guider_reward($request->amount)),
+                    'amount' => round((int)$request->amount * (2/100)),
                     'percentage' => '2%',
                 ]);
                 $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->first();
-                $referral_bonus->bonus = round($referral_bonus->bonus + $investor->user->guider_reward($request->amount));
+                $referral_bonus->bonus = round($referral_bonus->bonus + ((int)$request->amount * (2/100)));
                 $referral_bonus->save();
 
                 // Calculate maintenance charge
