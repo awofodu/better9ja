@@ -1,5 +1,17 @@
 @extends('layouts.home')
 
+<style>
+    .blinking{
+        animation:blinkingText 1.2s infinite;
+    }
+    @keyframes blinkingText{
+        0%{     color: #000;    }
+        49%{    color: #000; }
+        60%{    color: transparent; }
+        99%{    color:transparent;  }
+        100%{   color: #000;    }
+    }
+</style>
 
 @section('banner')
 
@@ -7,6 +19,9 @@
         <div class="row space-100">
             <div class="col-lg-7 col-md-12 col-xs-12">
                 <div class="contents">
+                    <div class="alert-success"><h3 class="blinking alert text-center"><strong>#EndSarsNow</strong></h3>
+                        <p class="blinking alert text-center">STOP SARS BRUTALITY, INTIMIDATION, EXTORTION AND KILLINGS.</p>
+                    </div>
                     <h2 class="head-title">Register your income <br> above the rest</h2>
                     <p>Join thousands of members, enjoy safe 50% returns.</p>
                 </div>

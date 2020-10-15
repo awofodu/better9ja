@@ -25,7 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
 //         $schedule->command('inspire')->hourly();
-         $schedule->command('terminate:transaction')->fiv();
+         $schedule->command('terminate:transaction')->everyMinute();
+         $schedule->command('calculate:maintenance')->everyMinute();
     }
 
     /**

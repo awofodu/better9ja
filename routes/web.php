@@ -66,6 +66,11 @@ Route::get('/update', function (){
     }
 });
 
+Route::get('/rw', function(){
+  $referrals = \App\Referral::where('is_withdrawn', 1)->get();
+  dd($referrals);
+});
+
 Route::post('/contact/send', 'InvestorController@store');
 
 Auth::routes(['verify' => true]);
