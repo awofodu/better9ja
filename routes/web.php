@@ -70,14 +70,15 @@ Route::get('/rw', function(){
   $referrals = \App\Referral::where('is_withdrawn', 1)->get();
   foreach($referrals as $referral)
   {
-     $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->sum('amount');
-     foreach($earnings as $earning)
-     {
-         if($referral->user_id == $earning->user_id)
-         {
-             echo $referral->bonus. '=' . $earnings;
-         }
-     }
+     $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->get();
+     $amount = \App\ReferralEarning::where('user_id', $referral->user_id)->sum('amount');
+//     foreach($earnings as $earning)
+//     {
+//         if($referral->user_id == $earning->user_id)
+//         {
+             echo $referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
+//         }
+//     }
   }
 });
 
