@@ -67,7 +67,7 @@ Route::get('/update', function (){
 });
 
 Route::get('/rw', function(){
-  $referrals = \App\Referral::where('bonus','>', 0)->where('is_withdrawn', 0)->whereNotIn('id', [6,15,28,52,80,81,112,194])->get();
+  $referrals = \App\Referral::where('bonus','>', 0)->where('is_withdrawn', 0)->whereNotIn('user_id', [6,15,28,52,80,81,112,194])->get();
   $w_referrals = \App\Referral::where('bonus','>', 0)->where('is_withdrawn', 1)->get();
   foreach($referrals as $referral)
   {
