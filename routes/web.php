@@ -81,7 +81,7 @@ Route::get('/rw', function(){
 //         }
 //     }
   }
-  foreach($referrals as $referral)
+  foreach($w_referrals as $referral)
   {
      $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->get();
      $amount = \App\ReferralEarning::where('user_id', $referral->user_id)->sum('amount');
