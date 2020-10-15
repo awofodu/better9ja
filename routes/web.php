@@ -78,17 +78,17 @@ Route::get('/rw', function(){
           echo $user->id.'='.$referral->bonus. '=' . $amount.'<br>';
       }
   }
-  foreach($referrals as $referral)
-  {
-     $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->get();
-//     foreach($earnings as $earning)
-//     {
-//         if($referral->user_id == $earning->user_id)
-//         {
-             echo $referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
-//         }
-//     }
-  }
+//  foreach($referrals as $referral)
+//  {
+//     $earnings = \App\ReferralEarning::where('user_id', $referral->user_id)->get();
+////     foreach($earnings as $earning)
+////     {
+////         if($referral->user_id == $earning->user_id)
+////         {
+//             echo $referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
+////         }
+////     }
+//  }
 });
 
 Route::post('/contact/send', 'InvestorController@store');
