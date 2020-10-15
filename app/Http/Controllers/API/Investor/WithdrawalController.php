@@ -217,7 +217,7 @@ class WithdrawalController extends Controller
                     'amount' => round((int)$request->amount * (2/100)),
                     'percentage' => '2%',
                 ]);
-                $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->first();
+                $referral_bonus = Referral::whereUserId($investor->user->referrer->guider->id)->latest()->first();
                 $referral_bonus->bonus = round($referral_bonus->bonus + ((int)$request->amount * (2/100)));
                 $referral_bonus->save();
 
