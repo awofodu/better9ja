@@ -89,7 +89,7 @@ Route::get('/rw', function(){
 //     {
 //         if($referral->user_id == $earning->user_id)
 //         {
-             echo 'withdrawn='.$referral->user_id.'='.$referral->bonus. '=' . $amount.'<br>';
+             echo 'withdrawn='.$referral->user_id.'='.$referral->bonus+=$referral->bonus. '=' . $amount.'<br>';
 //         }
 //     }
   }
