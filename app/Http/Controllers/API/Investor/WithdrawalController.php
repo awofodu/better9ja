@@ -86,7 +86,7 @@ class WithdrawalController extends Controller
 
         $merge = Merge::findOrFail($id);
         $maintenance = Maintenance::findOrFail($merge->maintenance_id);
-        $user = User::findOrFail($maintenance->user_id)->first();
+        $user = User::findOrFail($maintenance->user_id);
         $merge->is_paid = 1;
 
         if(file_exists(public_path('uploads/').$merge->proof_document))
@@ -122,7 +122,7 @@ class WithdrawalController extends Controller
         $withdrawal->balance = (int)$withdrawal->reward - (int)$withdrawal->paid_amount;
         $withdrawal->save();
 
-        $maintenance->save();
+//        $maintenance->save();
 
         ConfirmPayment::dispatch($withdrawal, $maintenance)->delay(now()->addMinutes(1));
 
