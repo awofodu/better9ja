@@ -61,7 +61,7 @@ class RecommitController extends Controller
         }
         $all_investments = Investment::whereUserId($user->id)->get();
         $maintenance = $user->maintenances()->latest()->first();
-        $bonus = $user->referral->bonus;
+        $bonus = $maintenance->charge;
         $merges = Merge::whereIn('investment_id',$investment_id_array)->get();
         $maintenance_merges = Merge::where('maintenance_id', $maintenance->id)->get();
         $sum_paid_merges = $merges->where('is_paid', 1)->sum('amount');
