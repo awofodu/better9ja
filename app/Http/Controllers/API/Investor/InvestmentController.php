@@ -199,7 +199,7 @@ class InvestmentController extends Controller
     public function destroy($id)
     {
         $user = auth('api')->user();
-        $running_investments = $user->investments->where('withdrawal_date', '>', Carbon::now())->count();
+        $running_investments = $user->investments->where('id','!=', $id)->where('is_paid', 1)->where('withdrawal_date', '>', Carbon::now('UTC'))->count();
         $investment = Investment::findOrFail($id);
         if($running_investments > 0)
         {
