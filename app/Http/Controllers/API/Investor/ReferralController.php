@@ -257,6 +257,7 @@ class ReferralController extends Controller
             $referral->merge_balance = $referral->bonus;
             $referral->balance = $referral->merge_balance;
             $referral->referral_id = strtoupper(Str::random(6));
+            $referral->withdrawal_date = Carbon::now('UTC');
             $referral->save();
 
             $maintenance->pending_amount = $maintenance->pending_amount + round((int)$referral->amount * (30/100));

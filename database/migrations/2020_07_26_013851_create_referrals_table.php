@@ -23,6 +23,7 @@ class CreateReferralsTable extends Migration
             $table->float('paid_amount' , 20 , 2)->unsigned()->default(0);
             $table->float('balance' , 20 , 2)->unsigned()->default(0);
             $table->float('merge_balance' , 20 , 2)->unsigned()->default(0);
+            $table->timestamp('withdrawal_date')->nullable();
             $table->timestamps();
         });
     }

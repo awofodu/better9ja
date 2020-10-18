@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Referral extends Model
 {
     //
-    protected $fillable = ['user_id','amount','paid_amount','balance','merge_balance','is_withdrawn', 'bonus'];
+    protected $fillable = ['user_id','amount','paid_amount','balance','merge_balance','is_withdrawn', 'bonus', 'withdrawal_date'];
 
 
     public function user()
