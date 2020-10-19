@@ -261,6 +261,7 @@
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Investor</th>
                                                         <th scope="col">Amount</th>
+                                                        <th scope="col">Date</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                     </thead>
@@ -270,6 +271,7 @@
                                                         <td>{{merge.investment_id}}</td>
                                                         <td>{{merge.user.name}}</td>
                                                         <td>₦{{priceComma(merge.merge_balance)}}</td>
+                                                        <td>{{merge.withdrawal_date | shortDateWithTime}}</td>
                                                         <td>
                                                             <button type="button"
                                                                     @click="continueMerge(merge, investment)"
