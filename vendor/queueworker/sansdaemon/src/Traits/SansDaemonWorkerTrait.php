@@ -14,9 +14,8 @@ trait SansDaemonWorkerTrait
     /**
      * Process the queue sans-daemon mode.
      *
-     * @param string $connection
-     * @param string $queue
-     *
+     * @param  string  $connection
+     * @param  string  $queue
      * @return void
      */
     protected function runSansDaemon($connection, $queue)
@@ -27,12 +26,11 @@ trait SansDaemonWorkerTrait
     /**
      * Process jobs from the queue.
      *
-     * @param string $connectionName
-     * @param string $queue
+     * @param  string  $connectionName
+     * @param  string  $queue
+     * @return void
      *
      * @throws \Throwable
-     *
-     * @return void
      */
     public function processJobs($connectionName, $queue)
     {
@@ -68,8 +66,7 @@ trait SansDaemonWorkerTrait
     /**
      * Detect if the worker is running longer than the maximum execution time.
      *
-     * @param \Illuminate\Queue\WorkerOptions $options
-     *
+     * @param  \Illuminate\Queue\WorkerOptions  $options
      * @return bool
      */
     protected function isOverMaxExecutionTime($options)
@@ -86,9 +83,8 @@ trait SansDaemonWorkerTrait
     /**
      * Get the next available job from the given queue.
      *
-     * @param string $connectionName
-     * @param string $queue
-     *
+     * @param  string  $connectionName
+     * @param  string  $queue
      * @return \Illuminate\Contracts\Queue\Job|null
      */
     protected function getNextJob($connectionName, $queue)
@@ -101,7 +97,7 @@ trait SansDaemonWorkerTrait
     /**
      * Get the queue connection.
      *
-     * @param string|null $name
+     * @param  string|null  $name
      * @return \Illuminate\Contracts\Queue\Queue
      */
     protected function getConnection($name)

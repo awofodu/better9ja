@@ -2,8 +2,8 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -99,7 +99,7 @@ trait AuthenticatesUsers
      * Send the response after the user was authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     protected function sendLoginResponse(Request $request)
     {
@@ -107,16 +107,12 @@ trait AuthenticatesUsers
 
         $this->clearLoginAttempts($request);
 
-        $response = $this->authenticated($request, $this->guard()->user());
-        if ($response) {
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
             return $response;
         }
 
-        return $request->wantsJson() || $request->ajax()
-                    ? response()->json([
-                        'status' => 'success',
-                        'url' => redirect()->intended($this->redirectPath())->getTargetUrl(),
-            ])
+        return $request->wantsJson()
+                    ? new JsonResponse([], 204)
                     : redirect()->intended($this->redirectPath());
     }
 
@@ -161,7 +157,7 @@ trait AuthenticatesUsers
      * Log the user out of the application.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     public function logout(Request $request)
     {
@@ -176,8 +172,8 @@ trait AuthenticatesUsers
         }
 
         return $request->wantsJson()
-            ? new Response('', 204)
-            : redirect('/login');
+            ? new JsonResponse([], 204)
+            : redirect('/');
     }
 
     /**

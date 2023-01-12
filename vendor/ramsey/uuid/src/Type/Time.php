@@ -14,12 +14,10 @@ declare(strict_types=1);
 
 namespace Ramsey\Uuid\Type;
 
-use Ramsey\Uuid\Exception\UnsupportedOperationException;
 use Ramsey\Uuid\Type\Integer as IntegerObject;
-use stdClass;
+use ValueError;
 
-use function json_decode;
-use function json_encode;
+use function sprintf;
 
 /**
  * A value object representing a timestamp
@@ -32,24 +30,15 @@ use function json_encode;
  */
 final class Time implements TypeInterface
 {
-    /**
-     * @var IntegerObject
-     */
-    private $seconds;
+    private readonly IntegerObject $seconds;
+    private readonly IntegerObject $microseconds;
 
-    /**
-     * @var IntegerObject
-     */
-    private $microseconds;
-
-    /**
-     * @param mixed $seconds
-     * @param mixed $microseconds
-     */
-    public function __construct($seconds, $microseconds = 0)
-    {
-        $this->seconds = new IntegerObject($seconds);
-        $this->microseconds = new IntegerObject($microseconds);
+    public function __construct(
+        int | float | string | IntegerObject $seconds,
+        int | float | string | IntegerObject $microseconds = new IntegerObject(0),
+    ) {
+        $this->seconds = $seconds instanceof IntegerObject ? $seconds : new IntegerObject($seconds);
+        $this->microseconds = $microseconds instanceof IntegerObject ? $microseconds : new IntegerObject($microseconds);
     }
 
     public function getSeconds(): IntegerObject
@@ -62,18 +51,25 @@ final class Time implements TypeInterface
         return $this->microseconds;
     }
 
+    /**
+     * @return numeric-string
+     */
     public function toString(): string
     {
-        return $this->seconds->toString() . '.' . $this->microseconds->toString();
+        /** @var numeric-string */
+        return $this->seconds->toString() . '.' . sprintf('%06s', $this->microseconds->toString());
     }
 
+    /**
+     * @return numeric-string
+     */
     public function __toString(): string
     {
         return $this->toString();
     }
 
     /**
-     * @return string[]
+     * @return array{seconds: string, microseconds: string}
      */
     public function jsonSerialize(): array
     {
@@ -83,29 +79,30 @@ final class Time implements TypeInterface
         ];
     }
 
-    public function serialize(): string
+    /**
+     * @return array{seconds: string, microseconds: string}
+     */
+    public function __serialize(): array
     {
-        return (string) json_encode($this);
+        return [
+            'seconds' => $this->getSeconds()->toString(),
+            'microseconds' => $this->getMicroseconds()->toString(),
+        ];
     }
 
     /**
-     * Constructs the object from a serialized string representation
-     *
-     * @param string $serialized The serialized string representation of the object
-     *
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+     * @inheritDoc
      */
-    public function unserialize($serialized): void
+    public function __unserialize(array $data): void
     {
-        /** @var stdClass $time */
-        $time = json_decode($serialized);
-
-        if (!isset($time->seconds) || !isset($time->microseconds)) {
-            throw new UnsupportedOperationException(
-                'Attempted to unserialize an invalid value'
-            );
+        if (!isset($data['seconds']) || !isset($data['microseconds'])) {
+            throw new ValueError(sprintf('%s(): Argument #1 ($data) is invalid', __METHOD__));
         }
 
-        $this->__construct($time->seconds, $time->microseconds);
+        assert(is_string($data['seconds']));
+        assert(is_string($data['microseconds']));
+
+        $this->seconds = new IntegerObject($data['seconds']);
+        $this->microseconds = new IntegerObject($data['microseconds']);
     }
 }

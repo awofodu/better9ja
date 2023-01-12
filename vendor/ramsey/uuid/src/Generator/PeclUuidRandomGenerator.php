@@ -14,6 +14,11 @@ declare(strict_types=1);
 
 namespace Ramsey\Uuid\Generator;
 
+use Ramsey\Uuid\Exception\NameException;
+
+use function uuid_create;
+use function uuid_parse;
+
 use const UUID_TYPE_RANDOM;
 
 /**
@@ -27,6 +32,6 @@ class PeclUuidRandomGenerator implements RandomGeneratorInterface
     {
         $uuid = uuid_create(UUID_TYPE_RANDOM);
 
-        return uuid_parse($uuid);
+        return uuid_parse($uuid) ?: throw new NameException('Unable to generate UUID from ext-uuid');
     }
 }

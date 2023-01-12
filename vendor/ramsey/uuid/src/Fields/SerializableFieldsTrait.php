@@ -14,8 +14,11 @@ declare(strict_types=1);
 
 namespace Ramsey\Uuid\Fields;
 
+use ValueError;
+
 use function base64_decode;
-use function base64_encode;
+use function sprintf;
+use function strlen;
 
 /**
  * Provides common serialization functionality to fields
@@ -25,32 +28,43 @@ use function base64_encode;
 trait SerializableFieldsTrait
 {
     /**
-     * @param string $bytes The bytes that comprise the fields
+     * @param non-empty-string $bytes The bytes that comprise the fields
      */
     abstract public function __construct(string $bytes);
 
     /**
      * Returns the bytes that comprise the fields
+     *
+     * @return non-empty-string
      */
     abstract public function getBytes(): string;
 
     /**
-     * Returns a string representation of object
+     * @return array{bytes: non-empty-string}
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
-        return base64_encode($this->getBytes());
+        return ['bytes' => $this->getBytes()];
     }
 
     /**
-     * Constructs the object from a serialized string representation
-     *
-     * @param string $serialized The serialized string representation of the object
-     *
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+     * @inheritDoc
+     * @psalm-suppress UnusedMethodCall
      */
-    public function unserialize($serialized): void
+    public function __unserialize(array $data): void
     {
-        $this->__construct(base64_decode($serialized));
+        if (!isset($data['bytes'])) {
+            throw new ValueError(sprintf('%s(): Argument #1 ($data) is invalid', __METHOD__));
+        }
+
+        assert(is_string($data['bytes']) && $data['bytes'] !== '');
+
+        if (strlen($data['bytes']) === 16) {
+            $this->__construct($data['bytes']);
+        } else {
+            /** @var non-empty-string $bytes */
+            $bytes = base64_decode($data['bytes']);
+            $this->__construct($bytes);
+        }
     }
 }

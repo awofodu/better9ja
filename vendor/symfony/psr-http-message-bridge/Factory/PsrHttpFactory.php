@@ -58,7 +58,11 @@ class PsrHttpFactory implements HttpMessageFactoryInterface
         );
 
         foreach ($symfonyRequest->headers->all() as $name => $value) {
-            $request = $request->withHeader($name, $value);
+            try {
+                $request = $request->withHeader($name, $value);
+            } catch (\InvalidArgumentException $e) {
+                // ignore invalid header
+            }
         }
 
         $body = $this->streamFactory->createStreamFromResource($symfonyRequest->getContent(true));
@@ -89,7 +93,7 @@ class PsrHttpFactory implements HttpMessageFactoryInterface
 
         foreach ($uploadedFiles as $key => $value) {
             if (null === $value) {
-                $files[$key] = $this->uploadedFileFactory->createUploadedFile($this->streamFactory->createStream(), 0, UPLOAD_ERR_NO_FILE);
+                $files[$key] = $this->uploadedFileFactory->createUploadedFile($this->streamFactory->createStream(), 0, \UPLOAD_ERR_NO_FILE);
                 continue;
             }
             if ($value instanceof UploadedFile) {
@@ -127,18 +131,18 @@ class PsrHttpFactory implements HttpMessageFactoryInterface
     {
         $response = $this->responseFactory->createResponse($symfonyResponse->getStatusCode(), Response::$statusTexts[$symfonyResponse->getStatusCode()] ?? '');
 
-        if ($symfonyResponse instanceof BinaryFileResponse) {
+        if ($symfonyResponse instanceof BinaryFileResponse && !$symfonyResponse->headers->has('Content-Range')) {
             $stream = $this->streamFactory->createStreamFromFile(
                 $symfonyResponse->getFile()->getPathname()
             );
         } else {
             $stream = $this->streamFactory->createStreamFromFile('php://temp', 'wb+');
-            if ($symfonyResponse instanceof StreamedResponse) {
+            if ($symfonyResponse instanceof StreamedResponse || $symfonyResponse instanceof BinaryFileResponse) {
                 ob_start(function ($buffer) use ($stream) {
                     $stream->write($buffer);
 
                     return '';
-                });
+                }, 1);
 
                 $symfonyResponse->sendContent();
                 ob_end_clean();
@@ -160,7 +164,11 @@ class PsrHttpFactory implements HttpMessageFactoryInterface
         }
 
         foreach ($headers as $name => $value) {
-            $response = $response->withHeader($name, $value);
+            try {
+                $response = $response->withHeader($name, $value);
+            } catch (\InvalidArgumentException $e) {
+                // ignore invalid header
+            }
         }
 
         $protocolVersion = $symfonyResponse->getProtocolVersion();

@@ -15,9 +15,11 @@ declare(strict_types=1);
 namespace Ramsey\Uuid\Type;
 
 use Ramsey\Uuid\Exception\InvalidArgumentException;
+use ValueError;
 
-use function ctype_xdigit;
-use function strpos;
+use function preg_match;
+use function sprintf;
+use function str_starts_with;
 use function strtolower;
 use function substr;
 
@@ -33,28 +35,16 @@ use function substr;
 final class Hexadecimal implements TypeInterface
 {
     /**
-     * @var string
+     * @var non-empty-string
      */
-    private $value;
+    private readonly string $value;
 
     /**
-     * @param string $value The hexadecimal value to store
+     * @param non-empty-string|self $value The hexadecimal value to store
      */
-    public function __construct(string $value)
+    public function __construct(self | string $value)
     {
-        $value = strtolower($value);
-
-        if (strpos($value, '0x') === 0) {
-            $value = substr($value, 2);
-        }
-
-        if (!ctype_xdigit($value)) {
-            throw new InvalidArgumentException(
-                'Value must be a hexadecimal number'
-            );
-        }
-
-        $this->value = $value;
+        $this->value = $value instanceof self ? (string) $value : $this->prepareValue($value);
     }
 
     public function toString(): string
@@ -64,28 +54,56 @@ final class Hexadecimal implements TypeInterface
 
     public function __toString(): string
     {
-        return $this->toString();
+        return $this->value;
     }
 
     public function jsonSerialize(): string
     {
-        return $this->toString();
-    }
-
-    public function serialize(): string
-    {
-        return $this->toString();
+        return $this->value;
     }
 
     /**
-     * Constructs the object from a serialized string representation
-     *
-     * @param string $serialized The serialized string representation of the object
-     *
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+     * @return array{string: string}
      */
-    public function unserialize($serialized): void
+    public function __serialize(): array
     {
-        $this->__construct($serialized);
+        return ['string' => $this->value];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function __unserialize(array $data): void
+    {
+        if (!isset($data['string'])) {
+            throw new ValueError(sprintf('%s(): Argument #1 ($data) is invalid', __METHOD__));
+        }
+
+        assert(is_string($data['string']) && $data['string'] !== '');
+
+        $this->value = $this->prepareValue($data['string']);
+    }
+
+    /**
+     * @param non-empty-string $value
+     *
+     * @return non-empty-string
+     */
+    private function prepareValue(string $value): string
+    {
+        $value = strtolower($value);
+
+        if (str_starts_with($value, '0x')) {
+            $value = substr($value, 2);
+        }
+
+        if (!preg_match('/^[A-Fa-f0-9]+$/', $value)) {
+            throw new InvalidArgumentException(
+                'Value must be a hexadecimal number'
+            );
+        }
+
+        /** @var non-empty-string */
+        return $value;
     }
 }
